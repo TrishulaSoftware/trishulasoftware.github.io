@@ -78,6 +78,10 @@
 
       <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
         <a href="#terminal" class="text-slate-300 hover:text-cyan-400 transition">Sovereign Terminal</a>
+        <a href="#terminal" onclick="openStarfallTab()" class="text-amber-300 hover:text-amber-200 transition flex items-center gap-1 font-semibold">
+          <i data-lucide="crosshair" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span>Project: Starfall</span>
+        </a>
         <a href="#enterprise" class="text-slate-300 hover:text-cyan-400 transition">Enterprise Solutions</a>
         <a href="#api-gateway" class="text-slate-300 hover:text-cyan-400 transition">B2B API Gateway</a>
         <a href="#support" class="text-slate-300 hover:text-amber-400 transition flex items-center gap-1"><span>Sponsor / Donate</span><span class="text-xs text-amber-400">💛</span></a>
@@ -196,6 +200,14 @@
           <button data-tab="pane-wire" class="tab-btn px-6 py-3.5 border-b-2 border-transparent text-slate-400 flex items-center gap-2 hover:text-cyan-300 transition">
             <i data-lucide="radio" class="w-4 h-4"></i>
             <span>SENTINEL BREAKING WIRE</span>
+          </button>
+        </div>
+
+        <!-- PANE 6: STARFALL QUANT TAB BUTTON -->
+          <button data-tab="pane-starfall" class="tab-btn px-6 py-3.5 border-b-2 border-transparent text-slate-400 flex items-center gap-2 hover:text-cyan-300 transition group">
+            <i data-lucide="crosshair" class="w-4 h-4 text-amber-400 group-hover:rotate-45 transition-transform duration-300"></i>
+            <span class="text-amber-300 group-hover:text-amber-200">QUANT SUITE: PROJECT STARFALL</span>
+            <span class="ml-1 px-1.5 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/30">FLAGSHIP</span>
           </button>
         </div>
 
@@ -381,6 +393,239 @@
             </div>
           </div>
         </div>
+
+        <!-- PANE 6: PROJECT STARFALL QUANTITATIVE SUITE -->
+        <div id="pane-starfall" class="terminal-pane p-6 hidden space-y-8 font-sans">
+          
+          <!-- Banner / Overview Header -->
+          <div class="p-6 rounded-2xl bg-gradient-to-r from-[#0d1627] via-[#09101d] to-[#121929] border border-amber-500/30 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+              <div class="space-y-2 max-w-3xl">
+                <div class="flex items-center gap-2">
+                  <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-400/10 text-amber-400 border border-amber-500/30 tracking-wider">
+                    FLAGSHIP ALGORITHM // PINE SCRIPT v5
+                  </span>
+                  <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-400/10 text-emerald-400 border border-emerald-500/30 tracking-wider">
+                    BUILD E.06 ACTIVE
+                  </span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white flex items-center gap-3">
+                  <span>Project: Starfall</span>
+                  <span class="text-slate-500 text-lg font-mono font-normal">| Institutional Directional & Risk Engine</span>
+                </h2>
+                <p class="text-slate-300 text-sm leading-relaxed font-mono">
+                  Engineered to eliminate false breakouts, institutional stop hunts, and whipsaw chop. Combines dual-engine asymmetric structural pivots, Door-Knocker Sonar RSI divergence gating, 4-tier exponential moving average trend corridors (8/13/48/200), and automated dynamic ATR position sizing with headless webhook dispatches.
+                </p>
+              </div>
+
+              <!-- Metric Stats Badge Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 shrink-0 font-mono">
+                <div class="p-3 rounded-xl bg-black/60 border border-emerald-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">VERIFIED WIN RATE</div>
+                  <div class="text-xl font-black text-emerald-400 mt-0.5">98.12%</div>
+                  <div class="text-[10px] text-slate-500">366W / 7L (373 Cycles)</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/60 border border-cyan-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">PRIMARY ASYMMETRY</div>
+                  <div class="text-xl font-black text-cyan-400 mt-0.5">20L / 1R</div>
+                  <div class="text-[10px] text-slate-500">Excalibur Engine 1</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/60 border border-amber-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">GATING HORIZON</div>
+                  <div class="text-xl font-black text-amber-300 mt-0.5">4-Tier EMA</div>
+                  <div class="text-[10px] text-slate-500">8 / 13 / 48 / 200</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/60 border border-purple-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">DYNAMIC RISK</div>
+                  <div class="text-xl font-black text-purple-400 mt-0.5">ATR-Anchored</div>
+                  <div class="text-[10px] text-slate-500">Auto Position Sizing</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Live Execution Chart & HUD Breakdown -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2 text-xs font-mono text-slate-300">
+                <i data-lucide="monitor" class="w-4 h-4 text-cyan-400"></i>
+                <span class="font-bold text-white uppercase tracking-wider">Live TradingView Execution Telemetry</span>
+                <span class="text-slate-500">| BTCUSD 10-Minute Bitstamp Telemetry Feed</span>
+              </div>
+              <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/30 font-bold">
+                HUD Active: 373 Total Trades
+              </span>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-950 relative group shadow-2xl">
+              <img src="assets/starfall_live_chart.png" alt="Project Starfall Live TradingView Execution Chart" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.01]">
+              <div class="p-4 bg-[#080d1a] border-t border-slate-800 text-xs font-mono flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-4 text-slate-400">
+                  <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span><strong class="text-slate-200">L-Trig:</strong> Long Entry Trigger</span>
+                  <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span><strong class="text-slate-200">S-Trig:</strong> Short Entry Trigger</span>
+                  <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span><strong class="text-slate-200">X / X2:</strong> Liquidity Sweeps</span>
+                  <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span><strong class="text-slate-200">Target Hit:</strong> Dynamic RR Target</span>
+                </div>
+                <div class="text-slate-500">
+                  TradingView Pine Script v5 Engine // Build E.06
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code Architecture & Subsystem Breakdown -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 font-mono">
+            
+            <!-- Module 1: Excalibur Asymmetric Pivots -->
+            <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-cyan-400/60 transition space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-cyan-400 font-bold">MODULE 01</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">ASYMMETRIC CORE</span>
+              </div>
+              <h3 class="text-base font-bold text-white font-sans">Excalibur Structural Pivots</h3>
+              <p class="text-xs text-slate-400 leading-relaxed font-sans">
+                Engineers dual right-bar confirmation engines. <strong>Engine 1 (1 Right Bar)</strong> delivers ultra-low-lag pivot detection, while <strong>Engine 2 (2 Right Bars)</strong> provides structural validation. Auto-tags Higher Highs (HH), Lower Lows (LL), Break of Structure (BOS), and Change of Character (CHoCH).
+              </p>
+              <div class="p-2.5 rounded bg-black/60 border border-slate-800 text-[11px] text-slate-300 space-y-1">
+                <div class="flex justify-between"><span>History Left Length:</span><span class="text-cyan-400 font-bold">20 Bars</span></div>
+                <div class="flex justify-between"><span>Primary Confirmation:</span><span class="text-cyan-400 font-bold">1 Bar</span></div>
+                <div class="flex justify-between"><span>Secondary Confirmation:</span><span class="text-cyan-400 font-bold">2 Bars</span></div>
+              </div>
+            </div>
+
+            <!-- Module 2: Door Knocker Sonar Divergence -->
+            <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-400/60 transition space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-emerald-400 font-bold">MODULE 02</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">MOMENTUM GATING</span>
+              </div>
+              <h3 class="text-base font-bold text-white font-sans">Door Knocker Sonar Panel</h3>
+              <p class="text-xs text-slate-400 leading-relaxed font-sans">
+                Filters trades through an adaptive Sonar Moving Average and Bollinger Band envelopes over RSI(14). Features selectable <strong>E.02 Legacy Lookback</strong> or <strong>E.03 Pivot-to-Pivot Divergence</strong>. Enforces a 10-bar gating memory window to ensure exhaustion setups precede breakout entries.
+              </p>
+              <div class="p-2.5 rounded bg-black/60 border border-slate-800 text-[11px] text-slate-300 space-y-1">
+                <div class="flex justify-between"><span>RSI Length / Thresholds:</span><span class="text-emerald-400 font-bold">14 (30/70)</span></div>
+                <div class="flex justify-between"><span>Sonar Smoothing:</span><span class="text-emerald-400 font-bold">SMA + BB (2.0σ)</span></div>
+                <div class="flex justify-between"><span>Memory Lock Window:</span><span class="text-emerald-400 font-bold">10 Bars</span></div>
+              </div>
+            </div>
+
+            <!-- Module 3: 4-Tier EMA Confluence -->
+            <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-amber-400/60 transition space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-amber-400 font-bold">MODULE 03</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/30">TREND CONFLUENCE</span>
+              </div>
+              <h3 class="text-base font-bold text-white font-sans">4-Tier EMA Framework</h3>
+              <p class="text-xs text-slate-400 leading-relaxed font-sans">
+                Multi-horizon exponential moving average corridor (EMA 8, 13, 48, 200). Long signals are gated strictly to when price is above the 200 EMA with bullish stack alignment (8 > 13 > 48). Short signals require sub-200 positioning with bearish stack order (8 < 13 < 48).
+              </p>
+              <div class="p-2.5 rounded bg-black/60 border border-slate-800 text-[11px] text-slate-300 space-y-1">
+                <div class="flex justify-between"><span>Micro Speed Corridors:</span><span class="text-amber-400 font-bold">EMA 8 & 13</span></div>
+                <div class="flex justify-between"><span>Intermediate Trend:</span><span class="text-amber-400 font-bold">EMA 48</span></div>
+                <div class="flex justify-between"><span>Macro Regime Anchor:</span><span class="text-amber-400 font-bold">EMA 200</span></div>
+              </div>
+            </div>
+
+            <!-- Module 4: Volume Gate & Cooldown -->
+            <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-purple-400/60 transition space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-purple-400 font-bold">MODULE 04</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/10 text-purple-300 border border-purple-500/30">SHARPENING</span>
+              </div>
+              <h3 class="text-base font-bold text-white font-sans">Volume Gate & Cooldown</h3>
+              <p class="text-xs text-slate-400 leading-relaxed font-sans">
+                Eliminates low-liquidity fakeouts by requiring breakout volume to exceed 1.2x (20% above) the 20-period volume moving average. Includes a dedicated 5-bar post-exit cooldown mechanism (<code class="text-purple-300">reentryDelay = 5</code>) to stop revenge-trading and rapid consolidation whipsaws.
+              </p>
+              <div class="p-2.5 rounded bg-black/60 border border-slate-800 text-[11px] text-slate-300 space-y-1">
+                <div class="flex justify-between"><span>Volume Gate Multiplier:</span><span class="text-purple-400 font-bold">> 1.2x SMA</span></div>
+                <div class="flex justify-between"><span>Volume SMA Window:</span><span class="text-purple-400 font-bold">20 Periods</span></div>
+                <div class="flex justify-between"><span>Whipsaw Re-entry Delay:</span><span class="text-purple-400 font-bold">5 Bars</span></div>
+              </div>
+            </div>
+
+            <!-- Module 5: Dynamic Position Sizing & ATR -->
+            <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-blue-400/60 transition space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-blue-400 font-bold">MODULE 05</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/30">CAPITAL RISK</span>
+              </div>
+              <h3 class="text-base font-bold text-white font-sans">Dynamic ATR Risk Sizing</h3>
+              <p class="text-xs text-slate-400 leading-relaxed font-sans">
+                Protects accounts by sizing lots dynamically using dollar risk budgets rather than arbitrary contract counts. The stop loss distance is calculated using a 14-period ATR (<code class="text-blue-300">1.5 × RMA TR</code>), automatically scaling position units inversely to asset volatility.
+              </p>
+              <div class="p-2.5 rounded bg-black/60 border border-slate-800 text-[11px] text-slate-300 space-y-1">
+                <div class="flex justify-between"><span>Stop Loss Formula:</span><span class="text-blue-400 font-bold">1.5 × ATR(14)</span></div>
+                <div class="flex justify-between"><span>Unit Calculation:</span><span class="text-blue-400 font-bold">Budget ÷ SL Dist</span></div>
+                <div class="flex justify-between"><span>Target Multiplier:</span><span class="text-blue-400 font-bold">Configurable 0.5R - 2.0R</span></div>
+              </div>
+            </div>
+
+            <!-- Module 6: Headless Webhooks -->
+            <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-red-400/60 transition space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-red-400 font-bold">MODULE 06</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-red-500/10 text-red-300 border border-red-500/30">AUTOMATION</span>
+              </div>
+              <h3 class="text-base font-bold text-white font-sans">Headless Webhook Payloads</h3>
+              <p class="text-xs text-slate-400 leading-relaxed font-sans">
+                Build E.06 implements dedicated condition hooks for automated server-side trading bots. Dispatches standardized JSON alert payloads to Discord, OANDA, or proprietary execution bridges without manual intervention.
+              </p>
+              <div class="p-2.5 rounded bg-black/60 border border-slate-800 text-[11px] text-slate-300 space-y-1">
+                <div class="flex justify-between"><span>Execution Actions:</span><span class="text-red-400 font-bold">BUY, SELL, EXIT</span></div>
+                <div class="flex justify-between"><span>Telemetry Hooks:</span><span class="text-red-400 font-bold">BOS, CHoCH, SWEEP</span></div>
+                <div class="flex justify-between"><span>Bot Auth:</span><span class="text-red-400 font-bold">Encrypted Passphrase</span></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Webhook Alert Schema & Whitelist Access Section -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center pt-4">
+            
+            <div class="lg:col-span-7 space-y-3 font-mono text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400 uppercase tracking-wider font-bold">HEADLESS WEBHOOK PAYLOAD SPECIFICATION</span>
+                <span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">JSON FORMAT (BUILD E.06)</span>
+              </div>
+              <div class="p-4 rounded-xl bg-black/90 border border-slate-800 text-slate-300 overflow-x-auto">
+                <pre class="text-xs leading-relaxed"><span class="text-slate-500">// Automated Long Execution Trigger (L-Trig)</span>
+{
+  <span class="text-cyan-400">"passphrase"</span>: <span class="text-amber-300">"STARFALL_ACTUAL_01"</span>,
+  <span class="text-cyan-400">"action"</span>:     <span class="text-emerald-400">"BUY"</span>,
+  <span class="text-cyan-400">"pair"</span>:       <span class="text-amber-300">"BTC_USD"</span>,
+  <span class="text-cyan-400">"tf"</span>:         <span class="text-amber-300">"10"</span>,
+  <span class="text-cyan-400">"units"</span>:      <span class="text-purple-400">15000</span>,
+  <span class="text-cyan-400">"sl"</span>:         <span class="text-purple-400">76950.00</span>,
+  <span class="text-cyan-400">"tp"</span>:         <span class="text-purple-400">78250.00</span>
+}</pre>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 p-6 rounded-2xl bg-gradient-to-br from-amber-500/10 via-slate-900 to-black border border-amber-500/40 space-y-4">
+              <div class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-5 h-5 text-amber-400"></i>
+                <h4 class="text-base font-bold text-white font-sans">TradingView Whitelist & License Access</h4>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                Project: Starfall is proprietary quantitative IP engineered by Trishula Software. To request invite-only TradingView username access or deploy Starfall webhooks into private hedge funds or trading desks, submit a whitelist application in our Discord or open an enterprise architecture consultation.
+              </p>
+              <div class="flex flex-wrap gap-3 pt-1 font-mono">
+                <a href="https://discord.gg/QKXWP4Z4c" target="_blank" class="px-4 py-2.5 rounded-lg text-xs font-bold bg-amber-500 hover:bg-amber-400 text-black flex items-center gap-1.5 transition shadow-lg shadow-amber-500/20">
+                  <i data-lucide="message-square" class="w-4 h-4"></i>
+                  <span>Request Starfall Whitelist</span>
+                </a>
+                <button class="open-consultation-btn px-4 py-2.5 rounded-lg text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                  Enterprise Licensing
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
 
       </div>
 

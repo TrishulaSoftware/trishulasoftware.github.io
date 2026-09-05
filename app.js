@@ -49,6 +49,7 @@ function initTerminalTabs() {
           pane.classList.add('hidden');
         }
       });
+      if (window.lucide) window.lucide.createIcons();
     });
   });
 }
@@ -244,5 +245,15 @@ function initConsultationModal() {
         if (successMsg) successMsg.classList.add('hidden');
       }, 4000);
     });
+  }
+}
+
+
+// Starfall Tab Trigger Helper
+function openStarfallTab() {
+  const starfallBtn = document.querySelector('[data-tab="pane-starfall"]');
+  if (starfallBtn) {
+    starfallBtn.click();
+    document.getElementById('terminal')?.scrollIntoView({ behavior: 'smooth' });
   }
 }
