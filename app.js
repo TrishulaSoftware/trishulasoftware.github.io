@@ -211,7 +211,7 @@ function initApiPlayground() {
   }
 }
 
-// 5. CONSULTATION MODAL
+// 5. CONSULTATION & WHITELIST MODAL
 function initConsultationModal() {
   const modal = document.getElementById('consultation-modal');
   const openBtns = document.querySelectorAll('.open-consultation-btn');
@@ -219,9 +219,50 @@ function initConsultationModal() {
   const form = document.getElementById('consultation-form');
   const successMsg = document.getElementById('consultation-success');
 
+  const modalBadge = modal ? modal.querySelector('.modal-badge') : null;
+  const modalTitle = modal ? modal.querySelector('.modal-title') : null;
+  const modalSubtitle = modal ? modal.querySelector('.modal-subtitle') : null;
+  const modalScopeLabel = modal ? modal.querySelector('.modal-scope-label') : null;
+  const modalScopeInput = modal ? modal.querySelector('.modal-scope-input') : null;
+  const modalSubmitBtn = modal ? modal.querySelector('.modal-submit-btn') : null;
+  const modalSuccessTitle = modal ? modal.querySelector('.modal-success-title') : null;
+  const modalSuccessDesc = modal ? modal.querySelector('.modal-success-desc') : null;
+
   openBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+      const indicator = btn.getAttribute('data-indicator');
+
+      if (indicator) {
+        if (modalBadge) modalBadge.textContent = `TRADINGVIEW WHITELIST // ${indicator.toUpperCase()}`;
+        if (modalTitle) modalTitle.textContent = `Request Whitelist: ${indicator}`;
+        if (modalSubtitle) modalSubtitle.textContent = `Direct TradingView whitelist onboarding with Trishula Quantitative Systems.`;
+        if (modalScopeLabel) modalScopeLabel.textContent = 'TRADINGVIEW USERNAME & REQUIREMENTS';
+        if (modalScopeInput) {
+          modalScopeInput.placeholder = `TradingView Username: @your_username
+Target Markets: GC1!, BTCUSDT, NQ1!, SPY...
+Deployment Mode: Webhook automated bot or discretionary chart overlay...`;
+          modalScopeInput.value = `TradingView Username: 
+Target Markets: 
+Requested Indicator: ${indicator} (Pine Script v5)`;
+        }
+        if (modalSubmitBtn) modalSubmitBtn.textContent = `SUBMIT ${indicator.toUpperCase()} WHITELIST REQUEST`;
+        if (modalSuccessTitle) modalSuccessTitle.textContent = 'Whitelist Application Received';
+        if (modalSuccessDesc) modalSuccessDesc.textContent = `Your TradingView whitelist request for ${indicator} has been logged. Trishula Systems Engineering will authorize your account and follow up via email.`;
+      } else {
+        if (modalBadge) modalBadge.textContent = 'ENTERPRISE ARCHITECTURE RFP';
+        if (modalTitle) modalTitle.textContent = 'Request Custom Engineering';
+        if (modalSubtitle) modalSubtitle.textContent = 'Direct engagement with Trishula Principal Systems Engineering.';
+        if (modalScopeLabel) modalScopeLabel.textContent = 'PROJECT SCOPE / REQUIREMENTS';
+        if (modalScopeInput) {
+          modalScopeInput.placeholder = 'Describe your required scraper volume, terminal features, or quantitative odds engine...';
+          modalScopeInput.value = '';
+        }
+        if (modalSubmitBtn) modalSubmitBtn.textContent = 'SUBMIT ARCHITECTURE INQUIRY';
+        if (modalSuccessTitle) modalSuccessTitle.textContent = 'Inquiry Received';
+        if (modalSuccessDesc) modalSuccessDesc.textContent = 'Your architecture specification has been delivered to Trishula Systems Engineering. We will respond within 24 hours.';
+      }
+
       if (modal) modal.classList.remove('hidden');
     });
   });
