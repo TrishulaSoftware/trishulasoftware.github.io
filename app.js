@@ -248,12 +248,41 @@ function initConsultationModal() {
   }
 }
 
+// QUANT SUITE EXPAND / RETRACT ENGINE (PHOTO 2 BANNER)
+function toggleStarfallSuite() {
+  const drawer = document.getElementById('starfall-drawer');
+  const label = document.getElementById('starfall-status-label');
+  const arrow = document.getElementById('starfall-arrow');
 
-// Starfall Tab Trigger Helper
-function openStarfallTab() {
-  const starfallBtn = document.querySelector('[data-tab="pane-starfall"]');
-  if (starfallBtn) {
-    starfallBtn.click();
-    document.getElementById('terminal')?.scrollIntoView({ behavior: 'smooth' });
+  if (!drawer) return;
+
+  const isHidden = drawer.classList.contains('hidden');
+  if (isHidden) {
+    drawer.classList.remove('hidden');
+    if (label) label.textContent = 'CLICK TO RETRACT';
+    if (arrow) arrow.classList.add('rotate-180');
+    if (window.lucide) window.lucide.createIcons();
+  } else {
+    drawer.classList.add('hidden');
+    if (label) label.textContent = 'CLICK TO EXPAND';
+    if (arrow) arrow.classList.remove('rotate-180');
+  }
+}
+
+function expandAndScrollToQuantSuite() {
+  const drawer = document.getElementById('starfall-drawer');
+  const label = document.getElementById('starfall-status-label');
+  const arrow = document.getElementById('starfall-arrow');
+  const banner = document.getElementById('starfall-banner-toggle');
+
+  if (drawer && drawer.classList.contains('hidden')) {
+    drawer.classList.remove('hidden');
+    if (label) label.textContent = 'CLICK TO RETRACT';
+    if (arrow) arrow.classList.add('rotate-180');
+    if (window.lucide) window.lucide.createIcons();
+  }
+
+  if (banner) {
+    banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 }
