@@ -1,5 +1,5 @@
 # Trishula Software — Sovereign Quantitative & Autonomous AI Infrastructure
-**Lead Quantitative Systems Architect**: Cliff Finneyfrock  
+**Architecture**: Trishula Software Engineering Labs  
 **Official Portal**: [https://trishulasoftware.github.io](https://trishulasoftware.github.io)  
 **Community Discord**: [https://discord.gg/QKXWP4Z4c](https://discord.gg/QKXWP4Z4c)
 

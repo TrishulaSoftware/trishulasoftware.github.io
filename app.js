@@ -1,5 +1,5 @@
 // TRISHULA SOFTWARE — SOVEREIGN INTERACTIVE TERMINAL ENGINE
-// Lead Systems Architect: Cliff Finneyfrock
+// Trishula Architecture Labs — Autonomous Telemetry Core
 
 document.addEventListener('DOMContentLoaded', () => {
   initLiveTelemetry();
