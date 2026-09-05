@@ -1494,74 +1494,200 @@
         </div>
         
         <!-- ACCORDION ITEM: Trident-3 -->
-        <div class="cyber-card rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden shadow-xl" id="card-ind-trident3">
+        <div class="cyber-card rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 overflow-hidden shadow-xl" id="card-ind-trident3">
           
           <!-- Banner Header (Clickable Toggle) -->
           <div onclick="toggleIndicatorAccordion('ind-trident3')" class="px-6 py-4 bg-gradient-to-r from-[#0b1220] via-[#0f192e] to-[#0b1220] hover:from-[#111d35] hover:to-[#142340] cursor-pointer flex items-center justify-between gap-4 transition select-none group">
             <div class="flex items-center gap-3.5">
-              <div class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700/80 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:border-cyan-400 transition">
-                <i data-lucide="crosshair" class="w-4 h-4"></i>
+              <div class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700/80 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:border-emerald-400 transition">
+                <i data-lucide="layers" class="w-4 h-4"></i>
               </div>
               <div>
                 <div class="flex flex-wrap items-center gap-2">
-                  <span class="text-white font-bold text-sm sm:text-base tracking-wide group-hover:text-amber-300 transition font-sans">Trident-3</span>
-                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">PINE SCRIPT v5</span>
-                  <span class="hidden sm:inline text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30">100% SIGNAL ALIGNMENT GATE</span>
+                  <span class="text-white font-bold text-sm sm:text-base tracking-wide group-hover:text-emerald-300 transition font-sans">Trident-3 MTF Order Block System</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">PINE SCRIPT v6</span>
+                  <span class="hidden sm:inline text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30">TRIPLE-ENGINE MTF OVERLAY</span>
+                  <span class="hidden md:inline text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">VOLUME &amp; FOOTPRINT DYNAMICS</span>
                 </div>
-                <div class="text-[11px] font-mono text-slate-400 mt-0.5">TRIPLE-VECTOR DIRECTIONAL CONFLUENCE</div>
+                <div class="text-[11px] font-mono text-slate-400 mt-0.5">DYNAMIC ORDER BLOCKS · MULTI-TIMEFRAME OVERLAYS · BUY/SELL ACTIVITY · 11-HORIZON SCANNER</div>
               </div>
             </div>
 
             <div class="flex items-center gap-3 text-xs font-mono shrink-0">
-              <span id="label-ind-trident3" class="text-slate-400 group-hover:text-amber-300 transition text-[11px] font-semibold hidden md:inline">CLICK TO EXPAND</span>
-              <div class="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-400 group-hover:border-amber-400 transition">
+              <span id="label-ind-trident3" class="text-slate-400 group-hover:text-emerald-300 transition text-[11px] font-semibold hidden md:inline">CLICK TO EXPAND</span>
+              <div class="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-emerald-400 group-hover:border-emerald-400 transition">
                 <i id="chevron-ind-trident3" data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300 "></i>
               </div>
             </div>
           </div>
 
           <!-- Drawer Content (Expandable / Retractable) -->
-          <div id="drawer-ind-trident3" class="hidden border-t border-slate-800/80 bg-[#070c18] p-6 space-y-6 transition-all duration-500">
-            <div class="text-xs text-slate-300 font-mono leading-relaxed max-w-4xl">
-              Triple-vector confluence engine requiring complete alignment across trend structure, volatility expansion, and institutional volume acceleration before firing directional alert vectors.
-            </div>
+          <div id="drawer-ind-trident3" class="hidden border-t border-slate-800/80 bg-[#070c18] p-6 space-y-8 transition-all duration-500">
             
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-cyan-400 font-bold">THREE-TIER CONFLUENCE</div>
-                  <p class="text-slate-300 font-sans leading-relaxed">
-                    Vector 1 evaluates micro/macro trend alignment. Vector 2 tracks Bollinger/Keltner volatility expansion squeezes. Vector 3 confirms cumulative volume delta surges.
+            <!-- Banner / Overview Header -->
+            <div class="p-6 rounded-2xl bg-gradient-to-r from-[#091a24] via-[#08131c] to-[#0f1d2b] border border-emerald-500/30 shadow-2xl relative overflow-hidden">
+              <div class="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+              <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                <div class="space-y-2 max-w-3xl">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-400/10 text-emerald-400 border border-emerald-500/30 tracking-wider">
+                      FLAGSHIP ALGORITHM // PINE SCRIPT v6
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-cyan-400/10 text-cyan-400 border border-cyan-500/30 tracking-wider">
+                      TRIPLE-ENGINE MTF ARCHITECTURE
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-400/10 text-amber-400 border border-amber-500/30 tracking-wider">
+                      SPY 10M LIVE EXECUTION
+                    </span>
+                  </div>
+                  <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white flex items-center gap-3">
+                    <span>Trident-3 MTF Order Block System</span>
+                    <span class="text-slate-500 text-lg font-mono font-normal">| Institutional Multi-Timeframe Liquidity Engine</span>
+                  </h2>
+                  <p class="text-slate-300 text-sm leading-relaxed font-mono">
+                    Engineered to map institutional liquidity footprints, order block mitigation dynamics, and multi-timeframe supply/demand hierarchies in real-time. Built natively in Pine Script v6, Trident-3 runs three concurrent order block engines (Current Chart + MTF Overlay 1 + MTF Overlay 2), embeds buy/sell activity absorption footprints directly inside blocks, calculates visible order volume percentage metrics, and scans across 11 time horizons for precision execution.
                   </p>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-cyan-400 font-bold">SYSTEM THRESHOLDS</div>
-                  <div class="space-y-1 text-slate-400">
-                    <div class="flex justify-between"><span>Vector Alignment:</span><span class="text-cyan-400">Strict 3 of 3</span></div>
-                    <div class="flex justify-between"><span>False Signal Filter:</span><span class="text-white">Multi-Timeframe Sync</span></div>
-                    <div class="flex justify-between"><span>False Positive Rate:</span><span class="text-emerald-400">< 4.2%</span></div>
+
+                <!-- Metric Stats Badge Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 shrink-0 font-mono">
+                  <div class="p-3 rounded-xl bg-black/60 border border-emerald-500/40 text-center">
+                    <div class="text-[10px] text-slate-400 tracking-wider">CONCURRENT ENGINES</div>
+                    <div class="text-xl font-black text-emerald-400 mt-0.5">3 MTF Layers</div>
+                    <div class="text-[10px] text-slate-500">Current + MTF1 + MTF2</div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-black/60 border border-cyan-500/40 text-center">
+                    <div class="text-[10px] text-slate-400 tracking-wider">ALERT HORIZONS</div>
+                    <div class="text-xl font-black text-cyan-400 mt-0.5">11 Timeframes</div>
+                    <div class="text-[10px] text-slate-500">1m to 12M Continuous Scan</div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-black/60 border border-amber-500/40 text-center">
+                    <div class="text-[10px] text-slate-400 tracking-wider">MITIGATION MODES</div>
+                    <div class="text-xl font-black text-amber-300 mt-0.5">3 Protocols</div>
+                    <div class="text-[10px] text-slate-500">Close · Wick · 50% Mid-Line</div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-black/60 border border-purple-500/40 text-center">
+                    <div class="text-[10px] text-slate-400 tracking-wider">VOLUME METRIC</div>
+                    <div class="text-xl font-black text-purple-400 mt-0.5">Dynamic % Share</div>
+                    <div class="text-[10px] text-slate-500">Visible Set Concentration</div>
                   </div>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-cyan-400 font-bold">DISPATCH MODES</div>
-                  <div class="space-y-1 text-slate-400">
-                    <div class="flex justify-between"><span>Automation:</span><span class="text-emerald-400">Direct Webhook JSON</span></div>
-                    <div class="flex justify-between"><span>Alert Firing:</span><span class="text-white">Bar Close Confirmation</span></div>
-                    <div class="flex justify-between"><span>Execution Mode:</span><span class="text-white">Long / Short Directional</span></div>
-                  </div>
-                </div>
-              </div>
-            
-            <div class="pt-2 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800/80 text-xs font-mono">
-              <div class="flex items-center gap-2 text-slate-400">
-                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>TradingView Webhook Integration Ready</span>
-              </div>
-              <div class="flex gap-3">
-                <button class="open-consultation-btn px-4 py-2 rounded-lg font-bold bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 transition" data-indicator="Trident-3">
-                  Request Trident-3 Whitelist &rarr;
-                </button>
               </div>
             </div>
+
+            <!-- The Live Execution Chart & HUD Breakdown -->
+            <div class="space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2 text-xs font-mono text-slate-300">
+                  <i data-lucide="monitor" class="w-4 h-4 text-emerald-400"></i>
+                  <span class="font-bold text-white uppercase tracking-wider">Live TradingView Execution Telemetry</span>
+                  <span class="text-slate-500">| SPY 10-Minute NYSE Arca Telemetry Feed</span>
+                </div>
+                <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/30 font-bold">
+                  Pine Script v6 Core // Trident-3 Active
+                </span>
+              </div>
+
+              <div class="rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-950 relative group shadow-2xl">
+                <img src="assets/trident3_mtf_order_block_chart.png" alt="Trident-3 MTF Order Block System Live TradingView Execution Chart" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.01]">
+                <div class="p-4 bg-[#080d1a] border-t border-slate-800 text-xs font-mono flex flex-wrap items-center justify-between gap-4">
+                  <div class="flex flex-wrap items-center gap-4 text-slate-400">
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span><strong class="text-slate-200">[240] MTF 2 Blocks (Red):</strong> 4H Supply ($775.20–$777.00, 3.257M contracts, 61% vol)</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span><strong class="text-slate-200">[30] MTF 1 Blocks:</strong> 30M Supply/Demand ($770.20 &amp; $762.50)</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span><strong class="text-slate-200">Current 10M Blocks:</strong> Local S/R &amp; 50% Mid-Lines</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span><strong class="text-slate-200">Buy &amp; Sell Footprint:</strong> Internal Bid/Ask Volume Absorption</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span><strong class="text-slate-200">Volume % Share:</strong> Dynamic Right-Edge Telemetry Labels</span>
+                  </div>
+                  <div class="text-slate-500">
+                    TradingView Pine Script v6 Engine // Trident-3
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Code Architecture & Subsystem Breakdown (4 Detailed Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-xs">
+              
+              <!-- Module 01: Triple-Engine MTF Pipeline -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-400/60 transition space-y-2">
+                <div class="text-emerald-400 font-bold flex items-center gap-2">
+                  <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+                  <span>TRIPLE-ENGINE MTF PIPELINE</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Executes three independent order block pipelines simultaneously: Current Chart timeframe, MTF Overlay 1 (e.g. 30m/60m), and MTF Overlay 2 (e.g. 240m/4h). Utilizes non-repainting higher-timeframe data requests via <code class="text-emerald-300">request.security()</code> to construct institutional multi-tier supply/demand levels.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Overlay 1:</span><span class="text-white">Intermediate Timeframe (30m/60m)</span></div>
+                  <div class="flex justify-between"><span>Overlay 2:</span><span class="text-white">Macro Timeframe (240m/4h)</span></div>
+                </div>
+              </div>
+
+              <!-- Module 02: ATR-Bounded Block Construction & Mid-Line -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-cyan-400/60 transition space-y-2">
+                <div class="text-cyan-400 font-bold flex items-center gap-2">
+                  <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                  <span>DYNAMIC CONSTRUCTION &amp; MID-LINE</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Offers flexible order block construction via dynamic ATR coordinate expansion (<code class="text-cyan-300">h_len - 1 * atr[len]</code>) or Full candle body bounds. Automatically renders dashed 50% equilibrium mid-lines across all active blocks to test retest penetration and mitigation levels.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Construction Modes:</span><span class="text-cyan-300">Length (ATR) / Full Body</span></div>
+                  <div class="flex justify-between"><span>Equilibrium Line:</span><span class="text-white">Dashed 50% Mid-Point</span></div>
+                </div>
+              </div>
+
+              <!-- Module 03: Buy & Sell Activity Footprint -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-purple-400/60 transition space-y-2">
+                <div class="text-purple-400 font-bold flex items-center gap-2">
+                  <i data-lucide="activity" class="w-3.5 h-3.5"></i>
+                  <span>BUY &amp; SELL ACTIVITY FOOTPRINT</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Deconstructs internal aggressive buying vs. passive limit order absorption within each block. Generates dual-tone sub-boxes (<code class="text-purple-300">obactup / obactdn</code>) that visually reveal whether institutional market makers absorbed panic selling or distributed into aggressive liquidity surges.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Footprint Sub-Boxes:</span><span class="text-emerald-400">Bid / Ask Internal Split</span></div>
+                  <div class="flex justify-between"><span>Microstructure Tracking:</span><span class="text-white">Dynamic UMT Bar Positioning</span></div>
+                </div>
+              </div>
+
+              <!-- Module 04: 11-Horizon Cross-Timeframe Alert Radar -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-amber-400/60 transition space-y-2">
+                <div class="text-amber-400 font-bold flex items-center gap-2">
+                  <i data-lucide="bell-ring" class="w-3.5 h-3.5"></i>
+                  <span>11-HORIZON CROSS-TIMEFRAME RADAR</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Comprehensive real-time alerting engine scanning 11 continuous horizons: <code class="text-amber-300">1m, 3m, 5m, 15m, 30m, 60m, 240m, D, W, M, 12M</code>. Triggers granular webhook notifications for Block Created, Price Inside Block, and Block Mitigated/Broken events across all three engines.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Horizon Spectrum:</span><span class="text-white">1-Minute to 12-Month</span></div>
+                  <div class="flex justify-between"><span>Alert Firing:</span><span class="text-emerald-400">Once Per Bar Close Sync</span></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Footer Integration & Whitelist Dispatch Bar -->
+            <div class="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800/80 text-xs font-mono">
+              <div class="flex items-center gap-2 text-slate-400">
+                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>TradingView Pine Script v6 Ready // Trident-3 MTF Order Block System</span>
+              </div>
+              <div class="flex flex-wrap gap-3">
+                <button class="open-consultation-btn px-4 py-2.5 rounded-lg font-bold bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-black flex items-center gap-2 transition shadow-lg shadow-emerald-500/20" data-indicator="Trident-3 MTF Order Block System">
+                  <span>Request Trident-3 Whitelist</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+                <a href="#enterprise" class="px-4 py-2.5 rounded-lg font-bold bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 flex items-center gap-2 transition">
+                  <span>Deploy Custom TradingView Core</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+
           </div>
 
         </div>
