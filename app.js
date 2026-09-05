@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initEvTable();
   initApiPlayground();
   initConsultationModal();
+  initIndicatorFilters();
 });
 
 // 1. LIVE TELEMETRY TICKER
@@ -245,4 +246,31 @@ function initConsultationModal() {
       }, 4000);
     });
   }
+}
+
+
+// 6. TRADING INDICATORS CATEGORY FILTER
+function initIndicatorFilters() {
+  const filterBtns = document.querySelectorAll('.ind-filter-btn');
+  const cards = document.querySelectorAll('.indicator-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('active', 'bg-cyan-500/20', 'text-cyan-300', 'border-cyan-400');
+        b.classList.add('bg-slate-900', 'text-slate-300', 'border-slate-800');
+      });
+      btn.classList.add('active', 'bg-cyan-500/20', 'text-cyan-300', 'border-cyan-400');
+      btn.classList.remove('bg-slate-900', 'text-slate-300', 'border-slate-800');
+
+      const cat = btn.getAttribute('data-cat');
+      cards.forEach(card => {
+        if (cat === 'ALL' || card.getAttribute('data-cat') === cat) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
 }
