@@ -2975,22 +2975,23 @@
 
         </div>
         
-        <!-- ACCORDION ITEM: Project Vajra -->
-        <div class="cyber-card rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 overflow-hidden shadow-xl" id="card-ind-projectvajra">
+        <!-- ACCORDION ITEM: Project: Vajra 1.1 -->
+        <div class="cyber-card rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden shadow-xl" id="card-ind-projectvajra">
           
           <!-- Banner Header (Clickable Toggle) -->
           <div onclick="toggleIndicatorAccordion('ind-projectvajra')" class="px-6 py-4 bg-gradient-to-r from-[#0b1220] via-[#0f192e] to-[#0b1220] hover:from-[#111d35] hover:to-[#142340] cursor-pointer flex items-center justify-between gap-4 transition select-none group">
             <div class="flex items-center gap-3.5">
-              <div class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700/80 flex items-center justify-center text-amber-400 group-hover:scale-110 group-hover:border-amber-400 transition">
-                <i data-lucide="crosshair" class="w-4 h-4"></i>
+              <div class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700/80 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:border-cyan-400 transition">
+                <i data-lucide="layers" class="w-4 h-4"></i>
               </div>
               <div>
                 <div class="flex flex-wrap items-center gap-2">
-                  <span class="text-white font-bold text-sm sm:text-base tracking-wide group-hover:text-amber-300 transition font-sans">Project Vajra</span>
-                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30">PINE SCRIPT v5</span>
-                  <span class="hidden sm:inline text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">EXPLOSIVE KINETIC MOMENTUM IGNITION</span>
+                  <span class="text-white font-bold text-sm sm:text-base tracking-wide group-hover:text-amber-300 transition font-sans">Project: Vajra 1.1</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">PINE SCRIPT v6</span>
+                  <span class="hidden sm:inline text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">EXPERIMENTAL VOLUME PROFILE / HEATMAP</span>
+                  <span class="hidden md:inline text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">OPTIONS GEX &amp; NET DELTA ENGINE</span>
                 </div>
-                <div class="text-[11px] font-mono text-slate-400 mt-0.5">VOLATILITY COMPRESSION & KINETIC BREAKOUT</div>
+                <div class="text-[11px] font-mono text-slate-400 mt-0.5">WHALE VOLUME PROFILE, OPTIONS GEX HEATMAP, NET DELTA &amp; WICK ABSORPTION PROFILE</div>
               </div>
             </div>
 
@@ -3003,47 +3004,168 @@
           </div>
 
           <!-- Drawer Content (Expandable / Retractable) -->
-          <div id="drawer-ind-projectvajra" class="hidden border-t border-slate-800/80 bg-[#070c18] p-6 space-y-6 transition-all duration-500">
-            <div class="text-xs text-slate-300 font-mono leading-relaxed max-w-4xl">
-              Volatility compression squeeze & kinetic ignition alert. Detects tight consolidation squeezes and flags the exact micro-tick of explosive momentum release.
-            </div>
+          <div id="drawer-ind-projectvajra" class="hidden border-t border-slate-800/80 bg-[#070c18] p-6 space-y-8 transition-all duration-500">
             
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-amber-400 font-bold">SQUEEZE COMPRESSION CORE</div>
-                  <p class="text-slate-300 font-sans leading-relaxed">
-                    Monitors Bollinger Bands compressing completely inside Keltner Channels. The longer price remains coiling inside the squeeze, the more kinetic potential energy accumulates.
-                  </p>
+            <!-- System Overview Header & Stat Cards Grid -->
+            <div class="flex flex-col lg:flex-row items-start justify-between gap-6">
+              <div class="space-y-3 max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-[10px] font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                  <i data-lucide="activity" class="w-3 h-3"></i>
+                  <span>Project: Vajra 1.1 // Trishula Quantitative Systems &amp; AlgoAlpha</span>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-amber-400 font-bold">KINETIC IGNITION SIGNALS</div>
-                  <div class="space-y-1 text-slate-400">
-                    <div class="flex justify-between"><span>Black Squeeze Dot:</span><span class="text-white">Compression Active</span></div>
-                    <div class="flex justify-between"><span>Green Ignition Fire:</span><span class="text-emerald-400">Kinetic Release</span></div>
-                    <div class="flex justify-between"><span>Momentum Vector:</span><span class="text-amber-400">Linear Regression Slope</span></div>
+                <h4 class="text-lg md:text-xl font-bold text-white tracking-wide font-sans">
+                  Experimental Volume Profile, Options GEX Heatmap &amp; Liquidity Terminal
+                </h4>
+                <p class="text-xs text-slate-300 font-mono leading-relaxed">
+                  Engineered as a hybrid institutional order flow microstructure and derivatives surface engine. Project: Vajra 1.1 constructs multi-layer whale volume profiles, modeled options gamma exposure (GEX) heatmaps, net delta walls, and wick absorption profiles. Built natively in Pine Script v6 with an embedded Black-Scholes Greeks engine and Horner's polynomial normal CDF approximation, Vajra maps 97th-percentile whale volume, projects persistent horizontal S/R absorption ribbons, and calculates the exact algorithmic Options Max Pain pin level across any asset.
+                </p>
+              </div>
+
+              <!-- 4 Stat Metric Cards -->
+              <div class="grid grid-cols-2 gap-3 w-full lg:w-auto shrink-0 font-mono text-xs">
+                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">Volume Profile</div>
+                  <div class="text-base font-bold text-cyan-400 mt-0.5">35 Price Bins</div>
+                  <div class="text-[10px] text-slate-500">97% Whale Filter · 30% VA &amp; POC</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">Options GEX Model</div>
+                  <div class="text-base font-bold text-emerald-400 mt-0.5">Black-Scholes</div>
+                  <div class="text-[10px] text-slate-500">Green Pin Wall · Red Vol Wall</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">Net Delta Engine</div>
+                  <div class="text-base font-bold text-amber-400 mt-0.5">Strike Delta Walls</div>
+                  <div class="text-[10px] text-slate-500">Formatted &Delta;&plusmn; Scaling</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">Absorption &amp; Pin</div>
+                  <div class="text-base font-bold text-rose-400 mt-0.5">Wick S/R + Pain</div>
+                  <div class="text-[10px] text-slate-500">Gold Dashed Max Pain Line</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Chart Telemetry Showcase -->
+            <div class="cyber-card rounded-xl border border-slate-800 bg-[#080d1a] overflow-hidden">
+              <div class="px-4 py-3 bg-slate-900/80 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+                <div class="flex items-center gap-2 text-slate-200 font-bold">
+                  <i data-lucide="line-chart" class="w-4 h-4 text-cyan-400"></i>
+                  <span>LIVE TRADINGVIEW EXECUTION TELEMETRY</span>
+                  <span class="text-slate-500">|</span>
+                  <span class="text-slate-400 font-normal">SPDR S&amp;P 500 ETF Trust (SPY) 30-Minute NYSE Telemetry Feed</span>
+                </div>
+                <div class="flex items-center gap-2 text-[11px] text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20 font-semibold">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>Pine Script v6 Core // Project: Vajra 1.1 Active</span>
+                </div>
+              </div>
+
+              <div class="p-4 space-y-4">
+                <div class="relative rounded-lg overflow-hidden border border-slate-800/80 bg-black/40 group">
+                  <img src="assets/projectvajra_live_chart.png" alt="Project: Vajra 1.1 Live TradingView Execution Chart on SPY" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.01]">
+                </div>
+
+                <!-- Telemetry Breakdown Badges -->
+                <div class="flex flex-wrap items-center justify-between gap-3 text-xs font-mono pt-2 border-t border-slate-800/60">
+                  <div class="flex flex-wrap items-center gap-4 text-[11px]">
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span><strong class="text-slate-200">Whale Profile:</strong> Bullish (<code class="text-emerald-300">#00ffbb</code>) &amp; Bearish (<code class="text-rose-400">#ff1100</code>) Stacked Bins</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span><strong class="text-slate-200">Options GEX Heatmap:</strong> Black-Scholes Modeled Gamma Walls with Dynamic Opacity</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span><strong class="text-slate-200">Net Delta Profile:</strong> Strike-level Directional Hedging Pressure (<code class="text-amber-300">&Delta;&plusmn;</code>)</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span><strong class="text-slate-200">Wick Absorption Profile:</strong> Passive Limit Order Absorption Histogram</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500/50"></span><strong class="text-slate-200">S/R Absorption Levels:</strong> Projected Multi-Bar Peak Liquidity Corridors</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span><strong class="text-slate-200">Options Max Pain Pin:</strong> Minimal Payout Strike Line (<code class="text-yellow-300">#ffbd15</code>)</span>
                   </div>
-                </div>
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-amber-400 font-bold">EXECUTION</div>
-                  <div class="space-y-1 text-slate-400">
-                    <div class="flex justify-between"><span>Ignition Lag:</span><span class="text-emerald-400">0 Bars (Instant Fire)</span></div>
-                    <div class="flex justify-between"><span>High-Beta Targets:</span><span class="text-white">Semis, Biotech, Crypto</span></div>
-                    <div class="flex justify-between"><span>Discord Webhook:</span><span class="text-white">Automated Fire Alert</span></div>
+                  <div class="text-slate-500">
+                    TradingView Pine Script v6 Engine // Project: Vajra 1.1
                   </div>
                 </div>
               </div>
-            
-            <div class="pt-2 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800/80 text-xs font-mono">
+            </div>
+
+            <!-- Code Architecture & Subsystem Breakdown (4 Detailed Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-xs">
+              
+              <!-- Module 01: Multi-Layer Whale Volume Profile -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-cyan-400/60 transition space-y-2">
+                <div class="text-cyan-400 font-bold flex items-center gap-2">
+                  <i data-lucide="bar-chart" class="w-3.5 h-3.5"></i>
+                  <span>WHALE VOLUME PROFILE</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Samples lower-timeframe intrabar volume across a 200-bar lookback partitioned into 35 vertical price bins. Applies a 97th-percentile volume threshold filter to separate massive institutional whale blocks from retail noise, computing Point of Control (POC) and Value Area (VA).
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Whale Filter:</span><span class="text-white">97th Percentile</span></div>
+                  <div class="flex justify-between"><span>Resolution:</span><span class="text-cyan-400">35 Vertical Price Bins</span></div>
+                </div>
+              </div>
+
+              <!-- Module 02: Native Black-Scholes Greeks & GEX Engine -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-400/60 transition space-y-2">
+                <div class="text-emerald-400 font-bold flex items-center gap-2">
+                  <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+                  <span>BLACK-SCHOLES GEX HEATMAP</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Simulates full options surface Greeks on-chart via Horner's polynomial approximation (~1e-7 precision). Computes Net Gamma Exposure at each strike midpoint: Green Positive Gamma walls enforce dealer mean-reversion pins; Red Negative Gamma walls trigger accelerating volatility expansions.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Greeks Engine:</span><span class="text-white">Horner's Method CDF</span></div>
+                  <div class="flex justify-between"><span>GEX Walls:</span><span class="text-emerald-400">&plusmn; Scaling Heatmap Opacity</span></div>
+                </div>
+              </div>
+
+              <!-- Module 03: Options Net Delta Wall Profile -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-amber-400/60 transition space-y-2">
+                <div class="text-amber-400 font-bold flex items-center gap-2">
+                  <i data-lucide="triangle" class="w-3.5 h-3.5"></i>
+                  <span>OPTIONS NET DELTA WALLS</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Synthesizes institutional call and put open interest from directional order volume to calculate continuous strike-level Net Delta (<code class="text-amber-300">Call OI &times; Call &Delta; + Put OI &times; Put &Delta;</code>). Visualizes dealer inventory rehedging pressure formatted as compact &Delta;&plusmn; numerical badges.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Delta Output:</span><span class="text-white">&Delta;&plusmn; Formatted Volume</span></div>
+                  <div class="flex justify-between"><span>Profile Width:</span><span class="text-amber-400">Proportional Coordinate Offset</span></div>
+                </div>
+              </div>
+
+              <!-- Module 04: Wick Absorption & Max Pain Line -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-rose-400/60 transition space-y-2">
+                <div class="text-rose-400 font-bold flex items-center gap-2">
+                  <i data-lucide="crosshair" class="w-3.5 h-3.5"></i>
+                  <span>WICK ABSORPTION &amp; MAX PAIN</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Isolates aggressive market order absorption occurring strictly in candle wicks. Peak absorption bins project transparent multi-bar S/R zones across historical candles, while the algorithmic Max Pain solver finds the exact strike that minimizes option buyer payouts, plotted as a dashed golden line.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>S/R Projection:</span><span class="text-white">Peak Absorption Ribbons</span></div>
+                  <div class="flex justify-between"><span>Max Pain Line:</span><span class="text-yellow-400">#ffbd15 Dashed Golden Pin</span></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Footer Integration & Whitelist Dispatch Bar -->
+            <div class="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800/80 text-xs font-mono">
               <div class="flex items-center gap-2 text-slate-400">
-                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>TradingView Webhook Integration Ready</span>
+                <span class="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span>TradingView Pine Script v6 Ready // Project: Vajra 1.1</span>
               </div>
-              <div class="flex gap-3">
-                <button class="open-consultation-btn px-4 py-2 rounded-lg font-bold bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 transition" data-indicator="Project Vajra">
-                  Request Project Vajra Whitelist &rarr;
+              <div class="flex flex-wrap gap-3">
+                <button class="open-consultation-btn px-4 py-2.5 rounded-lg font-bold bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black flex items-center gap-2 transition shadow-lg shadow-cyan-500/20" data-indicator="Project: Vajra 1.1">
+                  <span>Request Project: Vajra 1.1 Whitelist</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </button>
+                <a href="#enterprise" class="px-4 py-2.5 rounded-lg font-bold bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 flex items-center gap-2 transition">
+                  <span>Deploy Custom TradingView Core</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
               </div>
             </div>
+
           </div>
 
         </div>
