@@ -210,21 +210,21 @@ function initEvTable() {
 
     filtered.forEach(row => {
       const tr = document.createElement('tr');
-      tr.className = 'border-b border-slate-800/80 hover:bg-slate-800/40 transition font-mono text-sm';
+      tr.className = 'border-b border-slate-800/80 hover:bg-slate-800/40 transition text-sm';
       tr.innerHTML = `
-        <td class="py-3 px-4">
+        <td class="py-3 px-4 font-mono">
           <span class="px-2 py-0.5 rounded text-xs font-bold ${getSportBadgeClass(row.sport)}">${row.sport}</span>
         </td>
-        <td class="py-3 px-4 font-semibold text-slate-100">
-          ${row.player}
-          <div class="text-xs text-slate-400 font-normal">${row.team}</div>
-        </td>
-        <td class="py-3 px-4 text-cyan-300">${row.prop}</td>
-        <td class="py-3 px-4 text-slate-300 font-bold">${row.bookOdds}</td>
-        <td class="py-3 px-4 text-slate-400">${row.fairOdds}</td>
-        <td class="py-3 px-4 text-emerald-400 font-bold glow-emerald">${row.ev}</td>
-        <td class="py-3 px-4 text-amber-400 font-semibold">${row.conf}</td>
         <td class="py-3 px-4">
+          <div class="font-sans font-bold text-slate-100 text-sm tracking-tight leading-snug">${row.player}</div>
+          <div class="font-sans text-xs text-slate-400 font-normal mt-0.5">${row.team}</div>
+        </td>
+        <td class="py-3 px-4 font-sans font-semibold text-cyan-300 text-sm tracking-tight">${row.prop}</td>
+        <td class="py-3 px-4 font-mono text-slate-300 font-bold">${row.bookOdds}</td>
+        <td class="py-3 px-4 font-mono text-slate-400">${row.fairOdds}</td>
+        <td class="py-3 px-4 font-mono text-emerald-400 font-bold glow-emerald">${row.ev}</td>
+        <td class="py-3 px-4 font-mono text-amber-400 font-semibold">${row.conf}</td>
+        <td class="py-3 px-4 font-mono">
           <span class="px-2 py-1 rounded text-xs tracking-wide font-bold bg-cyan-950/60 border border-cyan-500/40 text-cyan-300">${row.action}</span>
         </td>
       `;
