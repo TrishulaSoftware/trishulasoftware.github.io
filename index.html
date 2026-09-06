@@ -71,9 +71,13 @@
   <!-- 2. NAVIGATION BAR -->
   <nav class="border-b border-slate-800/60 bg-[#080d17]/80 backdrop-blur-md sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-      <a href="#" class="flex items-center space-x-3 group">
-        <img src="assets/trishula_logo3.webp" alt="Trishula Software" class="h-10 w-10 rounded-full object-cover border border-amber-500/40 group-hover:border-amber-400 transition shadow-lg shadow-amber-500/10">
-        <span class="font-black tracking-widest text-lg bg-gradient-to-r from-amber-300 via-orange-400 to-cyan-400 bg-clip-text text-transparent group-hover:opacity-90 transition">TRISHULA SOFTWARE</span>
+      <a href="#" class="flex items-center space-x-3.5 group py-1">
+        <img src="assets/trishula_logo3.webp" alt="Trishula Software" class="h-11 w-11 rounded-full object-cover border border-amber-500/40 group-hover:border-amber-400 transition shadow-lg shadow-amber-500/20 shrink-0">
+        <div class="flex flex-col justify-center">
+          <span class="font-black tracking-widest text-base sm:text-lg bg-gradient-to-r from-amber-300 via-orange-400 to-cyan-400 bg-clip-text text-transparent group-hover:opacity-90 transition leading-none">TRISHULA SOFTWARE</span>
+          <div class="h-[1px] w-full bg-gradient-to-r from-orange-500 via-amber-400 to-orange-500/40 my-1"></div>
+          <span class="text-[9px] sm:text-[10px] font-mono tracking-[0.22em] text-amber-400/90 font-bold uppercase leading-none">PIERCE THE HEAVENS</span>
+        </div>
       </a>
 
       <div class="hidden md:flex items-center space-x-7 text-sm font-medium">
@@ -1988,22 +1992,23 @@
 
         </div>
         
-        <!-- ACCORDION ITEM: Door-Knocker -->
+        <!-- ACCORDION ITEM: The Door Knocker RSI -->
         <div class="cyber-card rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 overflow-hidden shadow-xl" id="card-ind-doorknocker">
           
           <!-- Banner Header (Clickable Toggle) -->
           <div onclick="toggleIndicatorAccordion('ind-doorknocker')" class="px-6 py-4 bg-gradient-to-r from-[#0b1220] via-[#0f192e] to-[#0b1220] hover:from-[#111d35] hover:to-[#142340] cursor-pointer flex items-center justify-between gap-4 transition select-none group">
             <div class="flex items-center gap-3.5">
               <div class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700/80 flex items-center justify-center text-amber-400 group-hover:scale-110 group-hover:border-amber-400 transition">
-                <i data-lucide="crosshair" class="w-4 h-4"></i>
+                <i data-lucide="bell-ring" class="w-4 h-4"></i>
               </div>
               <div>
                 <div class="flex flex-wrap items-center gap-2">
-                  <span class="text-white font-bold text-sm sm:text-base tracking-wide group-hover:text-amber-300 transition font-sans">Door-Knocker</span>
-                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30">PINE SCRIPT v5</span>
-                  <span class="hidden sm:inline text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">TEST REPETITION COUNTER</span>
+                  <span class="text-white font-bold text-sm sm:text-base tracking-wide group-hover:text-amber-300 transition font-sans">The Door Knocker RSI (CS Delta Rebuild)</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">PINE SCRIPT v5</span>
+                  <span class="hidden sm:inline text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">4-TIER EXTREME THRESHOLDS</span>
+                  <span class="hidden md:inline text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30">DYNAMIC RSI DIVERGENCE ENGINE</span>
                 </div>
-                <div class="text-[11px] font-mono text-slate-400 mt-0.5">KEY-LEVEL ABSORPTION & WEAR SENSOR</div>
+                <div class="text-[11px] font-mono text-slate-400 mt-0.5">MOMENTUM EXHAUSTION, DIVERGENCE LINES &amp; CONFLUENCE ZONES</div>
               </div>
             </div>
 
@@ -2016,47 +2021,167 @@
           </div>
 
           <!-- Drawer Content (Expandable / Retractable) -->
-          <div id="drawer-ind-doorknocker" class="hidden border-t border-slate-800/80 bg-[#070c18] p-6 space-y-6 transition-all duration-500">
-            <div class="text-xs text-slate-300 font-mono leading-relaxed max-w-4xl">
-              Repetitive level testing and liquidity absorption detector. Counts the frequency and velocity of tests against major support/resistance to forecast the exact breaking bar.
-            </div>
+          <div id="drawer-ind-doorknocker" class="hidden border-t border-slate-800/80 bg-[#070c18] p-6 space-y-8 transition-all duration-500">
             
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-amber-400 font-bold">ABSORPTION COUNTING</div>
-                  <p class="text-slate-300 font-sans leading-relaxed">
-                    Quantifies the law of diminishing liquidity: each subsequent touch of a price level consumes available limit orders, weakening the barrier until an explosive breakout occurs.
-                  </p>
+            <!-- System Overview Header & Stat Cards Grid -->
+            <div class="flex flex-col lg:flex-row items-start justify-between gap-6">
+              <div class="space-y-3 max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-[10px] font-mono bg-amber-500/10 text-amber-400 border border-amber-500/30">
+                  <i data-lucide="activity" class="w-3 h-3"></i>
+                  <span>The Door Knocker RSI // CS Delta Rebuild</span>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-amber-400 font-bold">COUNTER LOGIC</div>
-                  <div class="space-y-1 text-slate-400">
-                    <div class="flex justify-between"><span>Touch Tolerance:</span><span class="text-white">0.15 ATR Band</span></div>
-                    <div class="flex justify-between"><span>Critical Break Threshold:</span><span class="text-amber-400">3rd & 4th Test</span></div>
-                    <div class="flex justify-between"><span>Absorption Velocity:</span><span class="text-white">Decreasing Time-Delta</span></div>
+                <h4 class="text-lg md:text-xl font-bold text-white tracking-wide font-sans">
+                  Precision Momentum Exhaustion &amp; Divergence Terminal
+                </h4>
+                <p class="text-xs text-slate-300 font-mono leading-relaxed">
+                  Engineered to pinpoint exhausted market turning points, aggressive distribution climaxes, and hidden structural shifts through a 4-tier overbought/oversold architecture (70 / 77.5 / 85.0 &amp; 30 / 22.5 / 15.0). Built natively in Pine Script v5, The Door Knocker RSI connects structural pivots with live visual divergence line vectors (<code class="text-amber-300">line.new</code>), projects full-column confluence background illumination (<code class="text-amber-300">bgcolor</code>), and envelopes momentum with adaptive 14-period moving average smoothing and 2.0 StdDev Bollinger Bands channels.
+                </p>
+              </div>
+
+              <!-- 4 Stat Metric Cards -->
+              <div class="grid grid-cols-2 gap-3 w-full lg:w-auto shrink-0 font-mono text-xs">
+                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">Threshold Matrix</div>
+                  <div class="text-base font-bold text-amber-400 mt-0.5">4-Tier Gradients</div>
+                  <div class="text-[10px] text-slate-500">70/30 · 77.5/22.5 · 85/15</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">Divergence Engine</div>
+                  <div class="text-base font-bold text-emerald-400 mt-0.5">Dynamic Lines</div>
+                  <div class="text-[10px] text-slate-500">line.new Vectors · R-Div</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">Confluence Zones</div>
+                  <div class="text-base font-bold text-rose-400 mt-0.5">Full Column Tint</div>
+                  <div class="text-[10px] text-slate-500">Bearish Red / Bullish Green</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">Volatility Envelope</div>
+                  <div class="text-base font-bold text-cyan-400 mt-0.5">MA + Bollinger</div>
+                  <div class="text-[10px] text-slate-500">7 MA Types · StdDev Expansion</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Chart Telemetry Showcase -->
+            <div class="cyber-card rounded-xl border border-slate-800 bg-[#080d1a] overflow-hidden">
+              <div class="px-4 py-3 bg-slate-900/80 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+                <div class="flex items-center gap-2 text-slate-200 font-bold">
+                  <i data-lucide="line-chart" class="w-4 h-4 text-amber-400"></i>
+                  <span>LIVE TRADINGVIEW EXECUTION TELEMETRY</span>
+                  <span class="text-slate-500">|</span>
+                  <span class="text-slate-400 font-normal">DELL Technologies 4-Hour NYSE Telemetry Feed</span>
+                </div>
+                <div class="flex items-center gap-2 text-[11px] text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20 font-semibold">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>Pine Script v5 Core // Door Knocker Active</span>
+                </div>
+              </div>
+
+              <div class="p-4 space-y-4">
+                <div class="relative rounded-lg overflow-hidden border border-slate-800/80 bg-black/40 group">
+                  <img src="assets/doorknocker_live_chart.png" alt="The Door Knocker RSI Live TradingView Execution Chart" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.01]">
+                </div>
+
+                <!-- Telemetry Breakdown Badges -->
+                <div class="flex flex-wrap items-center justify-between gap-3 text-xs font-mono pt-2 border-t border-slate-800/60">
+                  <div class="flex flex-wrap items-center gap-4 text-[11px]">
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span><strong class="text-slate-200">Sell Crossunder Signals:</strong> Overbought Exhaustion Flags (Aug 5, Aug 13, Sep 3)</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span><strong class="text-slate-200">Bullish Divergence (R-Div):</strong> Swing Low Vector Reversal at $410.00</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-rose-500/60"></span><strong class="text-slate-200">Bearish Confluence Shading:</strong> Full Vertical Distribution Columns</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500/60"></span><strong class="text-slate-200">Bullish Confluence Shading:</strong> Full Vertical Accumulation Columns</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span><strong class="text-slate-200">Volatility Envelope:</strong> 14-Period SMA + Bollinger Bands Envelope</span>
                   </div>
-                </div>
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-amber-400 font-bold">ALERTS</div>
-                  <div class="space-y-1 text-slate-400">
-                    <div class="flex justify-between"><span>Door Break Imminent:</span><span class="text-emerald-400">3+ Knocks</span></div>
-                    <div class="flex justify-between"><span>Integration:</span><span class="text-white">Starfall Core Gate</span></div>
-                    <div class="flex justify-between"><span>Asset Classes:</span><span class="text-white">Futures / Commodities / Equities</span></div>
+                  <div class="text-slate-500">
+                    TradingView Pine Script v5 Engine // Door Knocker RSI
                   </div>
                 </div>
               </div>
-            
-            <div class="pt-2 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800/80 text-xs font-mono">
+            </div>
+
+            <!-- Code Architecture & Subsystem Breakdown (4 Detailed Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-xs">
+              
+              <!-- Module 01: 4-Tier Multi-Gradient Thresholds -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-amber-400/60 transition space-y-2">
+                <div class="text-amber-400 font-bold flex items-center gap-2">
+                  <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+                  <span>4-TIER THRESHOLD MATRIX</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Replaces primitive 70/30 boundaries with an institutional 4-tier step grid: Standard (70/30 solid), High (77.5/22.5 dashed), and Extreme (85.0/15.0 dotted). Isolates climax overextension with dedicated TradingView alert conditions.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Upper Climax:</span><span class="text-rose-400">70.0 · 77.5 · 85.0</span></div>
+                  <div class="flex justify-between"><span>Lower Climax:</span><span class="text-emerald-400">30.0 · 22.5 · 15.0</span></div>
+                </div>
+              </div>
+
+              <!-- Module 02: Dynamic RSI Divergence Engine -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-400/60 transition space-y-2">
+                <div class="text-emerald-400 font-bold flex items-center gap-2">
+                  <i data-lucide="crosshair" class="w-3.5 h-3.5"></i>
+                  <span>DYNAMIC LINE DIVERGENCE</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Scans price vs. oscillator momentum pivots using a 5-bar lookback window. Projects permanent visual connecting line vectors directly onto the RSI curve (<code class="text-emerald-300">line.new</code>) coupled with <code class="text-emerald-300">R-Div</code> circular markers for structural confirmation.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Line Vectors:</span><span class="text-white">Direct Pivot Projection</span></div>
+                  <div class="flex justify-between"><span>Divergence Flags:</span><span class="text-emerald-400">R-Div Bull / R-DIV Bear</span></div>
+                </div>
+              </div>
+
+              <!-- Module 03: Full Column Confluence Illumination -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-rose-400/60 transition space-y-2">
+                <div class="text-rose-400 font-bold flex items-center gap-2">
+                  <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                  <span>CONFLUENCE BG ZONES</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Fuses momentum crossunders (<code class="text-rose-300">ta.crossunder(rsi, 70)</code>) and divergence signals into full vertical chart background highlights (<code class="text-rose-300">bgcolor</code>). Instantly signals institutional distribution zones across the entire price pane.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Confluence Shading:</span><span class="text-white">Full-Column Background</span></div>
+                  <div class="flex justify-between"><span>Execution Signals:</span><span class="text-rose-400">Filtered Buy / Sell Labels</span></div>
+                </div>
+              </div>
+
+              <!-- Module 04: Volatility Envelope & 7-MA Smoothing -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-cyan-400/60 transition space-y-2">
+                <div class="text-cyan-400 font-bold flex items-center gap-2">
+                  <i data-lucide="trending-up" class="w-3.5 h-3.5"></i>
+                  <span>VOLATILITY ENVELOPE</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Envelopes raw RSI velocity with 7 customizable smoothing engines (SMA, SMA + Bollinger Bands, EMA, SMMA, WMA, VWMA). Renders an adaptive 2.0 StdDev volatility channel to identify momentum compression before explosive price expansion.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Smoothing Types:</span><span class="text-white">7 Moving Average Engines</span></div>
+                  <div class="flex justify-between"><span>Volatility Bands:</span><span class="text-cyan-400">StdDev Expansion Channel</span></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Footer Integration & Whitelist Dispatch Bar -->
+            <div class="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800/80 text-xs font-mono">
               <div class="flex items-center gap-2 text-slate-400">
-                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>TradingView Webhook Integration Ready</span>
+                <span class="h-2 w-2 rounded-full bg-amber-400 animate-pulse"></span>
+                <span>TradingView Pine Script v5 Ready // The Door Knocker RSI</span>
               </div>
-              <div class="flex gap-3">
-                <button class="open-consultation-btn px-4 py-2 rounded-lg font-bold bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 transition" data-indicator="Door-Knocker">
-                  Request Door-Knocker Whitelist &rarr;
+              <div class="flex flex-wrap gap-3">
+                <button class="open-consultation-btn px-4 py-2.5 rounded-lg font-bold bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-black flex items-center gap-2 transition shadow-lg shadow-amber-500/20" data-indicator="The Door Knocker RSI">
+                  <span>Request Door Knocker Whitelist</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </button>
+                <a href="#enterprise" class="px-4 py-2.5 rounded-lg font-bold bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 flex items-center gap-2 transition">
+                  <span>Deploy Custom TradingView Core</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
               </div>
             </div>
+
           </div>
 
         </div>
