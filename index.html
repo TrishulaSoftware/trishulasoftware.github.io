@@ -1991,68 +1991,194 @@
           <div onclick="toggleIndicatorAccordion('ind-projectidris')" class="px-6 py-4 bg-gradient-to-r from-[#0b1220] via-[#0f192e] to-[#0b1220] hover:from-[#111d35] hover:to-[#142340] cursor-pointer flex items-center justify-between gap-4 transition select-none group">
             <div class="flex items-center gap-3.5">
               <div class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700/80 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:border-cyan-400 transition">
-                <i data-lucide="crosshair" class="w-4 h-4"></i>
+                <i data-lucide="cpu" class="w-4 h-4"></i>
               </div>
               <div>
                 <div class="flex flex-wrap items-center gap-2">
-                  <span class="text-white font-bold text-sm sm:text-base tracking-wide group-hover:text-amber-300 transition font-sans">Project Idris</span>
-                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">PINE SCRIPT v5</span>
-                  <span class="hidden sm:inline text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30">ADAPTIVE HISTORICAL VARIANCE</span>
+                  <span class="text-white font-bold text-sm sm:text-base tracking-wide group-hover:text-cyan-300 transition font-sans">Project Idris — v0.6 Static OHLC Architecture</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">PINE SCRIPT v6</span>
+                  <span class="hidden sm:inline text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30">12-ENGINE CONFLUENCE MATRIX</span>
+                  <span class="hidden md:inline text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">STATIC OHLC &amp; ATR TARGETS</span>
                 </div>
-                <div class="text-[11px] font-mono text-slate-400 mt-0.5">SELF-CALIBRATING ADAPTIVE VOLATILITY ENGINE</div>
+                <div class="text-[11px] font-mono text-slate-400 mt-0.5">12-POINT REVERSAL SCORING · STATIC OHLC STRIKE FLAGS · LIQUIDITY SWEEPS · REAL-TIME HUD</div>
               </div>
             </div>
 
             <div class="flex items-center gap-3 text-xs font-mono shrink-0">
-              <span id="label-ind-projectidris" class="text-slate-400 group-hover:text-amber-300 transition text-[11px] font-semibold hidden md:inline">CLICK TO EXPAND</span>
-              <div class="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-400 group-hover:border-amber-400 transition">
+              <span id="label-ind-projectidris" class="text-slate-400 group-hover:text-cyan-300 transition text-[11px] font-semibold hidden md:inline">CLICK TO EXPAND</span>
+              <div class="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-cyan-400 group-hover:border-cyan-400 transition">
                 <i id="chevron-ind-projectidris" data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300 "></i>
               </div>
             </div>
           </div>
 
           <!-- Drawer Content (Expandable / Retractable) -->
-          <div id="drawer-ind-projectidris" class="hidden border-t border-slate-800/80 bg-[#070c18] p-6 space-y-6 transition-all duration-500">
-            <div class="text-xs text-slate-300 font-mono leading-relaxed max-w-4xl">
-              Self-calibrating adaptive volatility channel. Adjusts lookback parameters dynamically using real-time historical variance to prevent whipsaws during market opens.
-            </div>
+          <div id="drawer-ind-projectidris" class="hidden border-t border-slate-800/80 bg-[#070c18] p-6 space-y-8 transition-all duration-500">
             
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-cyan-400 font-bold">DYNAMIC RECALIBRATION</div>
-                  <p class="text-slate-300 font-sans leading-relaxed">
-                    Uses non-stationary time-series processing to adaptively lengthen lookback windows during euphoric high-volatility opens and compress during low-volatility tight consolidations.
+            <!-- Banner / Overview Header -->
+            <div class="p-6 rounded-2xl bg-gradient-to-r from-[#0a1b2e] via-[#091524] to-[#102238] border border-cyan-500/30 shadow-2xl relative overflow-hidden">
+              <div class="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+              <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                <div class="space-y-2 max-w-3xl">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-400/10 text-emerald-400 border border-emerald-500/30 tracking-wider">
+                      FLAGSHIP ALGORITHM // PINE SCRIPT v6
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-cyan-400/10 text-cyan-400 border border-cyan-500/30 tracking-wider">
+                      12-POINT CONFLUENCE ENGINE
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-400/10 text-amber-400 border border-amber-500/30 tracking-wider">
+                      DELL 4H LIVE TELEMETRY
+                    </span>
+                  </div>
+                  <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white flex items-center gap-3">
+                    <span>Project Idris — v0.6 Static OHLC Architecture</span>
+                    <span class="text-slate-500 text-lg font-mono font-normal">| 12-Engine Reversal Execution System</span>
+                  </h2>
+                  <p class="text-slate-300 text-sm leading-relaxed font-mono">
+                    Engineered to isolate high-probability institutional reversal pivots by aggregating 12 independent quantitative vectors into a unified 12-point confluence score. Built natively in Pine Script v6, Idris isolates market structure shifts, fair value gaps, liquidity sweeps, order blocks, and multi-timeframe momentum, projecting dynamic ATR stop/target corridors alongside static 4-line OHLC strike candle flags and an interactive real-time telemetry HUD.
                   </p>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-cyan-400 font-bold">ENGINE SPECIFICATIONS</div>
-                  <div class="space-y-1 text-slate-400">
-                    <div class="flex justify-between"><span>Variance Sampling:</span><span class="text-white">Rolling 100-bar Window</span></div>
-                    <div class="flex justify-between"><span>Band Multiplier:</span><span class="text-cyan-400">Self-Optimizing σ</span></div>
-                    <div class="flex justify-between"><span>Whipsaw Reduction:</span><span class="text-emerald-400">> 38% vs Static Channels</span></div>
+
+                <!-- Metric Stats Badge Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 shrink-0 font-mono">
+                  <div class="p-3 rounded-xl bg-black/60 border border-cyan-500/40 text-center">
+                    <div class="text-[10px] text-slate-400 tracking-wider">CONFLUENCE ENGINES</div>
+                    <div class="text-xl font-black text-cyan-400 mt-0.5">12 Vectors</div>
+                    <div class="text-[10px] text-slate-500">RSI · MACD · Stoch · OB · FVG</div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-black/60 border border-emerald-500/40 text-center">
+                    <div class="text-[10px] text-slate-400 tracking-wider">CONFIRMATION SCALE</div>
+                    <div class="text-xl font-black text-emerald-400 mt-0.5">12-Pt Scale</div>
+                    <div class="text-[10px] text-slate-500">Aggressive (3) to Sniper (7+)</div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-black/60 border border-amber-500/40 text-center">
+                    <div class="text-[10px] text-slate-400 tracking-wider">STATIC OHLC FLAGS</div>
+                    <div class="text-xl font-black text-amber-300 mt-0.5">4-Line Strike</div>
+                    <div class="text-[10px] text-slate-500">Open · High · Low · Close</div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-black/60 border border-purple-500/40 text-center">
+                    <div class="text-[10px] text-slate-400 tracking-wider">DYNAMIC TARGETS</div>
+                    <div class="text-xl font-black text-purple-400 mt-0.5">1.5x / 2.5x ATR</div>
+                    <div class="text-[10px] text-slate-500">Auto Win-Rate Telemetry</div>
                   </div>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-cyan-400 font-bold">OPTIMAL SYMBOLS</div>
-                  <div class="space-y-1 text-slate-400">
-                    <div class="flex justify-between"><span>Primary Tickers:</span><span class="text-white">NVDA / TSLA / QQQ</span></div>
-                    <div class="flex justify-between"><span>Timeframes:</span><span class="text-white">1m / 5m / 15m Intraday</span></div>
-                    <div class="flex justify-between"><span>Webhook Output:</span><span class="text-emerald-400">Automated Scalp Triggers</span></div>
-                  </div>
-                </div>
-              </div>
-            
-            <div class="pt-2 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800/80 text-xs font-mono">
-              <div class="flex items-center gap-2 text-slate-400">
-                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>TradingView Webhook Integration Ready</span>
-              </div>
-              <div class="flex gap-3">
-                <button class="open-consultation-btn px-4 py-2 rounded-lg font-bold bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 transition" data-indicator="Project Idris">
-                  Request Project Idris Whitelist &rarr;
-                </button>
               </div>
             </div>
+
+            <!-- The Live Execution Chart & HUD Breakdown -->
+            <div class="space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2 text-xs font-mono text-slate-300">
+                  <i data-lucide="monitor" class="w-4 h-4 text-cyan-400"></i>
+                  <span class="font-bold text-white uppercase tracking-wider">Live TradingView Execution Telemetry</span>
+                  <span class="text-slate-500">| DELL Technologies 4-Hour NYSE Telemetry Feed</span>
+                </div>
+                <span class="text-xs font-mono text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/30 font-bold">
+                  Pine Script v6 Core // Idris v0.6 Active
+                </span>
+              </div>
+
+              <div class="rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-950 relative group shadow-2xl">
+                <img src="assets/idris_static_ohlc_chart.png" alt="Project Idris v0.6 Static OHLC Architecture Live TradingView Chart" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.01]">
+                <div class="p-4 bg-[#080d1a] border-t border-slate-800 text-xs font-mono flex flex-wrap items-center justify-between gap-4">
+                  <div class="flex flex-wrap items-center gap-4 text-slate-400">
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span><strong class="text-slate-200">12-Point Score Labels:</strong> Dynamic Confluence Badges (4.5▲, 7.5▼, 8.0▲)</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span><strong class="text-slate-200">ATR TP / SL Corridors:</strong> Dynamic Green Target &amp; Red Invalidation Lines</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span><strong class="text-slate-200">Static OHLC Flags:</strong> Fixed 5-Bar Strike Candle Benchmarks</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-blue-400"></span><strong class="text-slate-200">Order Blocks &amp; FVGs:</strong> Institutional Supply/Demand Pockets</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span><strong class="text-slate-200">Real-Time HUD Table:</strong> Top-Right 12-Engine Score &amp; Win-Rate Telemetry</span>
+                  </div>
+                  <div class="text-slate-500">
+                    TradingView Pine Script v6 Engine // Project Idris
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Code Architecture & Subsystem Breakdown (4 Detailed Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-xs">
+              
+              <!-- Module 01: 12-Engine Master Confluence Matrix -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-cyan-400/60 transition space-y-2">
+                <div class="text-cyan-400 font-bold flex items-center gap-2">
+                  <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+                  <span>12-ENGINE MASTER MATRIX</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Aggregates 12 independent mathematical dimensions: RSI (+ Divergence), MACD Crosses, Stochastic Extremes, Bollinger Penetration, Volume Spikes, Market Structure Shifts (MSS/BOS), Order Blocks, Candlestick Formations, EMA 200/50 Regimes, Fair Value Gaps (FVG), Liquidity Sweeps, and 60m MTF momentum.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Point Scale:</span><span class="text-white">0 to 12.0 Points</span></div>
+                  <div class="flex justify-between"><span>Trigger Threshold:</span><span class="text-cyan-300">Min Confluence Score (3–7+)</span></div>
+                </div>
+              </div>
+
+              <!-- Module 02: Static OHLC Strike Candle Flags -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-amber-400/60 transition space-y-2">
+                <div class="text-amber-400 font-bold flex items-center gap-2">
+                  <i data-lucide="flag" class="w-3.5 h-3.5"></i>
+                  <span>STATIC OHLC ARCHITECTURE</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Anchors static 4-tier horizontal benchmark lines (<code class="text-amber-300">Open, High, Low, Close</code>) directly onto the signal strike candle for a fixed 5-bar duration. Establishes immediate microstructure retest and liquidity clearance levels without repainting or recalculating.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Flag Geometry:</span><span class="text-white">4-Level Strike Coordinates</span></div>
+                  <div class="flex justify-between"><span>Duration Horizon:</span><span class="text-amber-300">5-Bar Fixed Window</span></div>
+                </div>
+              </div>
+
+              <!-- Module 03: Dynamic ATR Stop/Target & Win Tracking -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-400/60 transition space-y-2">
+                <div class="text-emerald-400 font-bold flex items-center gap-2">
+                  <i data-lucide="target" class="w-3.5 h-3.5"></i>
+                  <span>DYNAMIC ATR RISK ENGINE</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Projects 1.5x ATR Stop Loss and 2.5x ATR Take Profit tracking corridors that dynamically extend forward up to 50 bars. Evaluates high/low touches in real-time, instantly logging win/loss outcomes into the onboard performance database to calculate live verified win rates.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Risk Multipliers:</span><span class="text-emerald-400">1.5x SL / 2.5x TP</span></div>
+                  <div class="flex justify-between"><span>Max Duration:</span><span class="text-white">50-Bar Dynamic Extension</span></div>
+                </div>
+              </div>
+
+              <!-- Module 04: Real-Time 12-PT HUD Dashboard Table -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-purple-400/60 transition space-y-2">
+                <div class="text-purple-400 font-bold flex items-center gap-2">
+                  <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+                  <span>12-PT HUD TELEMETRY TABLE</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Renders an institutional 16-row diagnostic dashboard in the top-right corner of the chart. Displays bull/bear contribution readouts for all 12 analytical engines, the current cumulative bar score, total signals logged, and the dynamic cumulative win rate percentage.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Dashboard Layout:</span><span class="text-white">Top-Right Fixed Grid</span></div>
+                  <div class="flex justify-between"><span>Diagnostics:</span><span class="text-purple-300">12 Subsystem Telemetry Feeds</span></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Footer Integration & Whitelist Dispatch Bar -->
+            <div class="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800/80 text-xs font-mono">
+              <div class="flex items-center gap-2 text-slate-400">
+                <span class="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span>TradingView Pine Script v6 Ready // Idris v0.6 Static OHLC Architecture</span>
+              </div>
+              <div class="flex flex-wrap gap-3">
+                <button class="open-consultation-btn px-4 py-2.5 rounded-lg font-bold bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black flex items-center gap-2 transition shadow-lg shadow-cyan-500/20" data-indicator="Project Idris (v0.6 Static OHLC Architecture)">
+                  <span>Request Idris Whitelist</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+                <a href="#enterprise" class="px-4 py-2.5 rounded-lg font-bold bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 flex items-center gap-2 transition">
+                  <span>Deploy Custom TradingView Core</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+
           </div>
 
         </div>
