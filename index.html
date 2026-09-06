@@ -1925,22 +1925,23 @@
 
         </div>
         
-        <!-- ACCORDION ITEM: RDM-Composure -->
+        <!-- ACCORDION ITEM: RDM Composure Oscillator -->
         <div class="cyber-card rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-all duration-300 overflow-hidden shadow-xl" id="card-ind-rdmcomposure">
           
           <!-- Banner Header (Clickable Toggle) -->
           <div onclick="toggleIndicatorAccordion('ind-rdmcomposure')" class="px-6 py-4 bg-gradient-to-r from-[#0b1220] via-[#0f192e] to-[#0b1220] hover:from-[#111d35] hover:to-[#142340] cursor-pointer flex items-center justify-between gap-4 transition select-none group">
             <div class="flex items-center gap-3.5">
               <div class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700/80 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:border-blue-400 transition">
-                <i data-lucide="crosshair" class="w-4 h-4"></i>
+                <i data-lucide="gauge" class="w-4 h-4"></i>
               </div>
               <div>
                 <div class="flex flex-wrap items-center gap-2">
-                  <span class="text-white font-bold text-sm sm:text-base tracking-wide group-hover:text-amber-300 transition font-sans">RDM-Composure</span>
+                  <span class="text-white font-bold text-sm sm:text-base tracking-wide group-hover:text-amber-300 transition font-sans">RDM Composure Oscillator</span>
                   <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-500/10 text-blue-400 border border-blue-500/30">PINE SCRIPT v5</span>
-                  <span class="hidden sm:inline text-[10px] font-mono text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/30">EUPHORIA / PANIC EXHAUSTION</span>
+                  <span class="hidden sm:inline text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30">DUAL ALPHA / GAMMA DIVERGENCE</span>
+                  <span class="hidden md:inline text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">4-STAGE HD MACD &amp; RSI CLIMAX</span>
                 </div>
-                <div class="text-[11px] font-mono text-slate-400 mt-0.5">MARKET COMPOSURE & REGIME CLASSIFIER</div>
+                <div class="text-[11px] font-mono text-slate-400 mt-0.5">DUAL-ENGINE MOMENTUM DIVERGENCE, PIVOT SCANNER &amp; RSI REVERSAL SYSTEM</div>
               </div>
             </div>
 
@@ -1953,47 +1954,167 @@
           </div>
 
           <!-- Drawer Content (Expandable / Retractable) -->
-          <div id="drawer-ind-rdmcomposure" class="hidden border-t border-slate-800/80 bg-[#070c18] p-6 space-y-6 transition-all duration-500">
-            <div class="text-xs text-slate-300 font-mono leading-relaxed max-w-4xl">
-              Market state and emotional composure quantification. Identifies when an asset transitions from stable institutional accumulation to euphoric/panicked exhaustion.
-            </div>
+          <div id="drawer-ind-rdmcomposure" class="hidden border-t border-slate-800/80 bg-[#070c18] p-6 space-y-8 transition-all duration-500">
             
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-blue-400 font-bold">COMPOSURE SCORING</div>
-                  <p class="text-slate-300 font-sans leading-relaxed">
-                    Measures structural velocity against historical standard deviations to index market panic and euphoria. Prevents entering at the climax of exhausted moves.
-                  </p>
+            <!-- System Overview Header & Stat Cards Grid -->
+            <div class="flex flex-col lg:flex-row items-start justify-between gap-6">
+              <div class="space-y-3 max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-[10px] font-mono bg-blue-500/10 text-blue-400 border border-blue-500/30">
+                  <i data-lucide="activity" class="w-3 h-3"></i>
+                  <span>RDM Composure Oscillator // Trishula Software</span>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-blue-400 font-bold">REGIME THRESHOLDS</div>
-                  <div class="space-y-1 text-slate-400">
-                    <div class="flex justify-between"><span>Stable Accumulation:</span><span class="text-emerald-400">Composure > 75</span></div>
-                    <div class="flex justify-between"><span>Choppy Indecision:</span><span class="text-amber-400">Composure 40 - 74</span></div>
-                    <div class="flex justify-between"><span>Exhaustion / Panic:</span><span class="text-red-400">Composure < 40</span></div>
+                <h4 class="text-lg md:text-xl font-bold text-white tracking-wide font-sans">
+                  Dual-Horizon Structural Momentum &amp; Divergence Terminal
+                </h4>
+                <p class="text-xs text-slate-300 font-mono leading-relaxed">
+                  Engineered to pinpoint high-probability reversal inflection points and structural momentum shifts across dual horizons: Segment 'Alpha' (10-bar swing lookback, 5–60 bar range) and Segment 'Gamma' (2-bar rapid tactical sniper lookback, 2–30 bar range). Built natively in Pine Script v5, the RDM Composure Oscillator integrates an institutional 4-state color gradient MACD histogram, multi-horizon pivot range verification, directional label markers (Regular &amp; Hidden Bull/Bear), and integrated 14-period RSI climax exhaustion signals (Buy at 30 / Sell at 70) with 10 dedicated alert webhook conditions.
+                </p>
+              </div>
+
+              <!-- 4 Stat Metric Cards -->
+              <div class="grid grid-cols-2 gap-3 w-full lg:w-auto shrink-0 font-mono text-xs">
+                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">Horizon Architecture</div>
+                  <div class="text-base font-bold text-blue-400 mt-0.5">Dual Alpha + Gamma</div>
+                  <div class="text-[10px] text-slate-500">10-Bar Swing · 2-Bar Tactical</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">Divergence Engine</div>
+                  <div class="text-base font-bold text-emerald-400 mt-0.5">4 Morphologies</div>
+                  <div class="text-[10px] text-slate-500">Regular &amp; Hidden Bull / Bear</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">HD MACD Dynamics</div>
+                  <div class="text-base font-bold text-cyan-400 mt-0.5">4-State Color Flow</div>
+                  <div class="text-[10px] text-slate-500">Grow / Fall Above &amp; Below Zero</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">Execution Signals</div>
+                  <div class="text-base font-bold text-amber-400 mt-0.5">RSI 30/70 Climax</div>
+                  <div class="text-[10px] text-slate-500">10 Webhook Alert Triggers</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Chart Telemetry Showcase -->
+            <div class="cyber-card rounded-xl border border-slate-800 bg-[#080d1a] overflow-hidden">
+              <div class="px-4 py-3 bg-slate-900/80 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+                <div class="flex items-center gap-2 text-slate-200 font-bold">
+                  <i data-lucide="line-chart" class="w-4 h-4 text-blue-400"></i>
+                  <span>LIVE TRADINGVIEW EXECUTION TELEMETRY</span>
+                  <span class="text-slate-500">|</span>
+                  <span class="text-slate-400 font-normal">SPDR S&amp;P 500 ETF Trust (SPY) 30-Minute NYSE Telemetry Feed</span>
+                </div>
+                <div class="flex items-center gap-2 text-[11px] text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20 font-semibold">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>Pine Script v5 Core // RDM Composure Active</span>
+                </div>
+              </div>
+
+              <div class="p-4 space-y-4">
+                <div class="relative rounded-lg overflow-hidden border border-slate-800/80 bg-black/40 group">
+                  <img src="assets/rdmcomposure_live_chart.png" alt="RDM Composure Oscillator Live TradingView Execution Chart on SPY" class="w-full h-auto object-cover transition duration-500 group-hover:scale-[1.01]">
+                </div>
+
+                <!-- Telemetry Breakdown Badges -->
+                <div class="flex flex-wrap items-center justify-between gap-3 text-xs font-mono pt-2 border-t border-slate-800/60">
+                  <div class="flex flex-wrap items-center gap-4 text-[11px]">
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span><strong class="text-slate-200">Bullish Divergences:</strong> Regular (<code class="text-emerald-300">Bull</code>) &amp; Hidden (<code class="text-emerald-300">H Bull</code>) Swing Troughs</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span><strong class="text-slate-200">Bearish Divergences:</strong> Regular (<code class="text-rose-300">Bear</code>) &amp; Hidden (<code class="text-rose-300">H Bear</code>) Momentum Peaks</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span><strong class="text-slate-200">RSI Oversold Climax:</strong> Green <code class="text-emerald-300">BUY</code> Reversal Crosses Below 30</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span><strong class="text-slate-200">RSI Overbought Climax:</strong> Red <code class="text-rose-300">SELL</code> Reversal Crosses Above 70</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span><strong class="text-slate-200">HD Histogram:</strong> 4-Stage Volume Flow Above &amp; Below Zero</span>
                   </div>
-                </div>
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                  <div class="text-blue-400 font-bold">USE CASES</div>
-                  <div class="space-y-1 text-slate-400">
-                    <div class="flex justify-between"><span>Top/Bottom Spotting:</span><span class="text-white">Climax Exhaustion</span></div>
-                    <div class="flex justify-between"><span>Regime Filter:</span><span class="text-blue-400">Master Algo Gate</span></div>
-                    <div class="flex justify-between"><span>Asset Coverage:</span><span class="text-white">Crypto Altcoins & FX</span></div>
+                  <div class="text-slate-500">
+                    TradingView Pine Script v5 Engine // RDM Composure Oscillator
                   </div>
                 </div>
               </div>
-            
-            <div class="pt-2 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800/80 text-xs font-mono">
+            </div>
+
+            <!-- Code Architecture & Subsystem Breakdown (4 Detailed Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-xs">
+              
+              <!-- Module 01: Segment 'Alpha' Swing Divergence Engine -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-blue-400/60 transition space-y-2">
+                <div class="text-blue-400 font-bold flex items-center gap-2">
+                  <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+                  <span>SEGMENT 'ALPHA' SWING ENGINE</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Scans institutional swing momentum pivots using a 10-bar left/right lookback window over 5 to 60 bar scan horizons. Maps structural lower lows in price against higher oscillator lows (Regular Bull) and higher lows against lower oscillator lows (Hidden Bull continuation).
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Pivot Window:</span><span class="text-white">10L / 10R Bars</span></div>
+                  <div class="flex justify-between"><span>Lookback Range:</span><span class="text-blue-400">5 to 60 Bars</span></div>
+                </div>
+              </div>
+
+              <!-- Module 02: Segment 'Gamma' Tactical Sniper Horizon -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-cyan-400/60 transition space-y-2">
+                <div class="text-cyan-400 font-bold flex items-center gap-2">
+                  <i data-lucide="crosshair" class="w-3.5 h-3.5"></i>
+                  <span>SEGMENT 'GAMMA' SNIPER</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Deploys an aggressive 2-bar left/right pivot detector across a 2 to 30 bar evaluation window directly on the standard MACD line. Captures fast micro-divergences and tactical inflection points before larger timeframes confirm.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Sniper Horizon:</span><span class="text-white">2L / 2R Bars</span></div>
+                  <div class="flex justify-between"><span>Tactical Window:</span><span class="text-cyan-400">2 to 30 Bars</span></div>
+                </div>
+              </div>
+
+              <!-- Module 03: HD 4-Stage MACD Histogram & Lines -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-amber-400/60 transition space-y-2">
+                <div class="text-amber-400 font-bold flex items-center gap-2">
+                  <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i>
+                  <span>4-STAGE HD HISTOGRAM</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Plots multi-tier color-coded momentum volume: Above-Zero Growing (<code class="text-teal-300">#26A69A</code>), Above-Zero Falling (<code class="text-teal-200">#B2DFDB</code>), Below-Zero Growing (<code class="text-rose-200">#FFCDD2</code>), and Below-Zero Falling (<code class="text-rose-400">#FF5252</code>). 2px MACD (#2962FF) and Signal (#FF6D00) lines track directional velocity.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>Line Palette:</span><span class="text-white">#2962FF Blue / #FF6D00 Orange</span></div>
+                  <div class="flex justify-between"><span>Hist Dynamic:</span><span class="text-amber-400">4-Tier Volumetric Gradient</span></div>
+                </div>
+              </div>
+
+              <!-- Module 04: Climax RSI Exhaustion & Alert Matrix -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-400/60 transition space-y-2">
+                <div class="text-emerald-400 font-bold flex items-center gap-2">
+                  <i data-lucide="bell" class="w-3.5 h-3.5"></i>
+                  <span>RSI CLIMAX &amp; ALERTS</span>
+                </div>
+                <p class="text-slate-300 font-sans leading-relaxed text-[11px]">
+                  Fuses 14-period RSI boundary crossings (30 Oversold / 70 Overbought) directly onto price bars, printing clear BUY / SELL shapes. Equipped with 10 discrete TradingView alert condition webhooks for Alpha, Gamma, and RSI signals.
+                </p>
+                <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400 space-y-1">
+                  <div class="flex justify-between"><span>RSI Bounds:</span><span class="text-white">30 Oversold / 70 Overbought</span></div>
+                  <div class="flex justify-between"><span>Alert Horizons:</span><span class="text-emerald-400">10 Discrete Webhook Alerts</span></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Footer Integration & Whitelist Dispatch Bar -->
+            <div class="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800/80 text-xs font-mono">
               <div class="flex items-center gap-2 text-slate-400">
-                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>TradingView Webhook Integration Ready</span>
+                <span class="h-2 w-2 rounded-full bg-blue-400 animate-pulse"></span>
+                <span>TradingView Pine Script v5 Ready // RDM Composure Oscillator</span>
               </div>
-              <div class="flex gap-3">
-                <button class="open-consultation-btn px-4 py-2 rounded-lg font-bold bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 transition" data-indicator="RDM-Composure">
-                  Request RDM-Composure Whitelist &rarr;
+              <div class="flex flex-wrap gap-3">
+                <button class="open-consultation-btn px-4 py-2.5 rounded-lg font-bold bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-400 hover:to-cyan-500 text-black flex items-center gap-2 transition shadow-lg shadow-blue-500/20" data-indicator="RDM Composure Oscillator">
+                  <span>Request RDM Composure Whitelist</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </button>
+                <a href="#enterprise" class="px-4 py-2.5 rounded-lg font-bold bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 flex items-center gap-2 transition">
+                  <span>Deploy Custom TradingView Core</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
               </div>
             </div>
+
           </div>
 
         </div>
