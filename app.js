@@ -54,39 +54,39 @@ function initTerminalTabs() {
   });
 }
 
-// 3. MULTI-SPORT +EV DATA & 24H DETERMINISTIC DAILY CYCLE ENGINE
+// 3. MULTI-SPORT +EV DATA & 2026 ACTIVE SEASON ENGINE
 const MASTER_PROP_POOLS = {
   NFL: [
+    { sport: 'NFL', player: 'Jaxson Dart', team: 'NYG vs MIN', prop: 'Over 224.5 Pass Yds', bookOdds: '-110', fairOdds: '-128', ev: '+8.2%', conf: '88%', action: 'HIGH VALUE' },
     { sport: 'NFL', player: 'Lamar Jackson', team: 'BAL vs KC', prop: 'Over 48.5 Rush Yds', bookOdds: '+108', fairOdds: '-118', ev: '+11.4%', conf: '94%', action: 'HIGH VALUE' },
-    { sport: 'NFL', player: 'CeeDee Lamb', team: 'DAL vs CLE', prop: 'Over 7.5 Receptions', bookOdds: '+120', fairOdds: '+102', ev: '+8.9%', conf: '89%', action: 'DISCREPANCY' },
-    { sport: 'NFL', player: 'Patrick Mahomes', team: 'KC vs BAL', prop: 'Over 268.5 Pass Yds', bookOdds: '-105', fairOdds: '-128', ev: '+9.2%', conf: '91%', action: 'SHARP EDGE' },
-    { sport: 'NFL', player: 'Christian McCaffrey', team: 'SF vs NYJ', prop: 'Over 72.5 Rush Yds', bookOdds: '-112', fairOdds: '-136', ev: '+10.5%', conf: '93%', action: 'SHARP EDGE' },
-    { sport: 'NFL', player: 'Justin Jefferson', team: 'MIN at NYG', prop: 'Over 84.5 Rec Yds', bookOdds: '+100', fairOdds: '-116', ev: '+7.8%', conf: '88%', action: 'HIGH VALUE' },
+    { sport: 'NFL', player: 'Patrick Mahomes', team: 'KC vs DEN', prop: 'Over 265.5 Pass Yds', bookOdds: '-108', fairOdds: '-132', ev: '+9.5%', conf: '91%', action: 'SHARP EDGE' },
     { sport: 'NFL', player: 'Josh Allen', team: 'BUF vs ARI', prop: 'Over 1.5 Passing TDs', bookOdds: '-125', fairOdds: '-155', ev: '+11.1%', conf: '95%', action: 'SHARP EDGE' },
+    { sport: 'NFL', player: 'Caleb Williams', team: 'CHI vs TEN', prop: 'Over 235.5 Pass Yds', bookOdds: '-112', fairOdds: '-130', ev: '+7.9%', conf: '88%', action: 'HIGH VALUE' },
+    { sport: 'NFL', player: 'Jayden Daniels', team: 'WAS at TB', prop: 'Over 44.5 Rush Yds', bookOdds: '-115', fairOdds: '-138', ev: '+10.4%', conf: '92%', action: 'SHARP EDGE' },
+    { sport: 'NFL', player: 'Malik Nabers', team: 'NYG vs MIN', prop: 'Over 68.5 Rec Yds', bookOdds: '+105', fairOdds: '-115', ev: '+9.8%', conf: '91%', action: 'HIGH VALUE' },
+    { sport: 'NFL', player: 'Marvin Harrison Jr.', team: 'ARI at BUF', prop: 'Over 64.5 Rec Yds', bookOdds: '+100', fairOdds: '-118', ev: '+8.6%', conf: '89%', action: 'DISCREPANCY' },
     { sport: 'NFL', player: 'Derrick Henry', team: 'BAL vs KC', prop: 'Anytime Touchdown', bookOdds: '-110', fairOdds: '-140', ev: '+12.6%', conf: '96%', action: 'SHARP EDGE' },
+    { sport: 'NFL', player: 'CeeDee Lamb', team: 'DAL vs CLE', prop: 'Over 7.5 Receptions', bookOdds: '+120', fairOdds: '+102', ev: '+8.9%', conf: '89%', action: 'DISCREPANCY' },
     { sport: 'NFL', player: 'Amon-Ra St. Brown', team: 'DET vs LAR', prop: 'Over 6.5 Receptions', bookOdds: '-115', fairOdds: '-135', ev: '+8.4%', conf: '90%', action: 'HIGH VALUE' },
-    { sport: 'NFL', player: 'Tyreek Hill', team: 'MIA vs JAX', prop: 'Over 88.5 Rec Yds', bookOdds: '+105', fairOdds: '-115', ev: '+9.5%', conf: '92%', action: 'HIGH VALUE' },
-    { sport: 'NFL', player: 'Breece Hall', team: 'NYJ at SF', prop: 'Over 28.5 Rec Yds', bookOdds: '-110', fairOdds: '-132', ev: '+9.8%', conf: '91%', action: 'SHARP EDGE' },
-    { sport: 'NFL', player: 'C.J. Stroud', team: 'HOU at IND', prop: 'Over 264.5 Pass Yds', bookOdds: '-110', fairOdds: '-126', ev: '+7.5%', conf: '87%', action: 'DISCREPANCY' },
-    { sport: 'NFL', player: 'Jahmyr Gibbs', team: 'DET vs LAR', prop: 'Over 44.5 Rush Yds', bookOdds: '-115', fairOdds: '-138', ev: '+10.1%', conf: '93%', action: 'HIGH VALUE' },
-    { sport: 'NFL', player: "Ja'Marr Chase", team: 'CIN vs NE', prop: 'Over 76.5 Rec Yds', bookOdds: '+102', fairOdds: '-118', ev: '+9.0%', conf: '90%', action: 'HIGH VALUE' },
-    { sport: 'NFL', player: 'Saquon Barkley', team: 'PHI vs GB', prop: 'Over 66.5 Rush Yds', bookOdds: '-108', fairOdds: '-128', ev: '+8.8%', conf: '89%', action: 'DISCREPANCY' }
+    { sport: 'NFL', player: 'Saquon Barkley', team: 'PHI vs GB', prop: 'Over 68.5 Rush Yds', bookOdds: '-108', fairOdds: '-128', ev: '+8.8%', conf: '89%', action: 'DISCREPANCY' },
+    { sport: 'NFL', player: 'Justin Jefferson', team: 'MIN at NYG', prop: 'Over 82.5 Rec Yds', bookOdds: '+100', fairOdds: '-116', ev: '+7.8%', conf: '88%', action: 'HIGH VALUE' },
+    { sport: 'NFL', player: 'Breece Hall', team: 'NYJ at SF', prop: 'Over 32.5 Rec Yds', bookOdds: '-110', fairOdds: '-132', ev: '+9.8%', conf: '91%', action: 'SHARP EDGE' }
   ],
   CFB: [
-    { sport: 'CFB', player: 'Carson Beck', team: 'UGA vs CLEM', prop: 'Over 275.5 Pass Yds', bookOdds: '+110', fairOdds: '-105', ev: '+9.8%', conf: '91%', action: 'HIGH VALUE' },
-    { sport: 'CFB', player: 'Travis Hunter', team: 'COL vs NDSU', prop: 'Over 82.5 Rec Yds', bookOdds: '-110', fairOdds: '-135', ev: '+12.1%', conf: '96%', action: 'SHARP EDGE' },
-    { sport: 'CFB', player: 'Quinn Ewers', team: 'TEX vs MICH', prop: 'Over 248.5 Pass Yds', bookOdds: '-115', fairOdds: '-138', ev: '+10.2%', conf: '93%', action: 'SHARP EDGE' },
-    { sport: 'CFB', player: 'Shedeur Sanders', team: 'COL vs NDSU', prop: 'Over 310.5 Pass Yds', bookOdds: '+105', fairOdds: '-115', ev: '+9.4%', conf: '90%', action: 'HIGH VALUE' },
-    { sport: 'CFB', player: 'Dillon Gabriel', team: 'ORE vs BOISE', prop: 'Over 2.5 Passing TDs', bookOdds: '+120', fairOdds: '+101', ev: '+9.1%', conf: '89%', action: 'DISCREPANCY' },
-    { sport: 'CFB', player: 'Ollie Gordon II', team: 'OKST vs SDSU', prop: 'Over 118.5 Rush Yds', bookOdds: '-110', fairOdds: '-135', ev: '+11.8%', conf: '95%', action: 'SHARP EDGE' },
-    { sport: 'CFB', player: 'Jaxson Dart', team: 'MISS vs FUR', prop: 'Over 288.5 Pass Yds', bookOdds: '-112', fairOdds: '-130', ev: '+8.1%', conf: '88%', action: 'HIGH VALUE' },
-    { sport: 'CFB', player: 'Tetairoa McMillan', team: 'ARIZ vs UNM', prop: 'Over 94.5 Rec Yds', bookOdds: '+105', fairOdds: '-120', ev: '+11.2%', conf: '94%', action: 'SHARP EDGE' },
-    { sport: 'CFB', player: 'Jalen Milroe', team: 'ALA vs WKU', prop: 'Over 42.5 Rush Yds', bookOdds: '-110', fairOdds: '-134', ev: '+10.5%', conf: '92%', action: 'SHARP EDGE' },
-    { sport: 'CFB', player: 'Nico Iamaleava', team: 'TENN vs UTC', prop: 'Over 235.5 Pass Yds', bookOdds: '-115', fairOdds: '-132', ev: '+7.6%', conf: '88%', action: 'DISCREPANCY' },
-    { sport: 'CFB', player: 'Luther Burden III', team: 'MIZ vs MURR', prop: 'Over 78.5 Rec Yds', bookOdds: '-108', fairOdds: '-130', ev: '+10.0%', conf: '92%', action: 'HIGH VALUE' },
-    { sport: 'CFB', player: 'Cam Ward', team: 'MIA at FLA', prop: 'Over 262.5 Pass Yds', bookOdds: '+110', fairOdds: '-110', ev: '+9.5%', conf: '91%', action: 'HIGH VALUE' },
-    { sport: 'CFB', player: 'Will Howard', team: 'OSU vs AKR', prop: 'Over 2.5 Passing TDs', bookOdds: '+115', fairOdds: '-105', ev: '+9.7%', conf: '90%', action: 'HIGH VALUE' },
-    { sport: 'CFB', player: 'TreVeyon Henderson', team: 'OSU vs AKR', prop: 'Over 74.5 Rush Yds', bookOdds: '-112', fairOdds: '-135', ev: '+10.8%', conf: '93%', action: 'SHARP EDGE' }
+    { sport: 'CFB', player: 'Kevin Jennings', team: 'SMU at FSU', prop: 'Over 248.5 Pass Yds', bookOdds: '-114', fairOdds: '-135', ev: '+9.2%', conf: '91%', action: 'SHARP EDGE' },
+    { sport: 'CFB', player: 'Ashton Daniels', team: 'FSU vs SMU', prop: 'Over 38.5 Rush Yds', bookOdds: '-118', fairOdds: '-142', ev: '+10.6%', conf: '93%', action: 'HIGH VALUE' },
+    { sport: 'CFB', player: 'Jordan Dwyer', team: 'TCU vs NC', prop: 'Anytime Touchdown', bookOdds: '+125', fairOdds: '+104', ev: '+10.2%', conf: '92%', action: 'SHARP EDGE' },
+    { sport: 'CFB', player: 'T.J. Moore', team: 'CLEM at LSU', prop: 'Over 49.5 Rec Yds', bookOdds: '-137', fairOdds: '-165', ev: '+8.8%', conf: '90%', action: 'HIGH VALUE' },
+    { sport: 'CFB', player: 'Billy Edwards Jr.', team: 'NCAR at TCU', prop: 'Over 169.5 Pass Yds', bookOdds: '-137', fairOdds: '-162', ev: '+7.9%', conf: '89%', action: 'DISCREPANCY' },
+    { sport: 'CFB', player: 'Byrum Brown', team: 'AUB vs BAYL', prop: 'Over 254.5 Pass Yds', bookOdds: '-137', fairOdds: '-165', ev: '+9.4%', conf: '91%', action: 'HIGH VALUE' },
+    { sport: 'CFB', player: 'Arch Manning', team: 'TEX vs COLO', prop: 'Over 272.5 Pass Yds', bookOdds: '+105', fairOdds: '-115', ev: '+9.5%', conf: '90%', action: 'HIGH VALUE' },
+    { sport: 'CFB', player: 'Julian Sayin', team: 'OSU vs BALL', prop: 'Over 2.5 Passing TDs', bookOdds: '+120', fairOdds: '+101', ev: '+9.1%', conf: '89%', action: 'DISCREPANCY' },
+    { sport: 'CFB', player: 'Jeremiah Smith', team: 'OSU vs BALL', prop: 'Over 88.5 Rec Yds', bookOdds: '-110', fairOdds: '-136', ev: '+11.8%', conf: '95%', action: 'SHARP EDGE' },
+    { sport: 'CFB', player: 'Ryan Williams', team: 'ALA vs USF', prop: 'Over 78.5 Rec Yds', bookOdds: '-108', fairOdds: '-132', ev: '+10.5%', conf: '93%', action: 'SHARP EDGE' },
+    { sport: 'CFB', player: 'Dylan Raiola', team: 'NEB vs CINN', prop: 'Over 238.5 Pass Yds', bookOdds: '-112', fairOdds: '-130', ev: '+7.8%', conf: '88%', action: 'HIGH VALUE' },
+    { sport: 'CFB', player: 'DJ Lagway', team: 'FLA vs MIA', prop: 'Over 228.5 Pass Yds', bookOdds: '-115', fairOdds: '-135', ev: '+8.6%', conf: '90%', action: 'DISCREPANCY' },
+    { sport: 'CFB', player: 'Dante Moore', team: 'ORE vs IDAHO', prop: 'Over 2.5 Passing TDs', bookOdds: '+115', fairOdds: '-105', ev: '+9.7%', conf: '91%', action: 'HIGH VALUE' },
+    { sport: 'CFB', player: 'Nico Iamaleava', team: 'TENN vs NCST', prop: 'Over 244.5 Pass Yds', bookOdds: '-110', fairOdds: '-130', ev: '+8.9%', conf: '90%', action: 'HIGH VALUE' }
   ],
   MLB: [
     { sport: 'MLB', player: 'Shohei Ohtani', team: 'LAD at ARI', prop: 'Over 1.5 Total Bases', bookOdds: '-115', fairOdds: '-142', ev: '+12.8%', conf: '95%', action: 'SHARP EDGE' },
@@ -123,7 +123,11 @@ const MASTER_PROP_POOLS = {
 };
 
 let activeSportFilter = 'ALL';
-let slateDayOffset = 0; // 0 = Current Live Day, 1 = Tomorrow Preview
+let activeDate = new Date();
+// Ensure year is 2026 or later
+if (activeDate.getFullYear() < 2026) {
+  activeDate = new Date('2026-09-07T12:00:00Z');
+}
 
 function getSportBadgeClass(sport) {
   switch (sport) {
@@ -135,33 +139,27 @@ function getSportBadgeClass(sport) {
   }
 }
 
-function getDayNumber(offset = 0) {
-  const d = new Date();
-  if (offset !== 0) {
-    d.setUTCDate(d.getUTCDate() + offset);
-  }
-  // Days since epoch (UTC)
+function getDayNumber(dateObj) {
+  const d = dateObj || activeDate;
   return Math.floor(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()) / 86400000);
 }
 
-function getFormattedSlateDate(offset = 0) {
-  const d = new Date();
-  if (offset !== 0) {
-    d.setUTCDate(d.getUTCDate() + offset);
-  }
+function getFormattedSlateDate(dateObj) {
+  const d = dateObj || activeDate;
   const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' };
   const formatted = d.toLocaleDateString('en-US', options);
-  if (offset === 0) {
+  
+  const today = new Date();
+  if (d.getUTCFullYear() === today.getUTCFullYear() && 
+      d.getUTCMonth() === today.getUTCMonth() && 
+      d.getUTCDate() === today.getUTCDate()) {
     return `TODAY (${formatted})`;
-  } else if (offset === 1) {
-    return `TOMORROW'S PREVIEW (${formatted})`;
-  } else {
-    return formatted;
   }
+  return formatted;
 }
 
-function getDailySlateData(offset = 0, sportFilter = 'ALL') {
-  const dayNum = getDayNumber(offset);
+function getDailySlateData(dateObj, sportFilter = 'ALL') {
+  const dayNum = getDayNumber(dateObj);
   const sports = ['NFL', 'CFB', 'MLB', 'WNBA'];
 
   if (sportFilter === 'ALL') {
@@ -197,16 +195,35 @@ function initEvTable() {
   const countdownEl = document.getElementById('ev-countdown');
   const previewBtn = document.getElementById('ev-preview-toggle-btn');
   const previewBtnText = document.getElementById('ev-preview-btn-text');
+  const datePicker = document.getElementById('ev-date-picker');
+
+  // Initialize interactive 2026 date picker
+  if (datePicker) {
+    const yyyy = activeDate.getUTCFullYear();
+    const mm = String(activeDate.getUTCMonth() + 1).padStart(2, '0');
+    const dd = String(activeDate.getUTCDate()).padStart(2, '0');
+    datePicker.value = `${yyyy}-${mm}-${dd}`;
+    datePicker.min = '2026-08-01';
+    datePicker.max = '2027-03-01';
+
+    datePicker.addEventListener('change', (e) => {
+      if (e.target.value) {
+        const [year, month, day] = e.target.value.split('-').map(Number);
+        activeDate = new Date(Date.UTC(year, month - 1, day, 12, 0, 0));
+        renderRows();
+      }
+    });
+  }
 
   function renderRows() {
     if (!container) return;
     container.innerHTML = '';
 
     if (slateDateEl) {
-      slateDateEl.textContent = getFormattedSlateDate(slateDayOffset);
+      slateDateEl.textContent = getFormattedSlateDate(activeDate);
     }
 
-    const filtered = getDailySlateData(slateDayOffset, activeSportFilter);
+    const filtered = getDailySlateData(activeDate, activeSportFilter);
 
     filtered.forEach(row => {
       const tr = document.createElement('tr');
@@ -245,13 +262,23 @@ function initEvTable() {
   // Tomorrow Preview Toggle
   if (previewBtn) {
     previewBtn.addEventListener('click', () => {
-      slateDayOffset = slateDayOffset === 0 ? 1 : 0;
-      if (slateDayOffset === 1) {
-        previewBtn.classList.add('bg-cyan-500/20', 'text-cyan-300', 'border-cyan-400');
+      const now = new Date();
+      if (activeDate.getUTCDate() === now.getUTCDate() && 
+          activeDate.getUTCMonth() === now.getUTCMonth() && 
+          activeDate.getUTCFullYear() === now.getUTCFullYear()) {
+        activeDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1, 12, 0, 0));
         if (previewBtnText) previewBtnText.textContent = "VIEW TODAY'S SLATE";
+        previewBtn.classList.add('bg-cyan-500/20', 'text-cyan-300', 'border-cyan-400');
       } else {
-        previewBtn.classList.remove('bg-cyan-500/20', 'text-cyan-300', 'border-cyan-400');
+        activeDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 12, 0, 0));
         if (previewBtnText) previewBtnText.textContent = "PREVIEW TOMORROW'S SLATE";
+        previewBtn.classList.remove('bg-cyan-500/20', 'text-cyan-300', 'border-cyan-400');
+      }
+      if (datePicker) {
+        const yyyy = activeDate.getUTCFullYear();
+        const mm = String(activeDate.getUTCMonth() + 1).padStart(2, '0');
+        const dd = String(activeDate.getUTCDate()).padStart(2, '0');
+        datePicker.value = `${yyyy}-${mm}-${dd}`;
       }
       renderRows();
     });

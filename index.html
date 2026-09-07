@@ -223,20 +223,26 @@
             <div class="flex flex-wrap items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
               <span class="text-slate-400">ACTIVE SLATE:</span>
-              <span id="ev-slate-date" class="text-emerald-400 font-bold tracking-wider uppercase">SYNCING CALENDAR...</span>
+              <span id="ev-slate-date" class="text-emerald-400 font-bold tracking-wider uppercase">SYNCING 2026 CALENDAR...</span>
               <span class="text-slate-700">|</span>
-              <span class="text-slate-400">ALGORITHM:</span>
-              <span class="text-cyan-300 font-semibold">24H DETERMINISTIC CYCLE</span>
+              <span class="text-slate-400">SEASON:</span>
+              <span class="text-cyan-300 font-semibold">2026 CAMPAIGN</span>
             </div>
             <div class="flex items-center gap-3 text-slate-400 text-[11px]">
+              <!-- 2026 Interactive Date Picker -->
+              <div class="flex items-center gap-1.5 bg-slate-900 border border-slate-700 hover:border-cyan-400 rounded px-2.5 py-1 transition">
+                <i data-lucide="calendar" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <label for="ev-date-picker" class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">DATE:</label>
+                <input type="date" id="ev-date-picker" class="bg-transparent text-cyan-300 font-mono text-xs focus:outline-none cursor-pointer" />
+              </div>
               <div class="flex items-center gap-1.5">
                 <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400"></i>
-                <span>NEXT SLATE CYCLES IN:</span>
+                <span>NEXT SLATE IN:</span>
                 <span id="ev-countdown" class="text-amber-300 font-bold">--:--:--</span>
               </div>
               <span class="text-slate-700 hidden sm:inline">|</span>
               <button id="ev-preview-toggle-btn" class="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 hover:border-cyan-400 transition text-[11px] font-bold flex items-center gap-1.5 cursor-pointer">
-                <i data-lucide="calendar" class="w-3 h-3 text-cyan-400"></i>
+                <i data-lucide="fast-forward" class="w-3 h-3 text-cyan-400"></i>
                 <span id="ev-preview-btn-text">PREVIEW TOMORROW'S SLATE</span>
               </button>
             </div>
@@ -292,37 +298,37 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="cyber-card p-5 border border-slate-800 bg-slate-900/50">
               <div class="text-xs font-mono text-amber-400 mb-1 font-bold">🏈 ALPHA CORRIDOR // NFL</div>
-              <h3 class="text-xl font-bold">Derrick Henry (BAL)</h3>
-              <p class="text-xs text-slate-400 mt-1 font-mono">Matchup: vs KC Chiefs | Week 1</p>
+              <h3 class="text-xl font-bold">Kenneth Walker III (SEA)</h3>
+              <p class="text-xs text-slate-400 mt-1 font-mono">Matchup: vs NE Patriots | 2026 Kickoff Opener</p>
               <div class="mt-4 space-y-2 text-xs font-mono">
-                <div class="flex justify-between"><span>Goal-Line Touch Share:</span> <span class="text-emerald-400 font-bold">82.4%</span></div>
-                <div class="flex justify-between"><span>Inside-10 Carry Pct:</span> <span class="text-cyan-400 font-bold">78.9%</span></div>
-                <div class="flex justify-between"><span>Model TD Probability:</span> <span class="text-amber-300 font-bold">68.5%</span></div>
-                <div class="flex justify-between"><span>Market Line vs Fair:</span> <span class="text-emerald-400 font-bold">-115 vs -175 (+EV)</span></div>
+                <div class="flex justify-between"><span>Goal-Line Carry Share:</span> <span class="text-emerald-400 font-bold">84.1%</span></div>
+                <div class="flex justify-between"><span>Inside-5 Carry Pct:</span> <span class="text-cyan-400 font-bold">81.0%</span></div>
+                <div class="flex justify-between"><span>Model TD Probability:</span> <span class="text-amber-300 font-bold">69.2%</span></div>
+                <div class="flex justify-between"><span>Market Line vs Fair:</span> <span class="text-emerald-400 font-bold">-115 vs -165 (+EV)</span></div>
               </div>
             </div>
 
             <div class="cyber-card p-5 border border-slate-800 bg-slate-900/50">
-              <div class="text-xs font-mono text-blue-400 mb-1 font-bold">🎓 AIR RAID RED ZONE // CFB</div>
-              <h3 class="text-xl font-bold">Travis Hunter (COL)</h3>
-              <p class="text-xs text-slate-400 mt-1 font-mono">Matchup: vs NDSU | Slate Primary</p>
+              <div class="text-xs font-mono text-blue-400 mb-1 font-bold">🎓 PRIMETIME RED ZONE // CFB</div>
+              <h3 class="text-xl font-bold">Ashton Daniels (FSU)</h3>
+              <p class="text-xs text-slate-400 mt-1 font-mono">Matchup: vs #19 SMU | Labor Day Monday Special</p>
               <div class="mt-4 space-y-2 text-xs font-mono">
-                <div class="flex justify-between"><span>Target Share (20+ Air Yds):</span> <span class="text-emerald-400 font-bold">36.2%</span></div>
-                <div class="flex justify-between"><span>End Zone Snap Count:</span> <span class="text-cyan-400 font-bold">91.0%</span></div>
-                <div class="flex justify-between"><span>Model TD Probability:</span> <span class="text-amber-300 font-bold">61.8%</span></div>
-                <div class="flex justify-between"><span>Market Line vs Fair:</span> <span class="text-emerald-400 font-bold">+110 vs -130 (+EV)</span></div>
+                <div class="flex justify-between"><span>Goal-Line Touch Share:</span> <span class="text-emerald-400 font-bold">86.2%</span></div>
+                <div class="flex justify-between"><span>Red Zone Keeper Pct:</span> <span class="text-cyan-400 font-bold">74.5%</span></div>
+                <div class="flex justify-between"><span>Model TD Probability:</span> <span class="text-amber-300 font-bold">64.0%</span></div>
+                <div class="flex justify-between"><span>Market Line vs Fair:</span> <span class="text-emerald-400 font-bold">+140 vs +105 (+EV)</span></div>
               </div>
             </div>
 
             <div class="cyber-card p-5 border border-slate-800 bg-slate-900/50">
-              <div class="text-xs font-mono text-emerald-400 mb-1 font-bold">🛡️ SHARP UNDERS RADAR</div>
-              <h3 class="text-xl font-bold">Deshaun Watson (CLE)</h3>
-              <p class="text-xs text-slate-400 mt-1 font-mono">Matchup: vs DAL | Under 218.5 Pass Yds</p>
+              <div class="text-xs font-mono text-emerald-400 mb-1 font-bold">🛡️ SHARP AIR RADAR // NFL</div>
+              <h3 class="text-xl font-bold">Jaxson Dart (NYG)</h3>
+              <p class="text-xs text-slate-400 mt-1 font-mono">Matchup: vs MIN Vikings | NFL Week 1 Starter</p>
               <div class="mt-4 space-y-2 text-xs font-mono">
-                <div class="flex justify-between"><span>DAL Shadow Pressure %:</span> <span class="text-crimson-400 font-bold">41.5%</span></div>
-                <div class="flex justify-between"><span>Passing Success Ceiling:</span> <span class="text-cyan-400 font-bold">189.2 Yds</span></div>
-                <div class="flex justify-between"><span>Model Under Hit Rate:</span> <span class="text-emerald-400 font-bold">71.4%</span></div>
-                <div class="flex justify-between"><span>Market Price:</span> <span class="text-amber-300 font-bold">-112 (High Sharp Floor)</span></div>
+                <div class="flex justify-between"><span>Target Share to Nabers:</span> <span class="text-cyan-400 font-bold">34.8%</span></div>
+                <div class="flex justify-between"><span>Passing Success Floor:</span> <span class="text-cyan-400 font-bold">224.5 Yds</span></div>
+                <div class="flex justify-between"><span>Model Pass Hit Rate:</span> <span class="text-emerald-400 font-bold">88.0%</span></div>
+                <div class="flex justify-between"><span>Market Price:</span> <span class="text-emerald-400 font-bold">-110 (High +EV Value)</span></div>
               </div>
             </div>
           </div>
