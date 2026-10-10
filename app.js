@@ -349,6 +349,32 @@ const API_SCHEMAS = {
     pythonSnippet: "import requests\n\nres = requests.get('https://api.trishulasoftware.com/v1/telemetry/bsc/chain-pulse')\nprint(res.json())",
     tsSnippet: "const res = await fetch('https://api.trishulasoftware.com/v1/telemetry/bsc/chain-pulse');\nconsole.log(await res.json());",
     curlSnippet: "curl -X GET 'https://api.trishulasoftware.com/v1/telemetry/bsc/chain-pulse'"
+  },
+  'quant-signals': {
+    endpoint: 'GET /v1/quant/signals/live',
+    response: {
+      status: 200,
+      timestamp: new Date().toISOString(),
+      engine: "Starfall E.06 Sovereign Core",
+      active_systems_count: 19,
+      market: "BTCUSD (Coinbase)",
+      timeframe: "1h",
+      telemetry: {
+        signal_state: "QUANTUM_BUY",
+        confluence_score: "9/9 Factors Bullish",
+        entry_price: 82040.50,
+        stop_loss: 80890.00,
+        target_1: 84200.00,
+        target_2: 86500.00,
+        risk_reward_ratio: "1 : 3.88",
+        win_probability_pct: 98.12,
+        chop_filter_status: "PASSED (ADX: 28.4)",
+        webhook_dispatch_verified: true
+      }
+    },
+    pythonSnippet: "import requests\n\nheaders = {'Authorization': 'Bearer YOUR_TRISHULA_API_KEY'}\nparams = {'system': 'starfall', 'ticker': 'BTCUSD'}\n\nres = requests.get('https://api.trishulasoftware.com/v1/quant/signals/live', headers=headers, params=params)\nprint(res.json())",
+    tsSnippet: "const res = await fetch('https://api.trishulasoftware.com/v1/quant/signals/live?system=starfall&ticker=BTCUSD', {\n  headers: { 'Authorization': 'Bearer YOUR_TRISHULA_API_KEY' }\n});\nconsole.log(await res.json());",
+    curlSnippet: "curl -X GET 'https://api.trishulasoftware.com/v1/quant/signals/live?system=starfall&ticker=BTCUSD' -H 'Authorization: Bearer YOUR_TRISHULA_API_KEY'"
   }
 };
 
