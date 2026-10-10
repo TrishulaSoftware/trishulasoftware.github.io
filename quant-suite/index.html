@@ -74,7 +74,7 @@
         </div>
         <div class="hidden lg:flex items-center space-x-1 text-slate-400">
           <span>ACTIVE ENGINES:</span>
-          <span class="text-emerald-400 font-bold">13 SOVEREIGN SYSTEMS</span>
+          <span class="text-emerald-400 font-bold">15 SOVEREIGN SYSTEMS</span>
         </div>
         <div class="hidden xl:flex items-center space-x-1 text-slate-400">
           <span>PEAK WIN RATE:</span>
@@ -154,7 +154,7 @@
         <div class="lg:col-span-8 space-y-5 text-center lg:text-left">
           <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-amber-500/40 bg-amber-950/40 text-xs font-mono text-amber-300">
             <span class="h-2 w-2 rounded-full bg-amber-400 animate-ping"></span>
-            <span>PROPRIETARY INSTITUTIONAL QUANTITATIVE SUITE • 13 VERIFIED SYSTEMS</span>
+            <span>PROPRIETARY INSTITUTIONAL QUANTITATIVE SUITE • 15 VERIFIED SYSTEMS</span>
           </div>
 
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
@@ -168,8 +168,8 @@
           <!-- Category Quick-Filter Bar -->
           <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 font-mono text-xs">
             <span class="text-slate-400 text-[11px] uppercase mr-1">Filter Systems:</span>
-            <button onclick="filterCategory('all')" class="category-pill active px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-all">ALL (13)</button>
-            <button onclick="filterCategory('smc')" class="category-pill px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-smc">SMC & STRUCTURE (4)</button>
+            <button onclick="filterCategory('all')" class="category-pill active px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-all">ALL (15)</button>
+            <button onclick="filterCategory('smc')" class="category-pill px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-smc">SMC & STRUCTURE (6)</button>
             <button onclick="filterCategory('options')" class="category-pill px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-options">OPTIONS GEX & FLOW (2)</button>
             <button onclick="filterCategory('volatility')" class="category-pill px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-volatility">VOLATILITY CORRIDORS (4)</button>
             <button onclick="filterCategory('namesake')" class="category-pill px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-namesake">TRISHULA NAMESAKE (3)</button>
@@ -196,7 +196,7 @@
               </div>
               <div class="p-3 rounded-xl bg-slate-900/80 border border-amber-500/30">
                 <div class="text-[10px] text-slate-400">INDICATORS</div>
-                <div class="text-2xl font-black text-amber-400 mt-0.5">13 Systems</div>
+                <div class="text-2xl font-black text-amber-400 mt-0.5">15 Systems</div>
                 <div class="text-[9px] text-slate-500">Modular Architecture</div>
               </div>
               <div class="p-3 rounded-xl bg-slate-900/80 border border-purple-500/30">
@@ -511,6 +511,310 @@
 
         </div>
         
+        
+        <!-- ACCORDION ITEM: 'Fragarach' (Weapon 06: Range Breaker) -->
+        <div class="cyber-card rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 overflow-hidden shadow-xl" id="card-ind-fragarach">
+          
+          <!-- Banner Header (Clickable Toggle) -->
+          <div onclick="toggleIndicatorAccordion('ind-fragarach')" class="px-6 py-4 bg-gradient-to-r from-[#0b1220] via-[#0f192e] to-[#0b1220] hover:from-[#111d35] hover:to-[#142340] cursor-pointer flex items-center justify-between gap-4 transition select-none group border-l-4 border-emerald-400">
+            <div class="flex items-center gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700/80 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:border-emerald-400 transition">
+                <i data-lucide="zap" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-white font-bold text-sm sm:text-base tracking-wide group-hover:text-amber-300 transition font-sans">'Fragarach'</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">WEAPON 06 ACTIVE</span>
+                  <span class="hidden sm:inline text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30">PINE SCRIPT v5</span>
+                  <span class="hidden md:inline text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">MULTI-BAR BREAKOUT VERIFICATION</span>
+                </div>
+                <div class="text-[11px] font-mono text-slate-400 mt-0.5">CONSOLIDATION SQUEEZE &bull; BB/KC VOLATILITY GATE &bull; 2-BAR FOLLOW-THROUGH &bull; MEASURED MOVE TARGETS</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 text-xs font-mono shrink-0">
+              <span id="label-ind-fragarach" class="text-slate-400 group-hover:text-amber-300 transition text-[11px] font-semibold hidden md:inline">CLICK TO EXPAND</span>
+              <div class="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-400 group-hover:border-amber-400 transition">
+                <i id="chevron-ind-fragarach" data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Drawer Content (Expandable / Retractable) -->
+          <div id="drawer-ind-fragarach" class="hidden border-t border-slate-800/80 bg-[#070c18] p-6 space-y-6 transition-all duration-500">
+          
+          <!-- Banner / Overview Header -->
+          <div class="p-6 rounded-2xl bg-gradient-to-r from-[#0d1627] via-[#09101d] to-[#121929] border border-emerald-500/30 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+              <div class="space-y-2 max-w-3xl">
+                <div class="flex items-center gap-2">
+                  <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-400/10 text-amber-400 border border-amber-500/30 tracking-wider">
+                    WEAPON 06: RANGE BREAKER // PINE SCRIPT v5
+                  </span>
+                  <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-400/10 text-emerald-400 border border-emerald-500/30 tracking-wider">
+                    REVERSE-ENGINEERED & UPGRADED
+                  </span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white flex items-center gap-3">
+                  <span>'Fragarach'</span>
+                  <span class="text-slate-500 text-lg font-mono font-normal">| Consolidation Squeeze & Multi-Bar Breakout Engine</span>
+                </h2>
+                <p class="text-slate-300 text-sm leading-relaxed font-mono">
+                  Named after the mythological Irish sword that pierced through any defense with zero resistance. Reverse-engineered and upgraded from Max Options Trading's "Range Breaker", Fragarach combines Bollinger Band vs. Keltner Channel volatility compression, multi-bar breakout follow-through confirmation (Bar 2 close higher/lower), relative volume surge gating (RVOL &ge; 1.25), and automatic 1x / 2x measured move target projections.
+                </p>
+              </div>
+
+              <!-- Metric Stats Badge Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 shrink-0 font-mono">
+                <div class="p-3 rounded-xl bg-black/60 border border-emerald-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">CONFIRMATION</div>
+                  <div class="text-xl font-black text-emerald-400 mt-0.5">2-Bar Close</div>
+                  <div class="text-[10px] text-slate-500">Zero Fakeout Traps</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/60 border border-cyan-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">VOLUME SURGE</div>
+                  <div class="text-xl font-black text-cyan-400 mt-0.5">&ge; 1.25x RVOL</div>
+                  <div class="text-[10px] text-slate-500">20-SMA Volume Gate</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/60 border border-amber-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">SQUEEZE ENGINE</div>
+                  <div class="text-xl font-black text-amber-300 mt-0.5">BB in KC</div>
+                  <div class="text-[10px] text-slate-500">1.8x ATR Compression</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/60 border border-purple-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">PROJECTIONS</div>
+                  <div class="text-xl font-black text-purple-400 mt-0.5">1x &bull; 2x</div>
+                  <div class="text-[10px] text-slate-500">Auto Measured Moves</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Live Execution Chart & HUD Breakdown -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2 text-xs font-mono text-slate-300">
+                <i data-lucide="monitor" class="w-4 h-4 text-cyan-400"></i>
+                <span class="font-bold text-white uppercase tracking-wider">Live TradingView Execution Telemetry</span>
+                <span class="text-slate-500">| NVIDIA Corporation (NVDA) 15-Minute NASDAQ Telemetry Feed</span>
+              </div>
+              <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/30 font-bold">
+                MULTI-BAR CONFIRMED
+              </span>
+            </div>
+            
+            <div class="relative rounded-xl overflow-hidden border border-slate-700/80 bg-slate-950 shadow-2xl group">
+              <img src="../assets/fragarach_live_chart.png" alt="Fragarach Live TradingView NVDA Execution Chart" class="w-full h-auto object-cover rounded-lg transition-transform duration-500 group-hover:scale-[1.01]">
+              <div class="absolute bottom-3 right-3 px-3 py-1.5 rounded-lg bg-black/80 border border-slate-700/80 backdrop-blur text-[11px] font-mono text-slate-300">
+                <span class="text-emerald-400 font-bold">&bull; NVDA 15m</span> | Active Squeeze Boxes, Confirmed Range Breaks &amp; Measured Targets
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Breakdown Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5 font-mono text-xs">
+            <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2">
+              <div class="text-amber-400 font-bold flex items-center gap-1.5">
+                <i data-lucide="box" class="w-4 h-4"></i>
+                <span>1. Compression Squeeze Detection</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed font-sans text-[11px]">
+                Detects institutional coiling by requiring Bollinger Bands (20, 2.0) to contract strictly inside Keltner Channels (20, 1.5 ATR). Simultaneously enforces ATR compression width (&le; 1.8x 14-ATR) over a rolling 10-bar window, plotting gold dashed equilibrium zones.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2">
+              <div class="text-emerald-400 font-bold flex items-center gap-1.5">
+                <i data-lucide="check-check" class="w-4 h-4"></i>
+                <span>2. Multi-Bar Confirmation Engine</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed font-sans text-[11px]">
+                Eliminates single-bar fakeouts and liquidity traps. Bar 1 must close outside the squeeze with RVOL &ge; 1.25. Bar 2 must print follow-through (close &gt; Bar 1 close for bulls, close &lt; Bar 1 close for bears). If price falls back into the box, the breakout state auto-resets.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2">
+              <div class="text-cyan-400 font-bold flex items-center gap-1.5">
+                <i data-lucide="trending-up" class="w-4 h-4"></i>
+                <span>3. Measured Moves &amp; Macro Trend</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed font-sans text-[11px]">
+                Automatically projects 1x (dashed) and 2x (solid) range height expansion targets from the breakout boundary. Integrates a 50-EMA macro corridor to classify breaks as trend continuations or high-risk exhaustion reversals.
+              </p>
+            </div>
+          </div>
+
+          <!-- Parameter Table & Whitelist Action -->
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-slate-900/70 border border-slate-800">
+            <div class="flex items-center gap-3">
+              <div class="text-xs font-mono text-slate-400">
+                PINE SCRIPT: <span class="text-slate-200 font-bold">v5 Standalone</span> &bull; OVERLAY: <span class="text-slate-200 font-bold">true</span> &bull; REVERSE-ENGINEERED: <span class="text-emerald-400 font-bold">Max Options Range Breaker</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <button class="open-consultation-btn px-4 py-2 rounded-lg font-mono text-xs font-bold bg-amber-500 hover:bg-amber-400 text-black flex items-center gap-1.5 transition shadow-lg shadow-amber-500/20" data-indicator="'Fragarach' Range Breaker">
+                <i data-lucide="key" class="w-3.5 h-3.5"></i>
+                <span>Request 'Fragarach' Whitelist</span>
+              </button>
+            </div>
+          </div>
+
+          </div>
+        </div>
+
+        
+        <!-- ACCORDION ITEM: 'Galveira' (Weapon 07: Pivot Hunter Pro) -->
+        <div class="cyber-card rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 overflow-hidden shadow-xl" id="card-ind-galveira">
+          
+          <!-- Banner Header (Clickable Toggle) -->
+          <div onclick="toggleIndicatorAccordion('ind-galveira')" class="px-6 py-4 bg-gradient-to-r from-[#0b1220] via-[#0f192e] to-[#0b1220] hover:from-[#111d35] hover:to-[#142340] cursor-pointer flex items-center justify-between gap-4 transition select-none group border-l-4 border-amber-400">
+            <div class="flex items-center gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700/80 flex items-center justify-center text-amber-400 group-hover:scale-110 group-hover:border-amber-400 transition">
+                <i data-lucide="crosshair" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-white font-bold text-sm sm:text-base tracking-wide group-hover:text-amber-300 transition font-sans">'Galveira'</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30">WEAPON 07 ACTIVE</span>
+                  <span class="hidden sm:inline text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30">PINE SCRIPT v5</span>
+                  <span class="hidden md:inline text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">LIQUIDITY SWEEP &amp; TRAP ENGINE</span>
+                </div>
+                <div class="text-[11px] font-mono text-slate-400 mt-0.5">DYNAMIC S/R &bull; ATR SPACING PRUNING &bull; TRAP LABELS &bull; POLARITY FLIPS (FLIP-SUP / FLIP-RES)</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 text-xs font-mono shrink-0">
+              <span id="label-ind-galveira" class="text-slate-400 group-hover:text-amber-300 transition text-[11px] font-semibold hidden md:inline">CLICK TO EXPAND</span>
+              <div class="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-400 group-hover:border-amber-400 transition">
+                <i id="chevron-ind-galveira" data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Drawer Content (Expandable / Retractable) -->
+          <div id="drawer-ind-galveira" class="hidden border-t border-slate-800/80 bg-[#070c18] p-6 space-y-6 transition-all duration-500">
+          
+          <!-- Banner / Overview Header -->
+          <div class="p-6 rounded-2xl bg-gradient-to-r from-[#0d1627] via-[#09101d] to-[#121929] border border-amber-500/30 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+              <div class="space-y-2 max-w-3xl">
+                <div class="flex items-center gap-2">
+                  <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-400/10 text-amber-400 border border-amber-500/30 tracking-wider">
+                    WEAPON 07: PIVOT HUNTER PRO // PINE SCRIPT v5
+                  </span>
+                  <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-400/10 text-emerald-400 border border-emerald-500/30 tracking-wider">
+                    REVERSE-ENGINEERED &amp; UPGRADED
+                  </span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white flex items-center gap-3">
+                  <span>'Galveira'</span>
+                  <span class="text-slate-500 text-lg font-mono font-normal">| Dynamic S/R &amp; False Breakout / Trap Engine</span>
+                </h2>
+                <p class="text-slate-300 text-sm leading-relaxed font-mono">
+                  Reverse-engineered and upgraded from Max Options Trading's "Pivot Hunter Pro". Galveira anchors real-time swing highs and lows, applies an ATR-based cluster pruning algorithm to prevent chart clutter, detects false breakout liquidity traps with visual "TRAP" beacons, auto-adjusts levels to encompass sweep wicks, and renders clean gold polarity flips (FLIP-SUP / FLIP-RES) upon verified structural penetration.
+                </p>
+              </div>
+
+              <!-- Metric Stats Badge Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 shrink-0 font-mono">
+                <div class="p-3 rounded-xl bg-black/60 border border-emerald-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">TRAP DETECTION</div>
+                  <div class="text-xl font-black text-emerald-400 mt-0.5">Wick Sweeps</div>
+                  <div class="text-[10px] text-slate-500">Auto Wick Adjustment</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/60 border border-cyan-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">CLUTTER PRUNING</div>
+                  <div class="text-xl font-black text-cyan-400 mt-0.5">0.6x ATR</div>
+                  <div class="text-[10px] text-slate-500">Max 12 Active Levels</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/60 border border-amber-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">POLARITY FLIPS</div>
+                  <div class="text-xl font-black text-amber-300 mt-0.5">FLIP-S/R</div>
+                  <div class="text-[10px] text-slate-500">Gold Break Transition</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/60 border border-purple-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">TOUCH VALIDATION</div>
+                  <div class="text-xl font-black text-purple-400 mt-0.5">&ge; 2 Touches</div>
+                  <div class="text-[10px] text-slate-500">Auto Line Thickening</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Live Execution Chart & HUD Breakdown -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2 text-xs font-mono text-slate-300">
+                <i data-lucide="monitor" class="w-4 h-4 text-cyan-400"></i>
+                <span class="font-bold text-white uppercase tracking-wider">Live TradingView Execution Telemetry</span>
+                <span class="text-slate-500">| XRP / U.S. Dollar 4-Hour Coinbase Telemetry Feed</span>
+              </div>
+              <span class="text-xs font-mono text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/30 font-bold">
+                SWEEPS &amp; TRAPS ACTIVE
+              </span>
+            </div>
+            
+            <div class="relative rounded-xl overflow-hidden border border-slate-700/80 bg-slate-950 shadow-2xl group">
+              <img src="../assets/galveira_live_chart.png" alt="Galveira Live TradingView XRP Execution Chart" class="w-full h-auto object-cover rounded-lg transition-transform duration-500 group-hover:scale-[1.01]">
+              <div class="absolute bottom-3 right-3 px-3 py-1.5 rounded-lg bg-black/80 border border-slate-700/80 backdrop-blur text-[11px] font-mono text-slate-300">
+                <span class="text-amber-400 font-bold">&bull; XRPUSD 4h</span> | Trap Sweeps, Auto-Adjusted Levels &amp; Polarity Flips
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Breakdown Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5 font-mono text-xs">
+            <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2">
+              <div class="text-amber-400 font-bold flex items-center gap-1.5">
+                <i data-lucide="crosshair" class="w-4 h-4"></i>
+                <span>1. Dynamic Swing Pivot Anchors</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed font-sans text-[11px]">
+                Tracks structural pivot highs and lows using 5-bar left strength and 3-bar right confirmation. Levels dynamically project forward across time, thickening in stroke weight when validated by 2 or more touches.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2">
+              <div class="text-rose-400 font-bold flex items-center gap-1.5">
+                <i data-lucide="shield-alert" class="w-4 h-4"></i>
+                <span>2. False Breakout &amp; Sweep Detection</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed font-sans text-[11px]">
+                Exposes retail liquidity traps. When price wicks beyond a major level but closes back inside the zone, Galveira prints a red or green "TRAP" marker and auto-adjusts the level to encompass the peak wick coordinate.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2">
+              <div class="text-cyan-400 font-bold flex items-center gap-1.5">
+                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                <span>3. Polarity Flips &amp; ATR Pruning</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed font-sans text-[11px]">
+                When price breaks cleanly past a level by &gt; 0.3x ATR, the level flips polarity to sovereign gold (FLIP-SUP / FLIP-RES). Levels closer than 0.6x ATR are pruned to guarantee clean, institutional readability.
+              </p>
+            </div>
+          </div>
+
+          <!-- Parameter Table & Whitelist Action -->
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-slate-900/70 border border-slate-800">
+            <div class="flex items-center gap-3">
+              <div class="text-xs font-mono text-slate-400">
+                PINE SCRIPT: <span class="text-slate-200 font-bold">v5 Standalone</span> &bull; OVERLAY: <span class="text-slate-200 font-bold">true</span> &bull; REVERSE-ENGINEERED: <span class="text-amber-400 font-bold">Max Options Pivot Hunter Pro</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <button class="open-consultation-btn px-4 py-2 rounded-lg font-mono text-xs font-bold bg-amber-500 hover:bg-amber-400 text-black flex items-center gap-1.5 transition shadow-lg shadow-amber-500/20" data-indicator="'Galveira' Pivot Hunter Pro">
+                <i data-lucide="key" class="w-3.5 h-3.5"></i>
+                <span>Request 'Galveira' Whitelist</span>
+              </button>
+            </div>
+          </div>
+
+          </div>
+        </div>
+
         <!-- ACCORDION ITEM: Q-Matrix -->
         <div class="cyber-card rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden shadow-xl" id="card-ind-qmatrix">
           
@@ -3341,7 +3645,7 @@
   <script>
     // Category Filter Engine
     const CATEGORY_MAP = {
-      smc: ['card-ind-starfall', 'card-ind-caladbolg', 'card-ind-rdmob', 'card-ind-trident3'],
+      smc: ['card-ind-starfall', 'card-ind-fragarach', 'card-ind-galveira', 'card-ind-caladbolg', 'card-ind-rdmob', 'card-ind-trident3'],
       options: ['card-ind-qmatrix', 'card-ind-projectvajra'],
       volatility: ['card-ind-cloudsplitter', 'card-ind-rdmcomposure', 'card-ind-doorknocker', 'card-ind-themadam'],
       namesake: ['card-ind-trishula', 'card-ind-doubleback', 'card-ind-projectidris']
