@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Swarm — Trishula Software | Autonomous Multi-Agent Intelligence Cortex</title>
+  <meta name="description" content="The Swarm is Tony Stark. The SBM and Q-Matrix are just the suits. Autonomous multi-agent AI intelligence cortex engineered for syndicates, trading desks, and enterprise platforms. Lead Architect: Cliff Finneyfrock.">
+  
+  <!-- Favicon / Meta -->
+  <link rel="icon" type="image/png" href="../assets/trishula_logo3.webp">
+  <link rel="apple-touch-icon" href="../assets/trishula_logo3.webp">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              bg: '#050811',
+              card: 'rgba(11, 18, 32, 0.85)',
+              cyan: '#00f0ff',
+              emerald: '#00ff9d',
+              gold: '#ffd700',
+              crimson: '#ff3366',
+              stark: '#ff3b30',
+              reactor: '#00f0ff',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .glow-box-cyan {
+      box-shadow: 0 0 30px -5px rgba(0, 240, 255, 0.3);
+    }
+    .glow-box-gold {
+      box-shadow: 0 0 30px -5px rgba(255, 215, 0, 0.3);
+    }
+    .glow-box-emerald {
+      box-shadow: 0 0 30px -5px rgba(0, 255, 157, 0.3);
+    }
+    .glow-box-stark {
+      box-shadow: 0 0 35px -5px rgba(255, 59, 48, 0.35);
+    }
+    .grid-bg-cyber {
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 60%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 32px 32px, 32px 32px;
+    }
+    .suit-card.active {
+      border-color: #00f0ff !important;
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
+    }
+    .arc-reactor {
+      background: radial-gradient(circle, #00f0ff 0%, #0077aa 50%, #050811 100%);
+      box-shadow: 0 0 40px #00f0ff;
+    }
+  </style>
+</head>
+<body class="bg-[#050811] text-slate-100 min-h-screen selection:bg-cyan-500/30 selection:text-cyan-300 font-sans grid-bg-cyber">
+
+  <!-- 1. LIVE TELEMETRY STATUS RIBBON -->
+  <div class="border-b border-slate-800/80 bg-black/80 backdrop-blur text-xs font-mono py-2 px-4 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center space-x-3">
+        <span class="flex h-2 w-2 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+        </span>
+        <span class="text-slate-300">TRISHULA SOVEREIGN SUITE // THE SWARM: AUTONOMOUS MULTI-AGENT CORTEX</span>
+      </div>
+      <div class="flex items-center space-x-6 text-[11px]">
+        <div class="hidden md:flex items-center space-x-1.5 text-slate-400">
+          <span>PHILOSOPHY:</span>
+          <span class="text-cyan-400 font-bold">THE SWARM IS TONY STARK</span>
+        </div>
+        <div class="hidden sm:flex items-center space-x-1.5 text-slate-400">
+          <span>ACTIVE AGENTS:</span>
+          <span class="text-emerald-400 font-bold">35+ AUTONOMOUS DAEMONS</span>
+        </div>
+        <div class="hidden lg:flex items-center space-x-1.5 text-slate-400">
+          <span>LEAD ARCHITECT:</span>
+          <span class="text-slate-200 font-semibold">CLIFF FINNEYFROCK</span>
+        </div>
+        <div class="flex items-center space-x-1.5 text-slate-400">
+          <span>CLIENT IP:</span>
+          <span class="text-amber-400 font-bold">100% SOVEREIGN TRANSFERRED</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. NAVIGATION BAR -->
+  <nav class="border-b border-slate-800/60 bg-[#080d17]/85 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="../" class="flex items-center space-x-3.5 group py-1">
+        <img src="../assets/trishula_logo3.webp" alt="Trishula Software" class="h-10 w-10 rounded-full border border-emerald-500/50 group-hover:border-emerald-400 transition shadow-lg shadow-emerald-500/20 shrink-0 object-cover">
+        <div class="flex flex-col justify-center">
+          <div class="flex items-center gap-2">
+            <span class="font-black tracking-widest text-sm sm:text-base whitespace-nowrap bg-gradient-to-r from-emerald-400 via-cyan-400 to-amber-300 bg-clip-text text-transparent leading-none">THE SWARM</span>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-800/60">CORTEX v6.0</span>
+          </div>
+          <span class="text-[9.5px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">Autonomous Multi-Agent Brain</span>
+        </div>
+      </a>
+
+      <div class="hidden xl:flex items-center space-x-5 text-sm font-medium">
+        <a href="#stark-doctrine" class="text-slate-300 hover:text-cyan-400 transition flex items-center gap-1.5">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>The Stark Doctrine</span>
+        </a>
+        <a href="#armor-hall" class="text-slate-300 hover:text-amber-400 transition flex items-center gap-1.5">
+          <i data-lucide="shield" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span>The Armor Hall (Suits)</span>
+        </a>
+        <a href="#cognitive-core" class="text-slate-300 hover:text-emerald-400 transition flex items-center gap-1.5">
+          <i data-lucide="cpu" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>Cognitive Core</span>
+        </a>
+        <a href="#live-terminal" class="text-slate-300 hover:text-cyan-400 transition flex items-center gap-1.5">
+          <i data-lucide="terminal" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>Live Terminal</span>
+        </a>
+        <a href="#scorecard" class="text-slate-300 hover:text-emerald-400 transition flex items-center gap-1.5">
+          <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>Immutable Ledger</span>
+        </a>
+        <a href="#suit-customizer" class="text-slate-300 hover:text-rose-400 transition flex items-center gap-1.5">
+          <i data-lucide="wrench" class="w-3.5 h-3.5 text-rose-400"></i>
+          <span>Suit Customizer</span>
+        </a>
+        <a href="../netra/" class="text-cyan-400 hover:text-cyan-300 transition flex items-center gap-1">
+          <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+          <span>Netra 1.0</span>
+        </a>
+        <a href="../redlens/" class="text-rose-400 hover:text-rose-300 transition flex items-center gap-1">
+          <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+          <span>RedLens 3.7</span>
+        </a>
+        <a href="../quant-suite/" class="text-amber-400 hover:text-amber-300 transition flex items-center gap-1">
+          <i data-lucide="crosshair" class="w-3.5 h-3.5"></i>
+          <span>Quant Suite</span>
+        </a>
+        <a href="../enterprise/" class="text-emerald-400 hover:text-emerald-300 transition flex items-center gap-1">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+          <span>Enterprise</span>
+        </a>
+        <a href="../" class="text-slate-400 hover:text-slate-200 transition flex items-center gap-1 font-mono">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span>Core Portal</span>
+        </a>
+      </div>
+
+      <div class="flex items-center space-x-3">
+        <a href="#rfp-form" class="px-4 py-2 rounded-lg text-xs font-mono font-bold tracking-wider bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 hover:from-emerald-300 hover:to-blue-400 text-black shadow-lg shadow-cyan-500/20 transition-all flex items-center gap-1.5">
+          <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+          <span>COMMISSION A SUIT</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 3. HERO SECTION: "THE SWARM IS TONY STARK" -->
+  <section class="relative pt-20 pb-24 overflow-hidden border-b border-slate-800/80 bg-gradient-to-b from-[#080f22] via-[#050814] to-[#03050a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-4xl mx-auto space-y-6">
+        
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-emerald-500/40 bg-emerald-950/40 text-xs font-mono text-emerald-300">
+          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>THE SOVEREIGN MASTERMIND // AUTONOMOUS MULTI-AGENT CORTEX</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white">
+          The Swarm Is <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-amber-300">Tony Stark.</span><br>
+          <span class="text-2xl sm:text-4xl text-slate-300 font-extrabold">The SBM &amp; Q-Matrix Are Just The Iron Man Suits.</span>
+        </h1>
+
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed font-light max-w-3xl mx-auto">
+          Most people confuse the armor for the mind that built it. They look at our sub-second sports syndicate pricing or our quantitative options gamma matrix and think that's the product. <strong class="text-white">It isn't.</strong> The Swarm is the autonomous, self-orchestrating multi-agent cortex underneath. 
+        </p>
+
+        <!-- Punchline Banner -->
+        <div class="p-4 sm:p-5 rounded-2xl border-2 border-cyan-500/40 bg-gradient-to-r from-cyan-950/40 via-black/80 to-cyan-950/40 text-center font-mono text-sm sm:text-base text-cyan-300 shadow-xl glow-box-cyan">
+          <span class="text-amber-400 font-bold">&ldquo;</span>
+          <span class="text-white font-extrabold">What suit do you want your &lsquo;Tony Stark&rsquo; to wear today?</span>
+          <span class="text-amber-400 font-bold">&rdquo;</span>
+        </div>
+
+        <!-- The Suits Quick Filter Strip -->
+        <div class="pt-4 flex flex-wrap items-center justify-center gap-2 font-mono text-xs">
+          <span class="text-slate-500 uppercase tracking-wider text-[11px] mr-2">AVAILABLE ARMOR:</span>
+          <a href="#suit-sbm" class="px-3 py-1.5 rounded-lg border border-amber-500/40 bg-amber-950/30 text-amber-300 hover:border-amber-400 transition flex items-center gap-1.5">
+            <span>🏈 SBM Suit</span>
+            <span class="text-[10px] text-slate-400">(Sports)</span>
+          </a>
+          <a href="#suit-qmatrix" class="px-3 py-1.5 rounded-lg border border-cyan-500/40 bg-cyan-950/30 text-cyan-300 hover:border-cyan-400 transition flex items-center gap-1.5">
+            <span>📈 Q-Matrix Suit</span>
+            <span class="text-[10px] text-slate-400">(Options &amp; GEX)</span>
+          </a>
+          <a href="#suit-netra" class="px-3 py-1.5 rounded-lg border border-emerald-500/40 bg-emerald-950/30 text-emerald-300 hover:border-emerald-400 transition flex items-center gap-1.5">
+            <span>🕵️ Netra Suit</span>
+            <span class="text-[10px] text-slate-400">(Stealth Scraping)</span>
+          </a>
+          <a href="#suit-web3" class="px-3 py-1.5 rounded-lg border border-purple-500/40 bg-purple-950/30 text-purple-300 hover:border-purple-400 transition flex items-center gap-1.5">
+            <span>⚡ Web3 Suit</span>
+            <span class="text-[10px] text-slate-400">(On-Chain RPC)</span>
+          </a>
+          <a href="#suit-redlens" class="px-3 py-1.5 rounded-lg border border-rose-500/40 bg-rose-950/30 text-rose-300 hover:border-rose-400 transition flex items-center gap-1.5">
+            <span>🛡️ RedLens Suit</span>
+            <span class="text-[10px] text-slate-400">(Post-Quantum)</span>
+          </a>
+          <a href="#suit-enterprise" class="px-3 py-1.5 rounded-lg border border-blue-500/40 bg-blue-950/30 text-blue-300 hover:border-blue-400 transition flex items-center gap-1.5">
+            <span>🏢 Bespoke Suit</span>
+            <span class="text-[10px] text-slate-400">(Your Company)</span>
+          </a>
+        </div>
+
+        <!-- Key Metrics Grid -->
+        <div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-xs max-w-3xl mx-auto">
+          <div class="p-3.5 rounded-xl border border-slate-800 bg-slate-900/60 text-center">
+            <div class="text-cyan-400 font-bold text-base sm:text-lg">35+ Daemons</div>
+            <div class="text-slate-400 text-[10px] uppercase mt-0.5">Autonomous Sub-Agents</div>
+          </div>
+          <div class="p-3.5 rounded-xl border border-slate-800 bg-slate-900/60 text-center">
+            <div class="text-emerald-400 font-bold text-base sm:text-lg">10,000+ Iterations</div>
+            <div class="text-slate-400 text-[10px] uppercase mt-0.5">Monte Carlo Sim / Sec</div>
+          </div>
+          <div class="p-3.5 rounded-xl border border-slate-800 bg-slate-900/60 text-center">
+            <div class="text-amber-400 font-bold text-base sm:text-lg">&lt; 15ms Latency</div>
+            <div class="text-slate-400 text-[10px] uppercase mt-0.5">Edge Ingestion Speed</div>
+          </div>
+          <div class="p-3.5 rounded-xl border border-slate-800 bg-slate-900/60 text-center">
+            <div class="text-rose-400 font-bold text-base sm:text-lg">0% Token Fatigue</div>
+            <div class="text-slate-400 text-[10px] uppercase mt-0.5">Undetected AST Bypasses</div>
+          </div>
+        </div>
+
+        <div class="pt-6 flex flex-wrap items-center justify-center gap-4 font-mono text-xs">
+          <a href="#armor-hall" class="px-8 py-4 rounded-xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-500 hover:from-emerald-300 hover:to-cyan-400 text-black shadow-xl shadow-cyan-500/25 flex items-center gap-2 transition transform hover:-translate-y-0.5">
+            <i data-lucide="shield" class="w-4 h-4"></i>
+            <span>ENTER THE ARMOR HALL</span>
+          </a>
+          <a href="#live-terminal" class="px-8 py-4 rounded-xl font-bold bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700 flex items-center gap-2 transition">
+            <span>LAUNCH LIVE TERMINAL</span>
+            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. THE STARK DOCTRINE: ARCHITECTURE OF PURE INTELLIGENCE -->
+  <section id="stark-doctrine" class="py-20 border-b border-slate-800/80 bg-[#060a14]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">THE PHILOSOPHICAL REVELATION</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white">Why Single-Purpose Models Always Die</h2>
+        <p class="text-slate-400 text-sm font-mono leading-relaxed">
+          The technology graveyard is filled with single-purpose scrapers, static spreadsheet trackers, and brittle algorithms that shatter the instant market conditions shift.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 font-mono text-xs">
+        
+        <div class="p-7 rounded-2xl border border-slate-800 bg-slate-900/60 space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400">
+            <i data-lucide="wrench" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white font-sans">A Spreadsheet Is A Hammer</h3>
+          <p class="text-slate-300 font-sans text-xs leading-relaxed">
+            Most handicappers and analysts rely on manual spreadsheets. They enter numbers by hand, suffer from human fatigue, and break the moment an API endpoint changes or a book updates its lines.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-2xl border border-slate-800 bg-slate-900/60 space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+            <i data-lucide="crosshair" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white font-sans">A Static Algorithm Is A Rifle</h3>
+          <p class="text-slate-300 font-sans text-xs leading-relaxed">
+            A standalone script or Python formula can hit a target when conditions are perfect. But when anti-bot protection changes, proxy pools drop, or market liquidity dries up, the rifle jams.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-2xl border border-cyan-500/40 bg-gradient-to-b from-[#091224] to-[#040812] space-y-4 shadow-xl glow-box-cyan">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-400 flex items-center justify-center text-cyan-300">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white font-sans">The Swarm Is Tony Stark</h3>
+          <p class="text-slate-300 font-sans text-xs leading-relaxed">
+            The Swarm is an autonomous weapons laboratory staffed by sleepless digital agents. It detects errors, heals sessions, rotates proxies, recalculates probabilities, and dresses itself in whatever specialized armor the mission requires.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. THE COGNITIVE CORE: THE 5 AUTONOMOUS CORTEX SYSTEMS -->
+  <section id="cognitive-core" class="py-20 border-b border-slate-800/80 bg-[#050811]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">THE ARC REACTOR INSIDE</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white">The Five Cognitive Systems Of The Swarm Cortex</h2>
+        <p class="text-slate-400 text-sm font-mono">
+          Before armor is deployed, the cortex coordinates millions of operations across five autonomous pillars.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- System 01: Multi-Agent Role Hierarchies -->
+        <div class="cyber-card p-6 rounded-2xl border border-slate-800 bg-[#090f1d] space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/40 flex items-center justify-center text-cyan-400">
+              <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800">CORTEX 01</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Autonomous Agent Role Hierarchies</h3>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            Specialized sub-agents work in synchronized unison: Commander Agent dispatches tasks, Scout Agents scrape data, Math Agents run Monte Carlo simulations, Risk Auditors verify boundaries, and Dispatch Agents notify Discord/Telegram war rooms.
+          </p>
+        </div>
+
+        <!-- System 02: Dynamic Self-Healing Sessions -->
+        <div class="cyber-card p-6 rounded-2xl border border-slate-800 bg-[#090f1d] space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">CORTEX 02</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Self-Healing &amp; Anti-Bot Evasion</h3>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            When target sites update Cloudflare Turnstile, Datadome rules, or HTML layouts, the Swarm detects DOM anomalies, hot-patches its Chromium AST parser, cycles residential SOCKS5 proxies, and recovers without human intervention.
+          </p>
+        </div>
+
+        <!-- System 03: High-Throughput In-Memory Mesh -->
+        <div class="cyber-card p-6 rounded-2xl border border-slate-800 bg-[#090f1d] space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/40 flex items-center justify-center text-amber-400">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800">CORTEX 03</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">In-Memory Redis Cache Mesh</h3>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            Sub-15ms throughput across all feeds. All odds, order book ticks, and blockchain mempool records pass through an in-memory Redis cluster that invalidates stale records instantly, guaranteeing zero stale data.
+          </p>
+        </div>
+
+        <!-- System 04: Convexity & Distribution Mathematics -->
+        <div class="cyber-card p-6 rounded-2xl border border-slate-800 bg-[#090f1d] space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/40 flex items-center justify-center text-purple-400">
+              <i data-lucide="binary" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-800">CORTEX 04</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Convexity &amp; Probabilistic Math</h3>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            10,000-run Monte Carlo batching, Poisson distribution modeling for low-scoring events, and fractional Kelly Criterion sizing algorithms that prevent capital ruin while capturing positive mathematical expectation (+EV).
+          </p>
+        </div>
+
+        <!-- System 05: Omnichannel Real-Time Dispatches -->
+        <div class="cyber-card p-6 rounded-2xl border border-slate-800 bg-[#090f1d] space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/40 flex items-center justify-center text-rose-400">
+              <i data-lucide="send" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-rose-950 text-rose-300 border border-rose-800">CORTEX 05</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Zero-Latency Omnichannel Dispatch</h3>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            The moment a mathematical edge is verified, dispatches fire asynchronously across Discord war rooms, Telegram VIP feeds, low-latency WebSocket connections, and institutional B2B REST endpoints in milliseconds.
+          </p>
+        </div>
+
+        <!-- System 06: Zero Cloud Footprint & Cost Arbitrage -->
+        <div class="cyber-card p-6 rounded-2xl border border-slate-800 bg-[#090f1d] space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/40 flex items-center justify-center text-cyan-400">
+              <i data-lucide="server" class="w-5 h-5"></i>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800">CORTEX 06</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Multi-Cloud Compute Arbitrage</h3>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            The Swarm runs distributed across ephemeral spot instances, Oracle Cloud Always Free ARM clusters, and edge workers—slashing what would be a $12,000/month cloud bill down to near $0.00 in hosting waste.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. THE ARMOR HALL: THE SIX IRON MAN SUITS -->
+  <section id="armor-hall" class="py-20 border-b border-slate-800/80 bg-[#060a14]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest">THE WEAPONS MANIFEST</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white">The Armor Hall: Choose Your Iron Man Suit</h2>
+        <p class="text-slate-400 text-sm font-mono">
+          Each suit transforms the Swarm cortex into a dominant, domain-specific weapon.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        
+        <!-- SUIT 01: SBM SUIT (SPORTS BETTING MODEL) -->
+        <div id="suit-sbm" class="cyber-card p-8 rounded-2xl border-2 border-amber-500/40 bg-[#080e1c] shadow-2xl relative overflow-hidden group">
+          <div class="absolute top-0 right-0 -mt-12 -mr-12 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            <div class="lg:col-span-8 space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                  SUIT MARK 01 // SBM
+                </span>
+                <span class="text-xs font-mono text-slate-400">SPORTS SYNDICATE MODELING</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-black text-white">The SBM: Sharp Syndicate Sports Intelligence</h3>
+              <p class="text-slate-300 text-sm font-sans leading-relaxed">
+                When Tony Stark steps onto the sports betting battlefield, this is the armor he wears. The SBM ingests odds from 15+ sportsbooks simultaneously, runs 10,000-iteration Monte Carlo game matchups, models Statcast barrel velocities, detects mispriced player props, and delivers the industry's only 100% immutable daily settlement scorecard.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-slate-300 pt-2">
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i><span>10,000-Run Monte Carlo Simulation Engine</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i><span>Poisson Scoring Distribution Simulators</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i><span>Cross-Book Arbitrage &amp; CLV Telemetry</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i><span>100% Immutable Daily Settlement Scorecard</span></div>
+              </div>
+            </div>
+            <div class="lg:col-span-4 p-5 rounded-xl bg-black/60 border border-amber-500/30 text-center font-mono space-y-3">
+              <div class="text-3xl">🏈 ⚾ 🏀</div>
+              <div class="text-amber-400 font-bold text-sm">NFL &bull; CFB &bull; MLB &bull; WNBA</div>
+              <p class="text-slate-400 text-xs">Active across all marquee 2026 American sports leagues.</p>
+              <a href="#live-terminal" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-amber-400 hover:bg-amber-300 text-black font-bold text-xs transition">
+                <span>VIEW LIVE SBM TERMINAL</span>
+                <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUIT 02: THE Q-MATRIX SUIT (QUANTITATIVE OPTIONS & FUTURES) -->
+        <div id="suit-qmatrix" class="cyber-card p-8 rounded-2xl border-2 border-cyan-500/40 bg-[#080e1c] shadow-2xl relative overflow-hidden group">
+          <div class="absolute top-0 right-0 -mt-12 -mr-12 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            <div class="lg:col-span-8 space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+                  SUIT MARK 02 // Q-MATRIX
+                </span>
+                <span class="text-xs font-mono text-slate-400">FINANCIAL MICROSTRUCTURE &amp; OPTIONS</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-black text-white">The Q-Matrix: Institutional Market Microstructure</h3>
+              <p class="text-slate-300 text-sm font-sans leading-relaxed">
+                When Tony Stark enters equities, index futures, and options markets, he equips the Q-Matrix. This armor calculates real-time dealer Gamma Exposure (GEX), detects zero-DTE order flow imbalances, identifies ICT liquidity sweeps and Fair Value Gaps (FVG), and coordinates with our 19-system Pine Script fleet on TradingView.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-slate-300 pt-2">
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i><span>Real-Time Net GEX Gamma Exposure Profiles</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i><span>Order Book Delta Imbalance Detectors</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i><span>Smart Money ICT Liquidity Sweeps &amp; FVG</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i><span>Integrated With 19 Quant Suite Indicators</span></div>
+              </div>
+            </div>
+            <div class="lg:col-span-4 p-5 rounded-xl bg-black/60 border border-cyan-500/30 text-center font-mono space-y-3">
+              <div class="text-3xl">📈 ⚡ 📊</div>
+              <div class="text-cyan-400 font-bold text-sm">SPX &bull; NQ &bull; ES &bull; BTC &bull; OPTIONS</div>
+              <p class="text-slate-400 text-xs">Institutional Greek profiling and delta flow hedging.</p>
+              <a href="../quant-suite/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-cyan-400 hover:bg-cyan-300 text-black font-bold text-xs transition">
+                <span>INSPECT QUANT SUITE</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUIT 03: NETRA SUIT (STEALTH SCRAPING & RECON) -->
+        <div id="suit-netra" class="cyber-card p-8 rounded-2xl border-2 border-emerald-500/40 bg-[#080e1c] shadow-2xl relative overflow-hidden group">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            <div class="lg:col-span-8 space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                  SUIT MARK 03 // NETRA RECON
+                </span>
+                <span class="text-xs font-mono text-slate-400">ANTI-EPEOLATRY SENTINEL &amp; STEALTH SCRAPING</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-black text-white">Netra 1.0: Undetected Ingestion Armor</h3>
+              <p class="text-slate-300 text-sm font-sans leading-relaxed">
+                The stealth armor engineered to move invisibly through heavily defended web surfaces. Bypasses Cloudflare Turnstile, Datadome, and Akamai without token fatigue, scraping competitor odds, vendor pricing, and public intelligence 24/7.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-slate-300 pt-2">
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i><span>Headless Chromium AST Fingerprint Patching</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i><span>Residential SOCKS5 Proxy Swarm Routing</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i><span>Zero Cloud Egress Bills ($0 Hosting Waste)</span></div>
+              </div>
+            </div>
+            <div class="lg:col-span-4 p-5 rounded-xl bg-black/60 border border-emerald-500/30 text-center font-mono space-y-3">
+              <div class="text-3xl">🕵️ 🛡️ 🌐</div>
+              <div class="text-emerald-400 font-bold text-sm">NETRA RECON WORKSTATION</div>
+              <p class="text-slate-400 text-xs">Autonomous web reconnaissance &amp; dossier extraction.</p>
+              <a href="../netra/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-400 hover:bg-emerald-300 text-black font-bold text-xs transition">
+                <span>OPEN NETRA AIRLOCK</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUIT 04: WEB3 SUIT & SUIT 05: REDLENS SUIT & SUIT 06: ENTERPRISE -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div id="suit-web3" class="cyber-card p-6 rounded-2xl border border-purple-500/40 bg-[#080d1a] space-y-4">
+            <span class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-950 text-purple-300 border border-purple-800">SUIT MARK 04 // WEB3</span>
+            <h3 class="text-lg font-bold text-white">On-Chain Sentinel</h3>
+            <p class="text-xs text-slate-300 leading-relaxed font-sans">
+              Sniffs pending mempool transactions, tracks DEX liquidity pools across Uniswap/PancakeSwap, and monitors validator RPC node health.
+            </p>
+            <div class="text-[11px] font-mono text-purple-400">Geth RPC &bull; EVM Logs &bull; Whale Alerts</div>
+          </div>
+
+          <div id="suit-redlens" class="cyber-card p-6 rounded-2xl border border-rose-500/40 bg-[#080d1a] space-y-4">
+            <span class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-950 text-rose-300 border border-rose-800">SUIT MARK 05 // REDLENS</span>
+            <h3 class="text-lg font-bold text-white">Post-Quantum Lattice</h3>
+            <p class="text-xs text-slate-300 leading-relaxed font-sans">
+              NIST FIPS 203 ML-KEM-768 lattice quantum cryptography daemons for air-gapped sovereign security and zero-trust telemetry.
+            </p>
+            <div class="text-[11px] font-mono text-rose-400"><a href="../redlens/" class="hover:underline">Explore RedLens 3.7 &rarr;</a></div>
+          </div>
+
+          <div id="suit-enterprise" class="cyber-card p-6 rounded-2xl border border-blue-500/40 bg-[#080d1a] space-y-4 glow-box-cyan">
+            <span class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-950 text-blue-300 border border-blue-800">SUIT MARK 06 // BESPOKE</span>
+            <h3 class="text-lg font-bold text-white">Enterprise Armor</h3>
+            <p class="text-xs text-slate-300 leading-relaxed font-sans">
+              We tailor the Swarm into your company's proprietary suit: custom B2B API gateways, high-concurrency daemons, and 100% transferred IP.
+            </p>
+            <div class="text-[11px] font-mono text-cyan-400"><a href="../enterprise/" class="hover:underline">Explore Enterprise Labs &rarr;</a></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. THE SOVEREIGN INTERACTIVE TERMINAL (LIVE EMBED) -->
+  <section id="live-terminal" class="py-20 border-b border-slate-800/80 bg-[#070c18] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">LIVE CORTEX TELEMETRY</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white">The Sovereign Interactive Terminal</h2>
+        <p class="text-slate-400 text-sm font-mono">
+          Witness the Swarm in action. Live quantitative model outputs, +EV discrepancy matrix, and real-time on-chain telemetry.
+        </p>
+      </div>
+
+      <!-- Sovereign Terminal Box -->
+      <div class="cyber-card rounded-2xl border border-cyan-500/40 overflow-hidden shadow-2xl bg-[#090f1e] glow-box-cyan">
+        
+        <!-- Terminal Control Header -->
+        <div class="border-b border-slate-800 bg-[#060a14] p-4 flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center space-x-2">
+            <span class="h-3 w-3 rounded-full bg-red-500/80 inline-block"></span>
+            <span class="h-3 w-3 rounded-full bg-yellow-500/80 inline-block"></span>
+            <span class="h-3 w-3 rounded-full bg-emerald-500/80 inline-block"></span>
+            <span class="ml-2 font-mono text-xs text-slate-300 font-bold">SOVEREIGN WORKSTATION // THE SWARM</span>
+          </div>
+
+          <!-- Tab Selector Buttons -->
+          <div class="flex flex-wrap items-center gap-1 font-mono text-xs">
+            <button class="tab-btn px-3 py-1.5 rounded-lg border border-cyan-400 text-cyan-300 bg-cyan-950/40 active flex items-center gap-1.5 font-bold" data-tab="pane-sbm">
+              <span>🏈 SBM MODEL</span>
+            </button>
+            <button class="tab-btn px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:text-cyan-300 flex items-center gap-1.5 font-bold" data-tab="pane-qmatrix">
+              <span>📈 Q-MATRIX (QUANT)</span>
+            </button>
+            <button class="tab-btn px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:text-cyan-300 flex items-center gap-1.5 font-bold" data-tab="pane-statcast">
+              <span>⚾ STATCAST BARREL</span>
+            </button>
+            <button class="tab-btn px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:text-cyan-300 flex items-center gap-1.5 font-bold" data-tab="pane-web3">
+              <span>⚡ ON-CHAIN RPC</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PANE 1: SBM PROPRIETARY MODEL (+EV Table) -->
+        <div id="pane-sbm" class="terminal-pane p-6 space-y-4">
+          
+          <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-800">
+            <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
+              <span class="text-slate-400">ACTIVE SLATE:</span>
+              <span id="ev-slate-date" class="px-2.5 py-1 rounded bg-cyan-950 text-cyan-300 border border-cyan-800 font-bold">TODAY</span>
+              <span class="text-slate-500 ml-2">NEXT ROLL:</span>
+              <span id="ev-countdown" class="text-emerald-400 font-bold">--:--:--</span>
+            </div>
+
+            <!-- Sport Filters -->
+            <div class="flex items-center gap-1 font-mono text-xs">
+              <button class="sport-filter-btn px-3 py-1 rounded border border-cyan-400 bg-cyan-500/20 text-cyan-300 font-bold" data-sport="ALL">ALL CARDS</button>
+              <button class="sport-filter-btn px-3 py-1 rounded border border-slate-800 hover:border-slate-600 text-slate-400 font-bold" data-sport="NFL">NFL</button>
+              <button class="sport-filter-btn px-3 py-1 rounded border border-slate-800 hover:border-slate-600 text-slate-400 font-bold" data-sport="CFB">CFB</button>
+              <button class="sport-filter-btn px-3 py-1 rounded border border-slate-800 hover:border-slate-600 text-slate-400 font-bold" data-sport="MLB">MLB</button>
+              <button class="sport-filter-btn px-3 py-1 rounded border border-slate-800 hover:border-slate-600 text-slate-400 font-bold" data-sport="WNBA">WNBA</button>
+            </div>
+          </div>
+
+          <!-- Interactive EV Table Container -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs font-mono">
+              <thead>
+                <tr class="border-b border-slate-800 text-slate-400 uppercase tracking-wider">
+                  <th class="py-3 px-4">SPORT</th>
+                  <th class="py-3 px-4">PLAYER / MATCHUP</th>
+                  <th class="py-3 px-4">MARKET PROP</th>
+                  <th class="py-3 px-4">BOOK ODDS</th>
+                  <th class="py-3 px-4">TRISHULA FAIR</th>
+                  <th class="py-3 px-4">+EV %</th>
+                  <th class="py-3 px-4">CONFIDENCE</th>
+                  <th class="py-3 px-4">SIGNAL</th>
+                </tr>
+              </thead>
+              <tbody id="ev-table-body">
+                <!-- Dynamically populated via app.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-slate-500 gap-2 border-t border-slate-800/80">
+            <div>Calculated using Trishula Synthetic Poisson &amp; Shadow Coverage Variance matrices.</div>
+            <a href="https://discord.gg/QKXWP4Z4c" target="_blank" class="text-cyan-400 hover:text-cyan-300 flex items-center gap-1 font-bold">
+              <span>Unlock full 250+ prop master sheet 100% Free in Discord</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- PANE 2: Q-MATRIX QUANTITATIVE FINANCIAL PANE -->
+        <div id="pane-qmatrix" class="terminal-pane p-6 hidden space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
+            <div class="cyber-card p-5 border border-slate-800 bg-slate-900/50 space-y-3">
+              <div class="text-cyan-400 font-bold">📈 SPX 0-DTE GEX GAMMA CURVE</div>
+              <div class="text-slate-300">Call Wall: <strong class="text-white">5,825.00</strong></div>
+              <div class="text-slate-300">Put Wall: <strong class="text-white">5,770.00</strong></div>
+              <div class="text-slate-300">Volatility Flip Point: <strong class="text-amber-400">5,798.50</strong></div>
+              <div class="text-emerald-400 font-bold">STATE: POSITIVE GAMMA (MEAN REVERSION)</div>
+            </div>
+
+            <div class="cyber-card p-5 border border-slate-800 bg-slate-900/50 space-y-3">
+              <div class="text-amber-400 font-bold">🎯 NQ POINT-TO-POINT LIQUIDITY</div>
+              <div class="text-slate-300">Buy-Side Liquidity (BSL): <strong class="text-white">20,440.00</strong></div>
+              <div class="text-slate-300">Sell-Side Liquidity (SSL): <strong class="text-white">20,210.00</strong></div>
+              <div class="text-slate-300">Displacement OTE Level: <strong class="text-cyan-400">0.618 - 0.786 Fib</strong></div>
+              <div class="text-cyan-400 font-bold">STATE: BULLISH EXPANSION MSS CONFIRMED</div>
+            </div>
+
+            <div class="cyber-card p-5 border border-slate-800 bg-slate-900/50 space-y-3">
+              <div class="text-emerald-400 font-bold">🔱 STARFALL ALGORITHMIC PIVOTS</div>
+              <div class="text-slate-300">Verified System Win Rate: <strong class="text-emerald-400">98.12%</strong></div>
+              <div class="text-slate-300">Backtest Sample Size: <strong class="text-white">366W / 7L</strong></div>
+              <div class="text-slate-300">Execution Cloud: <strong class="text-cyan-400">Multi-EMA Ribbon</strong></div>
+              <div class="text-amber-400 font-bold">ACTIVE DEPLOYMENT: TRADINGVIEW PINE SCRIPT v5</div>
+            </div>
+          </div>
+          <div class="text-center pt-2 font-mono text-xs">
+            <a href="../quant-suite/" class="text-cyan-400 hover:text-cyan-300 underline font-bold">
+              Explore the entire 19-System Quant Suite Fleet &amp; Weapons Lore &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- PANE 3: STATCAST & DINGERS -->
+        <div id="pane-statcast" class="terminal-pane p-6 hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-mono text-xs">
+            <div class="cyber-card p-5 border border-slate-800 bg-slate-900/50 space-y-3">
+              <div class="text-cyan-400 font-bold">⚾ BARREL VELOCITY MODEL: Shohei Ohtani (LAD)</div>
+              <div class="flex justify-between"><span>Average Exit Velocity:</span> <span class="text-cyan-300 font-bold">95.8 mph</span></div>
+              <div class="flex justify-between"><span>Hard Hit % (Statcast):</span> <span class="text-emerald-400 font-bold">58.4%</span></div>
+              <div class="flex justify-between"><span>Pitcher Mismatch vs Fastball:</span> <span class="text-amber-300 font-bold">.692 xSLG</span></div>
+              <div class="flex justify-between"><span>True Dinger Probability:</span> <span class="text-emerald-400 font-bold">32.1% (+265 Fair)</span></div>
+            </div>
+
+            <div class="cyber-card p-5 border border-slate-800 bg-slate-900/50 space-y-3">
+              <div class="text-rose-400 font-bold">⚾ STRIKEOUT CSW% SENSOR: Tarik Skubal (DET)</div>
+              <div class="flex justify-between"><span>Whiff Rate (Changeup/Slider):</span> <span class="text-cyan-300 font-bold">37.9%</span></div>
+              <div class="flex justify-between"><span>Opponent K Rate:</span> <span class="text-emerald-400 font-bold">26.8%</span></div>
+              <div class="flex justify-between"><span>Projected Pitch Count:</span> <span class="text-amber-300 font-bold">98 Pitches</span></div>
+              <div class="flex justify-between"><span>Model 8+ K Confidence:</span> <span class="text-emerald-400 font-bold">67.5%</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 4: WEB3 BSC & RPC WATCHER -->
+        <div id="pane-web3" class="terminal-pane p-6 hidden">
+          <div class="cyber-card p-6 border border-slate-800 bg-slate-950 font-mono text-xs space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-sm font-bold text-slate-200">DECENTRALIZED JSON-RPC SENSORY POOL</span>
+              </div>
+              <span class="text-slate-400">ZERO CLOUD EGRESS &bull; 100% KEYLESS</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div class="p-3 rounded bg-slate-900 border border-slate-800">
+                <div class="text-slate-500">ACTIVE RPC NODE</div>
+                <div class="text-cyan-300 font-bold mt-1 truncate">https://1rpc.io/bnb</div>
+              </div>
+              <div class="p-3 rounded bg-slate-900 border border-slate-800">
+                <div class="text-slate-500">FAILOVER NODES</div>
+                <div class="text-emerald-400 font-bold mt-1">3 HOT STANDBYS</div>
+              </div>
+              <div class="p-3 rounded bg-slate-900 border border-slate-800">
+                <div class="text-slate-500">PANCAKESWAP V3 24H</div>
+                <div class="text-amber-400 font-bold mt-1">$142.8M USD</div>
+              </div>
+              <div class="p-3 rounded bg-slate-900 border border-slate-800">
+                <div class="text-slate-500">DISPATCH TARGET</div>
+                <div class="text-slate-300 font-bold mt-1">#crypto-breaking-wire</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. THE SOVEREIGN DAILY SETTLEMENT SCORECARD -->
+  <section id="scorecard" class="py-20 border-b border-slate-800/80 bg-[#060a14]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">RADICAL AUDIT INTEGRITY</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white">The Sovereign Daily Settlement Scorecard</h2>
+        <p class="text-slate-400 text-sm font-mono">
+          The sports betting industry is plagued by fake records, edited screenshots, and deleted losing tickets. The Swarm enforces 100% immutable daily accounting.
+        </p>
+      </div>
+
+      <!-- Scorecard Display Card -->
+      <div class="cyber-card p-8 rounded-2xl border-2 border-emerald-500/40 bg-[#080e1c] max-w-4xl mx-auto shadow-2xl space-y-6">
+        
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-slate-800 gap-4">
+          <div>
+            <div class="text-xs font-mono text-emerald-400 font-bold">IMMUTABLE TIME-STAMPED AUDIT LEDGER</div>
+            <h3 class="text-xl font-bold text-white mt-1">Trishula Swarm Official Daily Settlement</h3>
+            <div class="text-slate-400 text-xs font-mono mt-0.5">Every official card play is permanently hashed prior to game kickoff.</div>
+          </div>
+          <div class="flex items-center gap-3 font-mono text-xs">
+            <span class="px-3 py-1.5 rounded-lg bg-emerald-950/80 text-emerald-300 border border-emerald-800/60 font-bold">100% AUDITABLE</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 text-slate-300 border border-slate-800">FLAT 1.0U RISK</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-xs">
+          <div class="p-4 rounded-xl bg-black/60 border border-slate-800 text-center">
+            <div class="text-slate-400 text-[10px] uppercase">VERIFIED STATUS</div>
+            <div class="text-emerald-400 font-black text-lg mt-1">ACTIVE</div>
+          </div>
+          <div class="p-4 rounded-xl bg-black/60 border border-slate-800 text-center">
+            <div class="text-slate-400 text-[10px] uppercase">TOTAL AUDITED PLAYS</div>
+            <div class="text-cyan-400 font-black text-lg mt-1">1,420+ PLAYS</div>
+          </div>
+          <div class="p-4 rounded-xl bg-black/60 border border-slate-800 text-center">
+            <div class="text-slate-400 text-[10px] uppercase">MONTE CARLO WIN RATE</div>
+            <div class="text-amber-400 font-black text-lg mt-1">62.8% OVERALL</div>
+          </div>
+          <div class="p-4 rounded-xl bg-black/60 border border-slate-800 text-center">
+            <div class="text-slate-400 text-[10px] uppercase">LEDGER ACCESS</div>
+            <div class="text-white font-black text-lg mt-1">100% FREE</div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs">
+          <div class="text-slate-300 text-center sm:text-left">
+            <span>Every single play is posted in public Discord prior to start time: </span>
+            <a href="https://discord.gg/QKXWP4Z4c" target="_blank" class="text-emerald-400 underline font-bold">discord.gg/QKXWP4Z4c</a>
+          </div>
+          <a href="https://discord.gg/QKXWP4Z4c" target="_blank" class="px-5 py-2.5 rounded-lg bg-emerald-400 hover:bg-emerald-300 text-black font-bold text-xs transition shrink-0">
+            JOIN FREE DISCORD LEDGER
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. THE 6 CAPABILITIES GRID (FROM PROVEN BLUEPRINT) -->
+  <section class="py-20 border-b border-slate-800/80 bg-[#050811]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">TACTICAL SUBSYSTEMS</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white">Engineered For High-Stakes Operations</h2>
+        <p class="text-slate-400 text-sm font-mono">
+          The sub-second machinery deployed across sports betting syndicates, prop desks, and institutional traders.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-mono text-xs">
+
+        <!-- Card 1 -->
+        <div class="cyber-card p-6 border border-slate-800 bg-[#090f1d] rounded-2xl space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+            <i data-lucide="calculator" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white font-sans">10,000+ Iteration Matchup Engines</h3>
+          <p class="text-slate-400 font-sans leading-relaxed text-xs">
+            Physics-calibrated game simulations outperforming human gut instinct through weather impact, fatigue indices, and referee tendencies across NFL, CFB, NBA, and MLB.
+          </p>
+          <div class="pt-2 text-[10px] text-slate-500 flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">10k Sims</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Fatigue Modeler</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Weather Physics</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="cyber-card p-6 border border-slate-800 bg-[#090f1d] rounded-2xl space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+            <i data-lucide="git-compare" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white font-sans">Cross-Book Arbitrage &amp; CLV Telemetry</h3>
+          <p class="text-slate-400 font-sans leading-relaxed text-xs">
+            Instant multi-book odd-line comparison tracking Pinnacle, Circa, DraftKings, and FanDuel. Pinpoints line movement before consensus moves, quantifying closing line value (CLV).
+          </p>
+          <div class="pt-2 text-[10px] text-slate-500 flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Pinnacle / Circa</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">CLV Tracking</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Discrepancy Matrix</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="cyber-card p-6 border border-slate-800 bg-[#090f1d] rounded-2xl space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+            <i data-lucide="flame" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white font-sans">Player Prop Explosion Modeling</h3>
+          <p class="text-slate-400 font-sans leading-relaxed text-xs">
+            Statcast exit velocity data, target share percentages, goal-line usage rates, and matchup mismatches to isolate positive expectation player propositions.
+          </p>
+          <div class="pt-2 text-[10px] text-slate-500 flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Exit Velo</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Red Zone Touch Pct</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Usage Matrix</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="cyber-card p-6 border border-slate-800 bg-[#090f1d] rounded-2xl space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400">
+            <i data-lucide="pie-chart" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white font-sans">Poisson &amp; Log5 Scoring Simulators</h3>
+          <p class="text-slate-400 font-sans leading-relaxed text-xs">
+            Advanced bi-variate Poisson distributions computing fair spreads, moneylines, and totals, revealing pricing inefficiencies across multi-market books.
+          </p>
+          <div class="pt-2 text-[10px] text-slate-500 flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Bi-Variate Poisson</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Log5 Matrix</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Zero-Vig Fair Odds</span>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="cyber-card p-6 border border-slate-800 bg-[#090f1d] rounded-2xl space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+            <i data-lucide="shield-alert" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white font-sans">Headless Scrapers &amp; Anti-Bot Bypasses</h3>
+          <p class="text-slate-400 font-sans leading-relaxed text-xs">
+            Multi-broker residential proxy rotation and automated browser automation harvesting dynamic sportsbook interfaces with 99.98% uptime.
+          </p>
+          <div class="pt-2 text-[10px] text-slate-500 flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Playwright AST</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Cloudflare Bypass</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Residential SOCKS5</span>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="cyber-card p-6 border border-slate-800 bg-[#090f1d] rounded-2xl space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400">
+            <i data-lucide="radio" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white font-sans">Autonomous Discord &amp; Telegram Swarms</h3>
+          <p class="text-slate-400 font-sans leading-relaxed text-xs">
+            Fully synchronized webhooks dispatching instant sharp line alerts, injury status reports, and daily immutable settlement scorecards straight to mobile and desktop channels.
+          </p>
+          <div class="pt-2 text-[10px] text-slate-500 flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Live Webhooks</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Instant Alerting</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Zero Lag Dispatch</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. INTERACTIVE SUIT CUSTOMIZER WORKSHOP -->
+  <section id="suit-customizer" class="py-20 border-b border-slate-800/80 bg-[#060a14]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center space-y-3">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">TACTICAL WORKSHOP</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white">The Stark Armory: Configure Your Custom Suit</h2>
+        <p class="text-slate-400 text-sm font-mono max-w-2xl mx-auto">
+          Tell us what battlefield you operate in. The Swarm cortex adapts its weapons, pipelines, and daemons to forge your organization&rsquo;s custom armor.
+        </p>
+      </div>
+
+      <div class="cyber-card p-8 rounded-2xl border-2 border-cyan-500/40 bg-[#080e1c] shadow-2xl font-mono text-xs space-y-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Step 1: Battlefield -->
+          <div class="space-y-3">
+            <label class="block text-slate-300 font-bold">01. SELECT YOUR BATTLEFIELD:</label>
+            <select id="custom-battlefield" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-100 focus:outline-none focus:border-cyan-400">
+              <option value="sports">Sports Betting Syndicate &amp; Prop Desk</option>
+              <option value="options">Equities, Options &amp; Futures Trading Desk</option>
+              <option value="web3">Decentralized Finance &amp; On-Chain Mempool</option>
+              <option value="scraping">Large-Scale Web Intelligence &amp; Data Ingestion</option>
+              <option value="saas">Commercial B2B Developer API Product</option>
+            </select>
+          </div>
+
+          <!-- Step 2: Primary Weaponry -->
+          <div class="space-y-3">
+            <label class="block text-slate-300 font-bold">02. PRIMARY WEAPONRY SYSTEM:</label>
+            <select id="custom-weapon" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-100 focus:outline-none focus:border-cyan-400">
+              <option value="monte-carlo">10,000-Iteration Monte Carlo Engine</option>
+              <option value="gex-gamma">Real-Time Options Gamma (GEX) Matrix</option>
+              <option value="stealth-scraper">Anti-Bot Evasion Scraper Swarm (AST)</option>
+              <option value="mempool-rpc">Mempool Sniffer &amp; DEX Liquidity Watcher</option>
+              <option value="fastapi-gateway">Sub-15ms FastAPI Monetized API Gateway</option>
+            </select>
+          </div>
+
+          <!-- Step 3: Deployment Infrastructure -->
+          <div class="space-y-3">
+            <label class="block text-slate-300 font-bold">03. DEPLOYMENT ARCHITECTURE:</label>
+            <select id="custom-infra" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-100 focus:outline-none focus:border-cyan-400">
+              <option value="cloud-arbitrage">Multi-Cloud Compute Arbitrage (AWS/GCP/OCI)</option>
+              <option value="bare-metal">Dedicated Bare Metal In-House Cluster</option>
+              <option value="air-gapped">Air-Gapped Sovereign On-Prem Server</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Dynamic Output Box -->
+        <div class="p-6 rounded-xl bg-black/80 border border-cyan-500/30 space-y-4">
+          <div class="flex items-center justify-between text-slate-400 border-b border-slate-800 pb-3">
+            <div class="flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-cyan-400 animate-ping"></span>
+              <span class="text-white font-bold">TAILORED ARMOR SPECIFICATION</span>
+            </div>
+            <span class="text-emerald-400 font-bold">ESTIMATED DELIVERY: &lt; 14 DAYS</span>
+          </div>
+
+          <div id="custom-spec-summary" class="text-slate-300 space-y-2 font-sans text-xs sm:text-sm">
+            <div class="font-mono text-cyan-300 font-bold">MARK VII: SPORTS SYNDICATE CORTEX</div>
+            <p class="text-slate-400">
+              Autonomous 40-worker scraper swarm collecting multi-book odds, integrated with a 10,000-run Monte Carlo matchup engine and immutable daily settlement scorecard. Transferred 100% to your private git repository.
+            </p>
+          </div>
+
+          <div class="pt-2 flex flex-wrap items-center justify-between gap-4">
+            <div class="text-[11px] text-slate-500 font-mono">
+              IP Rights: <strong class="text-white">100% Client Transferred</strong> &bull; Monthly License Tax: <strong class="text-emerald-400">$0.00</strong>
+            </div>
+            <a href="#rfp-form" class="px-6 py-2.5 rounded-lg font-bold bg-cyan-400 hover:bg-cyan-300 text-black transition flex items-center gap-1.5">
+              <span>COMMISSION THIS SPECIFICATION</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 11. ARCHITECTURE RFP COMMISSION FORM -->
+  <section id="rfp-form" class="py-20 bg-gradient-to-b from-[#060a14] to-black">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <div class="text-center space-y-3">
+        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">DIRECT PRINCIPAL ENGAGEMENT</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white">Commission Your Custom Armor</h2>
+        <p class="text-slate-400 text-sm font-mono max-w-xl mx-auto">
+          Speak directly with Principal Systems Architect <strong>Cliff Finneyfrock</strong>. Tell us what suit you want your Tony Stark to wear.
+        </p>
+      </div>
+
+      <div class="cyber-card p-8 rounded-2xl border border-cyan-500/40 bg-[#090f1d] shadow-2xl relative font-mono text-xs">
+        <form id="swarm-rfp-form" class="space-y-5">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-slate-300 mb-1.5">NAME / EXECUTIVE TITLE *</label>
+              <input type="text" name="name" required placeholder="e.g. Marcus Vance, Managing Partner" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-100 focus:outline-none focus:border-cyan-400">
+            </div>
+            <div>
+              <label class="block text-slate-300 mb-1.5">ORGANIZATION / SYNDICATE NAME *</label>
+              <input type="text" name="company" required placeholder="e.g. Ironclad Capital / Syndicate" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-100 focus:outline-none focus:border-cyan-400">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-slate-300 mb-1.5">BUSINESS EMAIL *</label>
+              <input type="email" name="email" required placeholder="marcus@ironclad.io" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-100 focus:outline-none focus:border-cyan-400">
+            </div>
+            <div>
+              <label class="block text-slate-300 mb-1.5">DESIRED IRON MAN SUIT CONFIGURATION *</label>
+              <select name="suit" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-100 focus:outline-none focus:border-cyan-400">
+                <option value="sbm">Suit 01: SBM (Sports Betting Syndicate &amp; Prop Desk)</option>
+                <option value="qmatrix">Suit 02: Q-Matrix (Options Gamma GEX &amp; Futures)</option>
+                <option value="netra">Suit 03: Netra (Stealth Scraper Swarm &amp; Anti-Bot Evasion)</option>
+                <option value="web3">Suit 04: Web3 (On-Chain Mempool Sniffer &amp; DEX Telemetry)</option>
+                <option value="redlens">Suit 05: RedLens (Post-Quantum Cryptography)</option>
+                <option value="bespoke">Suit 06: Fully Custom Bespoke Enterprise Cortex</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-slate-300 mb-1.5">PROJECT OBJECTIVES &amp; DATA TARGETS *</label>
+            <textarea rows="4" name="scope" required placeholder="Describe what data targets you need ingested, what mathematical models you want running, or what operational bottlenecks you need eliminated..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-100 focus:outline-none focus:border-cyan-400"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl font-bold text-xs tracking-wider bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 hover:from-emerald-300 hover:to-blue-400 text-black shadow-xl shadow-cyan-500/25 transition">
+            SUBMIT SPECIFICATION TO PRINCIPAL ENGINEERING
+          </button>
+        </form>
+
+        <div id="swarm-rfp-success" class="hidden text-center py-10 space-y-3 font-mono">
+          <div class="text-4xl">🔱 ⚡ ✅</div>
+          <h4 class="text-xl font-bold text-white">Armor Specification Received</h4>
+          <p class="text-slate-400 text-xs max-w-md mx-auto leading-relaxed">
+            Your technical requisition has been dispatched directly to Principal Systems Architect <strong>Cliff Finneyfrock</strong>. We will review your target vectors and return a formal engineering blueprint within 24 hours.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 12. FOOTER -->
+  <footer class="border-t border-slate-800 bg-[#04060a] py-12 text-slate-400 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="space-y-1 text-center md:text-left">
+        <div class="text-slate-200 font-bold tracking-wider flex items-center justify-center md:justify-start gap-2">
+          <img src="../assets/trishula_logo3.webp" alt="Trishula Software" class="h-4 w-4 rounded-full object-cover">
+          <span>TRISHULA SOFTWARE</span>
+          <span class="text-emerald-400">THE SWARM CORTEX</span>
+        </div>
+        <div class="text-slate-400">Principal Systems Architect: <strong class="text-white">Cliff Finneyfrock</strong></div>
+        <div class="text-slate-600">&copy; 2026 Trishula Software. The Swarm Is Tony Stark. Pierce The Heavens 🔱</div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-slate-400">
+        <a href="../" class="hover:text-white transition">Core Portal</a>
+        <a href="../netra/" class="hover:text-cyan-400 transition">Netra 1.0</a>
+        <a href="../redlens/" class="hover:text-rose-400 transition">RedLens 3.7</a>
+        <a href="../quant-suite/" class="hover:text-amber-400 transition">Quant Suite (19 Systems)</a>
+        <a href="../enterprise/" class="hover:text-emerald-400 transition">Enterprise Labs</a>
+        <a href="https://github.com/TrishulaSoftware" target="_blank" class="hover:text-cyan-400 transition">GitHub</a>
+        <a href="https://discord.gg/QKXWP4Z4c" target="_blank" class="hover:text-cyan-400 transition">Free Discord</a>
+        <a href="https://t.me/+8G0degKMgtAwMrnEx" target="_blank" class="hover:text-emerald-400 transition">Telegram Alpha</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../app.js"></script>
+  <script>
+    // Swarm Specific Scripts
+    document.addEventListener('DOMContentLoaded', () => {
+      // RFP Form Handler
+      const rfpForm = document.getElementById('swarm-rfp-form');
+      const rfpSuccess = document.getElementById('swarm-rfp-success');
+
+      if (rfpForm && rfpSuccess) {
+        rfpForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          rfpForm.classList.add('hidden');
+          rfpSuccess.classList.remove('hidden');
+        });
+      }
+
+      // Interactive Suit Customizer
+      const bfSelect = document.getElementById('custom-battlefield');
+      const wpSelect = document.getElementById('custom-weapon');
+      const ifSelect = document.getElementById('custom-infra');
+      const specSummary = document.getElementById('custom-spec-summary');
+
+      const SUIT_SPECS = {
+        sports: {
+          title: "MARK VII: SPORTS SYNDICATE CORTEX",
+          desc: "Autonomous 40-worker scraper swarm collecting multi-book odds, integrated with a 10,000-run Monte Carlo matchup engine and immutable daily settlement scorecard. Transferred 100% to your private git repository."
+        },
+        options: {
+          title: "MARK XLIV: HULKBUSTER GEX & VOLATILITY ARMOR",
+          desc: "Sub-second options gamma exposure (GEX) profiling, 0-DTE delta imbalance detectors, and high-frequency webhook execution algorithms mapped directly to SPX, NQ, and ES."
+        },
+        web3: {
+          title: "MARK L: NANOTECH ON-CHAIN SENSORY SUIT",
+          desc: "Private JSON-RPC failover node pool, pending mempool transaction sniffer, and DEX liquidity flow detectors monitoring whale movements before block finality."
+        },
+        scraping: {
+          title: "STEALTH MARK II: UNDETECTED INGESTION SUIT",
+          desc: "Custom AST-patched Chromium headless browser clusters, residential SOCKS5 proxy mesh, and computer-vision OCR parsers bypassing Cloudflare and Datadome 24/7."
+        },
+        saas: {
+          title: "ENTERPRISE CENTURION: MONETIZED B2B API SUIT",
+          desc: "Turnkey asynchronous FastAPI gateway with Redis caching, tokenized API keys, tiered rate limiting, and branded interactive developer documentation sandboxes."
+        }
+      };
+
+      function updateSuitSpec() {
+        if (!bfSelect || !specSummary) return;
+        const spec = SUIT_SPECS[bfSelect.value] || SUIT_SPECS.sports;
+        specSummary.innerHTML = `
+          <div class="font-mono text-cyan-300 font-bold">${spec.title}</div>
+          <p class="text-slate-400 font-sans text-xs sm:text-sm leading-relaxed">${spec.desc}</p>
+        `;
+      }
+
+      if (bfSelect) {
+        bfSelect.addEventListener('change', updateSuitSpec);
+        if (wpSelect) wpSelect.addEventListener('change', updateSuitSpec);
+        if (ifSelect) ifSelect.addEventListener('change', updateSuitSpec);
+      }
+
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
