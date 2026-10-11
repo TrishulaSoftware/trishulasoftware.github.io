@@ -466,7 +466,7 @@ Requested Indicator: ${indicator} (Pine Script v5)`;
         }
         if (modalSubmitBtn) modalSubmitBtn.textContent = 'SUBMIT CUSTOM BUILD INQUIRY';
         if (modalSuccessTitle) modalSuccessTitle.textContent = 'Custom Build Inquiry Received';
-        if (modalSuccessDesc) modalSuccessDesc.textContent = 'Your architecture specification has been delivered to Principal Systems Architect Cliff Finneyfrock. We will respond with a tailored blueprint within 24 hours.';
+        if (modalSuccessDesc) modalSuccessDesc.textContent = 'Your architecture specification has been delivered to Trishula Systems Engineering. We will respond with a tailored blueprint within 24 hours.';
       }
 
       if (modal) modal.classList.remove('hidden');
