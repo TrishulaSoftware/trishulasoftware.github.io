@@ -456,17 +456,17 @@ Requested Indicator: ${indicator} (Pine Script v5)`;
         if (modalSuccessTitle) modalSuccessTitle.textContent = 'Whitelist Application Received';
         if (modalSuccessDesc) modalSuccessDesc.textContent = `Your TradingView whitelist request for ${indicator} has been logged. Trishula Systems Engineering will authorize your account and follow up via email.`;
       } else {
-        if (modalBadge) modalBadge.textContent = 'ENTERPRISE ARCHITECTURE RFP';
-        if (modalTitle) modalTitle.textContent = 'Request Custom Engineering';
-        if (modalSubtitle) modalSubtitle.textContent = 'Direct engagement with Trishula Principal Systems Engineering.';
-        if (modalScopeLabel) modalScopeLabel.textContent = 'PROJECT SCOPE / REQUIREMENTS';
+        if (modalBadge) modalBadge.textContent = 'ENTERPRISE ARCHITECTURE RFP // CUSTOM BUILD';
+        if (modalTitle) modalTitle.textContent = 'Request Custom Build';
+        if (modalSubtitle) modalSubtitle.textContent = 'We offer custom built solutions to tailor direction, output, situation to your own personal and professional needs!';
+        if (modalScopeLabel) modalScopeLabel.textContent = 'PROJECT SCOPE / TAILORED REQUIREMENTS';
         if (modalScopeInput) {
-          modalScopeInput.placeholder = 'Describe your required scraper volume, terminal features, or quantitative odds engine...';
+          modalScopeInput.placeholder = 'Describe your required direction, target data feeds, automated pipelines, or operational bottlenecks...';
           modalScopeInput.value = '';
         }
-        if (modalSubmitBtn) modalSubmitBtn.textContent = 'SUBMIT ARCHITECTURE INQUIRY';
-        if (modalSuccessTitle) modalSuccessTitle.textContent = 'Inquiry Received';
-        if (modalSuccessDesc) modalSuccessDesc.textContent = 'Your architecture specification has been delivered to Trishula Systems Engineering. We will respond within 24 hours.';
+        if (modalSubmitBtn) modalSubmitBtn.textContent = 'SUBMIT CUSTOM BUILD INQUIRY';
+        if (modalSuccessTitle) modalSuccessTitle.textContent = 'Custom Build Inquiry Received';
+        if (modalSuccessDesc) modalSuccessDesc.textContent = 'Your architecture specification has been delivered to Principal Systems Architect Cliff Finneyfrock. We will respond with a tailored blueprint within 24 hours.';
       }
 
       if (modal) modal.classList.remove('hidden');
