@@ -238,8 +238,8 @@
             <span class="text-[10px] text-slate-400">(Post-Quantum)</span>
           </a>
           <a href="#suit-enterprise" class="px-3 py-1.5 rounded-lg border border-blue-500/40 bg-blue-950/30 text-blue-300 hover:border-blue-400 transition flex items-center gap-1.5">
-            <span>🏢 Bespoke Suit</span>
-            <span class="text-[10px] text-slate-400">(Your Company)</span>
+            <span>👔 What "Suits" You?</span>
+            <span class="text-[10px] text-slate-400">(Custom-Tailored)</span>
           </a>
         </div>
 
@@ -573,10 +573,10 @@
           </div>
 
           <div id="suit-enterprise" class="cyber-card p-6 rounded-2xl border border-blue-500/40 bg-[#080d1a] space-y-4 glow-box-cyan">
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-950 text-blue-300 border border-blue-800">SUIT MARK 06 // BESPOKE</span>
-            <h3 class="text-lg font-bold text-white">Enterprise Armor</h3>
+            <span class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-950 text-blue-300 border border-blue-800">SUIT MARK 06 // WHAT &ldquo;SUITS&rdquo; YOU?</span>
+            <h3 class="text-lg font-bold text-white">Custom-Tailored Options</h3>
             <p class="text-xs text-slate-300 leading-relaxed font-sans">
-              We tailor the Swarm into your company's proprietary suit: custom B2B API gateways, high-concurrency daemons, and 100% transferred IP.
+              We tailor the Swarm into your company's proprietary armor: custom B2B API gateways, high-concurrency daemons, specialized mathematical models, and 100% client-transferred IP.
             </p>
             <div class="text-[11px] font-mono text-cyan-400"><a href="../enterprise/" class="hover:underline">Explore Enterprise Labs &rarr;</a></div>
           </div>
@@ -973,6 +973,7 @@
               <option value="web3">Decentralized Finance &amp; On-Chain Mempool</option>
               <option value="scraping">Large-Scale Web Intelligence &amp; Data Ingestion</option>
               <option value="saas">Commercial B2B Developer API Product</option>
+              <option value="custom">What &ldquo;Suits&rdquo; You? (Custom-Tailored Options)</option>
             </select>
           </div>
 
@@ -1021,7 +1022,7 @@
             <div class="text-[11px] text-slate-500 font-mono">
               IP Rights: <strong class="text-white">100% Client Transferred</strong> &bull; Monthly License Tax: <strong class="text-emerald-400">$0.00</strong>
             </div>
-            <a href="#rfp-form" class="px-6 py-2.5 rounded-lg font-bold bg-cyan-400 hover:bg-cyan-300 text-black transition flex items-center gap-1.5">
+            <a href="#rfp-form" id="commission-spec-btn" class="px-6 py-2.5 rounded-lg font-bold bg-cyan-400 hover:bg-cyan-300 text-black transition flex items-center gap-1.5">
               <span>COMMISSION THIS SPECIFICATION</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
             </a>
@@ -1066,13 +1067,13 @@
             </div>
             <div>
               <label class="block text-slate-300 mb-1.5">DESIRED IRON MAN SUIT CONFIGURATION *</label>
-              <select name="suit" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-100 focus:outline-none focus:border-cyan-400">
+              <select name="suit" id="desired-suit-select" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-100 focus:outline-none focus:border-cyan-400">
                 <option value="sbm">Suit 01: SBM (Sports Betting Syndicate &amp; Prop Desk)</option>
                 <option value="qmatrix">Suit 02: Q-Matrix (Options Gamma GEX &amp; Futures)</option>
                 <option value="netra">Suit 03: Netra (Stealth Scraper Swarm &amp; Anti-Bot Evasion)</option>
                 <option value="web3">Suit 04: Web3 (On-Chain Mempool Sniffer &amp; DEX Telemetry)</option>
                 <option value="redlens">Suit 05: RedLens (Post-Quantum Cryptography)</option>
-                <option value="bespoke">Suit 06: Fully Custom Bespoke Enterprise Cortex</option>
+                <option value="bespoke">Suit 06: What &ldquo;Suits&rdquo; You? (Custom-Tailored Options)</option>
               </select>
             </div>
           </div>
@@ -1170,6 +1171,10 @@
         saas: {
           title: "ENTERPRISE CENTURION: MONETIZED B2B API SUIT",
           desc: "Turnkey asynchronous FastAPI gateway with Redis caching, tokenized API keys, tiered rate limiting, and branded interactive developer documentation sandboxes."
+        },
+        custom: {
+          title: "CUSTOM MARK: WHAT \"SUITS\" YOU? (CUSTOM-TAILORED OPTIONS)",
+          desc: "Have a proprietary operational vector, unique mathematical models, or non-standard data ingestion requirements? We construct, calibrate, and deploy a 100% custom-tailored multi-agent Swarm cortex for your organization. Zero cloud waste, 100% client-transferred IP."
         }
       };
 
@@ -1186,6 +1191,25 @@
         bfSelect.addEventListener('change', updateSuitSpec);
         if (wpSelect) wpSelect.addEventListener('change', updateSuitSpec);
         if (ifSelect) ifSelect.addEventListener('change', updateSuitSpec);
+      }
+
+      // Sync commission button with RFP dropdown
+      const commissionBtn = document.getElementById('commission-spec-btn');
+      const desiredSuitSelect = document.getElementById('desired-suit-select');
+      if (commissionBtn && desiredSuitSelect && bfSelect) {
+        commissionBtn.addEventListener('click', () => {
+          const map = {
+            sports: 'sbm',
+            options: 'qmatrix',
+            web3: 'web3',
+            scraping: 'netra',
+            saas: 'bespoke',
+            custom: 'bespoke'
+          };
+          if (map[bfSelect.value]) {
+            desiredSuitSelect.value = map[bfSelect.value];
+          }
+        });
       }
 
       // Fleet Dropdown Toggle (for click/touch support)
