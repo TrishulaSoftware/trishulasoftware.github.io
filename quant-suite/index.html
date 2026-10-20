@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quant Suite — Proprietary Institutional TradingView Pine Script Systems | Trishula Software</title>
-  <meta name="description" content="20 institutional-grade TradingView Pine Script v5 & v6 quantitative indicators engineered by Trishula Software. SMC dual pivots, volume anchors, options GEX, volatility corridors, and headless webhook execution.">
+  <meta name="description" content="21 institutional-grade TradingView Pine Script v5 & v6 quantitative indicators engineered by Trishula Software. SMC dual pivots, volume anchors, options GEX, order flow absorption bubbles, volatility corridors, and headless webhook execution.">
   
   <!-- Favicon / Meta -->
   <link rel="icon" type="image/webp" href="../assets/trishula_logo3.webp">
@@ -74,7 +74,7 @@
         </div>
         <div class="hidden lg:flex items-center space-x-1 text-slate-400">
           <span>ACTIVE ENGINES:</span>
-          <span class="text-emerald-400 font-bold">19 SOVEREIGN SYSTEMS</span>
+          <span class="text-emerald-400 font-bold">21 SOVEREIGN SYSTEMS</span>
         </div>
         <div class="hidden xl:flex items-center space-x-1 text-slate-400">
           <span>PEAK WIN RATE:</span>
@@ -118,6 +118,10 @@
         <a href="#card-ind-caladbolg" class="text-slate-300 hover:text-blue-400 transition flex items-center gap-1.5 whitespace-nowrap shrink-0">
           <i data-lucide="shield" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
           <span>Caladbolg SMC</span>
+        </a>
+        <a href="#card-ind-joyeuse" class="text-slate-300 hover:text-cyan-400 transition flex items-center gap-1.5 whitespace-nowrap shrink-0">
+          <i data-lucide="circle-dot" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
+          <span>Joyeuse Order Flow</span>
         </a>
         <a href="#weapons-lore" class="text-amber-400 hover:text-amber-300 transition flex items-center gap-1.5 font-bold whitespace-nowrap shrink-0">
           <i data-lucide="book-open" class="w-3.5 h-3.5 shrink-0"></i>
@@ -182,7 +186,7 @@
         <div class="lg:col-span-8 space-y-5 text-center lg:text-left">
           <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-amber-500/40 bg-amber-950/40 text-xs font-mono text-amber-300">
             <span class="h-2 w-2 rounded-full bg-amber-400 animate-ping"></span>
-            <span>PROPRIETARY INSTITUTIONAL QUANTITATIVE SUITE • 20 VERIFIED SYSTEMS</span>
+            <span>PROPRIETARY INSTITUTIONAL QUANTITATIVE SUITE • 21 VERIFIED SYSTEMS</span>
           </div>
 
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
@@ -204,9 +208,9 @@
           <!-- Category Quick-Filter Bar -->
           <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 font-mono text-xs">
             <span class="text-slate-400 text-[11px] uppercase mr-1">Filter Systems:</span>
-            <button onclick="filterCategory('all')" class="category-pill active px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-all">ALL (20)</button>
-            <button onclick="filterCategory('smc')" class="category-pill px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-smc">SMC & STRUCTURE (9)</button>
-            <button onclick="filterCategory('options')" class="category-pill px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-options">OPTIONS GEX & FLOW (2)</button>
+            <button onclick="filterCategory('all')" class="category-pill active px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-all">ALL (21)</button>
+            <button onclick="filterCategory('smc')" class="category-pill px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-smc">SMC & STRUCTURE (10)</button>
+            <button onclick="filterCategory('options')" class="category-pill px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-options">OPTIONS GEX & FLOW (3)</button>
             <button onclick="filterCategory('volatility')" class="category-pill px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-volatility">VOLATILITY CORRIDORS (7)</button>
             <button onclick="filterCategory('namesake')" class="category-pill px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 hover:border-amber-400 transition" id="pill-namesake">TRISHULA NAMESAKE (4)</button>
           </div>
@@ -232,7 +236,7 @@
               </div>
               <div class="p-3 rounded-xl bg-slate-900/80 border border-amber-500/30">
                 <div class="text-[10px] text-slate-400">INDICATORS</div>
-                <div class="text-2xl font-black text-amber-400 mt-0.5">20 Systems</div>
+                <div class="text-2xl font-black text-amber-400 mt-0.5">21 Systems</div>
                 <div class="text-[9px] text-slate-500">Modular Architecture</div>
               </div>
               <div class="p-3 rounded-xl bg-slate-900/80 border border-purple-500/30">
@@ -1611,13 +1615,164 @@
           <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-slate-900/70 border border-slate-800">
             <div class="flex items-center gap-3">
               <div class="text-xs font-mono text-slate-400">
-                PINE SCRIPT: <span class="text-slate-200 font-bold">v5 Standalone</span> &bull; OVERLAY: <span class="text-slate-200 font-bold">true</span> &bull; REVERSE-ENGINEERED: <span class="text-emerald-400 font-bold">Max Options TrendShift</span>
+                PINE SCRIPT: <span class="text-slate-200 font-bold">v5 Standalone</span> &bull; OVERLAY: <span class="text-slate-200 font-bold">true</span> &bull; ARCHITECTURE: <span class="text-emerald-400 font-bold">Directional TrendShift & Volatility Expansion</span>
               </div>
             </div>
             <div class="flex items-center gap-3">
               <button class="open-consultation-btn px-4 py-2 rounded-lg font-mono text-xs font-bold bg-amber-500 hover:bg-amber-400 text-black flex items-center gap-1.5 transition shadow-lg shadow-amber-500/20" data-indicator="'Sylph' TrendShift Sovereign">
                 <i data-lucide="key" class="w-3.5 h-3.5"></i>
                 <span>Request 'Sylph' Whitelist</span>
+              </button>
+            </div>
+          </div>
+
+          </div>
+        </div>
+
+        <!-- ACCORDION ITEM: 'Joyeuse' (Weapon 10: Institutional Order Flow & Absorption Engine) -->
+        <div class="cyber-card rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden shadow-xl" id="card-ind-joyeuse">
+          
+          <!-- Banner Header (Clickable Toggle) -->
+          <div onclick="toggleIndicatorAccordion('ind-joyeuse')" class="px-6 py-4 bg-gradient-to-r from-[#0b1220] via-[#0f192e] to-[#0b1220] hover:from-[#111d35] hover:to-[#142340] cursor-pointer flex items-center justify-between gap-4 transition select-none group border-l-4 border-cyan-400">
+            <div class="flex items-center gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700/80 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:border-cyan-400 transition shadow-lg shadow-cyan-500/20">
+                <i data-lucide="circle-dot" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-white font-bold text-sm sm:text-base tracking-wide group-hover:text-cyan-300 transition font-sans">'Joyeuse'</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">WEAPON 10: ORDER FLOW</span>
+                  <span class="hidden sm:inline text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">PINE SCRIPT v5</span>
+                  <span class="hidden md:inline text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">VOLUME BUBBLES &bull; ICEBERG ABSORPTION &bull; LIVE HUD</span>
+                </div>
+                <div class="text-[11px] font-mono text-slate-400 mt-0.5">DYNAMIC AGGRESSOR DELTA &bull; PASSIVE LIMIT ICEBERGS &bull; PERSISTENT S/R DEFENSE &bull; MICROSTRUCTURE REGIME</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 text-xs font-mono shrink-0">
+              <span id="label-ind-joyeuse" class="text-slate-400 group-hover:text-cyan-300 transition text-[11px] font-semibold hidden md:inline">CLICK TO EXPAND</span>
+              <div class="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-cyan-400 group-hover:border-cyan-400 transition">
+                <i id="chevron-ind-joyeuse" data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Drawer Content (Expandable / Retractable) -->
+          <div id="drawer-ind-joyeuse" class="hidden border-t border-slate-800/80 bg-[#070c18] p-6 space-y-6 transition-all duration-500">
+          
+          <!-- Banner / Overview Header -->
+          <div class="p-6 rounded-2xl bg-gradient-to-r from-[#0d1627] via-[#09101d] to-[#121929] border border-cyan-500/30 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+              <div class="space-y-2 max-w-3xl">
+                <div class="flex items-center gap-2">
+                  <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-cyan-400/10 text-cyan-400 border border-cyan-500/30 tracking-wider">
+                    WEAPON 10 // PINE SCRIPT v5
+                  </span>
+                  <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-400/10 text-emerald-400 border border-emerald-500/30 tracking-wider">
+                    ORDER FLOW &amp; ABSORPTION ENGINE
+                  </span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white flex items-center gap-3">
+                  <span>'Joyeuse'</span>
+                  <span class="text-slate-500 text-lg font-mono font-normal">| Institutional Volume Bubbles &amp; Iceberg Absorption</span>
+                </h2>
+                <p class="text-slate-300 text-sm leading-relaxed font-mono">
+                  Named after the legendary sword of Charlemagne that changed colors thirty times a day and absorbed all counter-offensives. Joyeuse brings institutional Level-2 order flow microstructure directly to TradingView. It renders dynamic volume bubbles scaled by Relative Volume (RVOL) and tinted by intrabar Aggressor Delta (Buyer vs. Seller dominance), hunts institutional iceberg absorption where passive limit orders exhaust heavy aggressive market participants at key rejection wicks, projects persistent glowing support and resistance zones, and feeds a real-time on-chart telemetry HUD.
+                </p>
+              </div>
+
+              <!-- Metric Stats Badge Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 shrink-0 font-mono">
+                <div class="p-3 rounded-xl bg-black/60 border border-cyan-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">VOLUME BUBBLES</div>
+                  <div class="text-xl font-black text-cyan-400 mt-0.5">RVOL Scaled</div>
+                  <div class="text-[10px] text-slate-500">Dynamic Delta Sizing</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/60 border border-emerald-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">ICEBERG ABSORPTION</div>
+                  <div class="text-xl font-black text-emerald-400 mt-0.5">&ge; 1.8x RVOL</div>
+                  <div class="text-[10px] text-slate-500">&ge; 38% Wick Rejection</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/60 border border-amber-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">S/R DEFENSE</div>
+                  <div class="text-xl font-black text-amber-400 mt-0.5">Persistent</div>
+                  <div class="text-[10px] text-slate-500">Iceberg Bid/Ask Levels</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/60 border border-purple-500/40 text-center">
+                  <div class="text-[10px] text-slate-400 tracking-wider">TELEMETRY HUD</div>
+                  <div class="text-xl font-black text-purple-400 mt-0.5">Real-Time</div>
+                  <div class="text-[10px] text-slate-500">Delta, RVOL &amp; Regime</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Live Execution Chart & HUD Breakdown -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2 text-xs font-mono text-slate-300">
+                <i data-lucide="monitor" class="w-4 h-4 text-cyan-400"></i>
+                <span class="font-bold text-white uppercase tracking-wider">Live TradingView Execution Telemetry</span>
+                <span class="text-slate-500">| SPDR S&amp;P 500 ETF Trust (SPY) 10-Minute NYSE Telemetry Feed</span>
+              </div>
+              <span class="text-xs font-mono text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/30 font-bold">
+                VOLUME BUBBLES &amp; ABSORPTION ACTIVE
+              </span>
+            </div>
+            
+            <div class="relative rounded-xl overflow-hidden border border-slate-700/80 bg-slate-950 shadow-2xl group">
+              <img src="../assets/joyeuse_live_chart.png" alt="Joyeuse Live TradingView SPY Order Flow &amp; Absorption Chart" class="w-full h-auto object-cover rounded-lg transition-transform duration-500 group-hover:scale-[1.01]">
+              <div class="absolute bottom-3 right-3 px-3 py-1.5 rounded-lg bg-black/80 border border-slate-700/80 backdrop-blur text-[11px] font-mono text-slate-300">
+                <span class="text-cyan-400 font-bold">&bull; SPY 10m NYSE</span> | Real-Time Volume Bubbles, Microstructure Order Flow HUD &amp; Institutional Absorption Floors
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Breakdown Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5 font-mono text-xs">
+            <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2">
+              <div class="text-cyan-400 font-bold flex items-center gap-1.5">
+                <i data-lucide="circle-dot" class="w-4 h-4"></i>
+                <span>1. Dynamic Order Flow Volume Bubbles</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed font-sans text-[11px]">
+                Calculates intrabar Volume-Spread Delta (VSA) based on close location and candle body displacement. Renders circular bubbles at bar centroids scaled dynamically across 5 tiers (Tiny to Huge) and color-coded to visualize aggressive ask dominance (Green #00e676) versus aggressive bid dominance (Red #ff1744).
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2">
+              <div class="text-emerald-400 font-bold flex items-center gap-1.5">
+                <i data-lucide="anchor" class="w-4 h-4"></i>
+                <span>2. Institutional Iceberg Absorption Hunter</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed font-sans text-[11px]">
+                Detects institutional limit absorption when heavy market volume (&ge; 1.8x RVOL) is funneled into passive iceberg orders, creating distinct rejection wicks (&ge; 38% of bar range). Signals "ABSORB BUY" on lower wicks (iceberg bids absorbing market sell stops) and "ABSORB SELL" on upper wicks (iceberg asks absorbing breakout longs).
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2">
+              <div class="text-amber-400 font-bold flex items-center gap-1.5">
+                <i data-lucide="activity" class="w-4 h-4"></i>
+                <span>3. Persistent S/R Levels &amp; On-Chart HUD</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed font-sans text-[11px]">
+                Projects dashed support floors and resistance ceilings forward with shaded buffer zones to track historical absorption defenses. Integrates a low-latency on-chart HUD displaying real-time Relative Volume (RVOL), Bar Delta Imbalance percentage, and Microstructure Regime state (Bull/Bear Absorption, High Volume Expansion, or Normal Rotation).
+              </p>
+            </div>
+          </div>
+
+          <!-- Parameter Table & Whitelist Action -->
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-slate-900/70 border border-slate-800">
+            <div class="flex items-center gap-3">
+              <div class="text-xs font-mono text-slate-400">
+                PINE SCRIPT: <span class="text-slate-200 font-bold">v5 Standalone</span> &bull; OVERLAY: <span class="text-slate-200 font-bold">true</span> &bull; WEAPON: <span class="text-cyan-400 font-bold">10 Order Flow &amp; Absorption</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <button class="open-consultation-btn px-4 py-2 rounded-lg font-mono text-xs font-bold bg-cyan-500 hover:bg-cyan-400 text-black flex items-center gap-1.5 transition shadow-lg shadow-cyan-500/20" data-indicator="'Joyeuse' Order Flow &amp; Absorption Engine">
+                <i data-lucide="key" class="w-3.5 h-3.5"></i>
+                <span>Request 'Joyeuse' Whitelist</span>
               </button>
             </div>
           </div>
@@ -4412,6 +4567,27 @@
           </div>
         </div>
 
+        <!-- Weapon 10: Joyeuse -->
+        <div class="p-6 rounded-2xl border border-cyan-500/50 bg-slate-950/90 hover:border-cyan-400 transition-all shadow-xl space-y-4 relative overflow-hidden group">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <span class="text-xs text-cyan-400 font-bold">FRENCH MEDIEVAL &amp; CAROLINGIAN LEGEND</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800">WEAPON 10</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/50 flex items-center justify-center text-cyan-400 text-xl font-bold">⚔️</div>
+            <div>
+              <h3 class="text-lg font-black text-white group-hover:text-cyan-300 transition">'Joyeuse' (The Joyous)</h3>
+              <div class="text-[11px] text-slate-400">The Personal Broadsword of Charlemagne (Absorption Engine)</div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            In the medieval <em>Matter of France</em> and <em>The Song of Roland</em>, Joyeuse was the sovereign blade of Charlemagne. Forged with the relic of the Holy Lance within its pommel, it was famed for flashing thirty luminous colors every day, absorbing and blunting the fury of enemy onslaughts, and shattering opposing battle lines with supreme imperial authority.
+          </p>
+          <div class="p-3 rounded-lg bg-black/60 border border-slate-800 text-[11px] text-cyan-400">
+            <strong>Algorithmic Manifestation:</strong> Order Flow &amp; Absorption Engine (Weapon 10)—translates the sword's radiant color-shifts into dynamic volume delta bubbles, captures institutional iceberg absorption where passive limit orders blunt aggressive market dumps, and projects persistent defense levels across the tape.
+          </div>
+        </div>
+
         <!-- Weapon 1: Trishula -->
         <div class="p-6 rounded-2xl border border-amber-500/50 bg-slate-950/90 hover:border-amber-400 transition-all shadow-xl space-y-4 relative overflow-hidden group">
           <div class="flex items-center justify-between border-b border-slate-800 pb-3">
@@ -4698,8 +4874,8 @@
   <script>
     // Category Filter Engine
     const CATEGORY_MAP = {
-      smc: ['card-ind-starfall', 'card-ind-tupsimati', 'card-ind-murgleis', 'card-ind-yagrush', 'card-ind-fragarach', 'card-ind-galveira', 'card-ind-caladbolg', 'card-ind-rdmob', 'card-ind-trident3'],
-      options: ['card-ind-qmatrix', 'card-ind-projectvajra'],
+      smc: ['card-ind-starfall', 'card-ind-tupsimati', 'card-ind-murgleis', 'card-ind-yagrush', 'card-ind-fragarach', 'card-ind-galveira', 'card-ind-caladbolg', 'card-ind-rdmob', 'card-ind-trident3', 'card-ind-joyeuse'],
+      options: ['card-ind-qmatrix', 'card-ind-projectvajra', 'card-ind-joyeuse'],
       volatility: ['card-ind-yagrush', 'card-ind-sylph', 'card-ind-astra', 'card-ind-cloudsplitter', 'card-ind-rdmcomposure', 'card-ind-doorknocker', 'card-ind-themadam'],
       namesake: ['card-ind-trishula', 'card-ind-astra', 'card-ind-doubleback', 'card-ind-projectidris']
     };
