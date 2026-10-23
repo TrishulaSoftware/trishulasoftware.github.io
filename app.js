@@ -349,6 +349,32 @@ const API_SCHEMAS = {
     pythonSnippet: "import requests\n\nres = requests.get('https://api.trishulasoftware.com/v1/telemetry/bsc/chain-pulse')\nprint(res.json())",
     tsSnippet: "const res = await fetch('https://api.trishulasoftware.com/v1/telemetry/bsc/chain-pulse');\nconsole.log(await res.json());",
     curlSnippet: "curl -X GET 'https://api.trishulasoftware.com/v1/telemetry/bsc/chain-pulse'"
+  },
+  'quant-signals': {
+    endpoint: 'GET /v1/quant/signals/live',
+    response: {
+      status: 200,
+      timestamp: new Date().toISOString(),
+      engine: "Starfall E.06 Sovereign Core",
+      active_systems_count: 19,
+      market: "BTCUSD (Coinbase)",
+      timeframe: "1h",
+      telemetry: {
+        signal_state: "QUANTUM_BUY",
+        confluence_score: "9/9 Factors Bullish",
+        entry_price: 82040.50,
+        stop_loss: 80890.00,
+        target_1: 84200.00,
+        target_2: 86500.00,
+        risk_reward_ratio: "1 : 3.88",
+        win_probability_pct: 98.12,
+        chop_filter_status: "PASSED (ADX: 28.4)",
+        webhook_dispatch_verified: true
+      }
+    },
+    pythonSnippet: "import requests\n\nheaders = {'Authorization': 'Bearer YOUR_TRISHULA_API_KEY'}\nparams = {'system': 'starfall', 'ticker': 'BTCUSD'}\n\nres = requests.get('https://api.trishulasoftware.com/v1/quant/signals/live', headers=headers, params=params)\nprint(res.json())",
+    tsSnippet: "const res = await fetch('https://api.trishulasoftware.com/v1/quant/signals/live?system=starfall&ticker=BTCUSD', {\n  headers: { 'Authorization': 'Bearer YOUR_TRISHULA_API_KEY' }\n});\nconsole.log(await res.json());",
+    curlSnippet: "curl -X GET 'https://api.trishulasoftware.com/v1/quant/signals/live?system=starfall&ticker=BTCUSD' -H 'Authorization: Bearer YOUR_TRISHULA_API_KEY'"
   }
 };
 
@@ -430,17 +456,17 @@ Requested Indicator: ${indicator} (Pine Script v5)`;
         if (modalSuccessTitle) modalSuccessTitle.textContent = 'Whitelist Application Received';
         if (modalSuccessDesc) modalSuccessDesc.textContent = `Your TradingView whitelist request for ${indicator} has been logged. Trishula Systems Engineering will authorize your account and follow up via email.`;
       } else {
-        if (modalBadge) modalBadge.textContent = 'ENTERPRISE ARCHITECTURE RFP';
-        if (modalTitle) modalTitle.textContent = 'Request Custom Engineering';
-        if (modalSubtitle) modalSubtitle.textContent = 'Direct engagement with Trishula Principal Systems Engineering.';
-        if (modalScopeLabel) modalScopeLabel.textContent = 'PROJECT SCOPE / REQUIREMENTS';
+        if (modalBadge) modalBadge.textContent = 'ENTERPRISE ARCHITECTURE RFP // CUSTOM BUILD';
+        if (modalTitle) modalTitle.textContent = 'Request Custom Build';
+        if (modalSubtitle) modalSubtitle.textContent = 'We offer custom built solutions to tailor direction, output, situation to your own personal and professional needs!';
+        if (modalScopeLabel) modalScopeLabel.textContent = 'PROJECT SCOPE / TAILORED REQUIREMENTS';
         if (modalScopeInput) {
-          modalScopeInput.placeholder = 'Describe your required scraper volume, terminal features, or quantitative odds engine...';
+          modalScopeInput.placeholder = 'Describe your required direction, target data feeds, automated pipelines, or operational bottlenecks...';
           modalScopeInput.value = '';
         }
-        if (modalSubmitBtn) modalSubmitBtn.textContent = 'SUBMIT ARCHITECTURE INQUIRY';
-        if (modalSuccessTitle) modalSuccessTitle.textContent = 'Inquiry Received';
-        if (modalSuccessDesc) modalSuccessDesc.textContent = 'Your architecture specification has been delivered to Trishula Systems Engineering. We will respond within 24 hours.';
+        if (modalSubmitBtn) modalSubmitBtn.textContent = 'SUBMIT CUSTOM BUILD INQUIRY';
+        if (modalSuccessTitle) modalSuccessTitle.textContent = 'Custom Build Inquiry Received';
+        if (modalSuccessDesc) modalSuccessDesc.textContent = 'Your architecture specification has been delivered to Trishula Systems Engineering. We will respond with a tailored blueprint within 24 hours.';
       }
 
       if (modal) modal.classList.remove('hidden');

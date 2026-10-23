@@ -1,140 +1,694 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Trishula Netra 1.0 — Sovereign Telemetry Cockpit</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" type="image/png" href="icon-192.png">
-  <link rel="apple-touch-icon" href="icon-192.png">
-  <meta name="theme-color" content="#00e5ff">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <style>
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    html, body {
-      margin: 0; padding: 0; width: 100%; height: 100%;
-      background: #080c14; color: #f1f5f9;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      overflow: hidden;
-    }
-    #hud-bar {
-      height: 36px; background: #0c121e; border-bottom: 1px solid #1e293b;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 12px; font-size: 11px; font-family: monospace; z-index: 100;
-    }
-    .hud-title { color: #00e5ff; font-weight: 800; display: flex; align-items: center; gap: 6px; }
-    .pulse-dot {
-      width: 7px; height: 7px; border-radius: 50%; background: #00ff9d;
-      box-shadow: 0 0 8px #00ff9d; animation: pulse 2s infinite;
-    }
-    @keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
-    .hud-right { display: flex; align-items: center; gap: 10px; }
-    .hud-link {
-      color: #94a3b8; text-decoration: none; border: 1px solid #334155;
-      padding: 2px 8px; border-radius: 4px; font-size: 10px; transition: all 0.2s;
-    }
-    .hud-link:hover { border-color: #00e5ff; color: #00e5ff; }
-    #cockpit-frame {
-      width: 100%; height: calc(100% - 36px); border: none; background: #080c14;
-    }
-    #loader {
-      position: absolute; top: 36px; left: 0; width: 100%; height: calc(100% - 36px);
-      background: #080c14; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 14px; z-index: 50;
-      transition: opacity 0.3s ease;
-    }
-    .spinner {
-      width: 36px; height: 36px; border: 3px solid #1e293b;
-      border-top-color: #00e5ff; border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .load-text { font-size: 13px; color: #94a3b8; font-family: monospace; }
-  </style>
-</head>
-<body>
-  <div id="hud-bar">
-    <div class="hud-title">
-      <div class="pulse-dot" id="status-dot"></div>
-      <span>NETRA PERMANENT RELAY</span>
-      <span id="route-indicator" style="color: #64748b; font-size: 9px;">[CONNECTING]</span>
-    </div>
-    <div class="hud-right">
-      <a href="#" id="direct-btn" target="_blank" class="hud-link">Direct Ingress ↗</a>
-      <a href="#" id="reconnect-btn" class="hud-link" onclick="discoverAndMount(true); return false;">Sync ↻</a>
-    </div>
-  </div>
-
-  <div id="loader">
-    <div class="spinner"></div>
-    <div class="load-text" id="loader-msg">Resolving Active Netra Ingress...</div>
-  </div>
-
-  <iframe id="cockpit-frame" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-downloads"></iframe>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trishula Netra 1.0 — Anti-Epeolatry Recon Sentinel & Codebase Autopsy Engine</title>
+  <meta name="description" content="Trishula Netra 1.0: Autonomous competitive codebase dissection, Anti-Epeolatry audit, direct-to-disk SWOT scaffolding, and sovereign architecture synthesis.">
+  
+  <!-- Favicon / Meta -->
+  <link rel="icon" type="image/png" href="../assets/netra_icon.png">
+  <link rel="apple-touch-icon" href="../assets/netra_icon.png">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    const FRAME = document.getElementById('cockpit-frame');
-    const LOADER = document.getElementById('loader');
-    const STATUS_DOT = document.getElementById('status-dot');
-    const ROUTE_IND = document.getElementById('route-indicator');
-    const DIRECT_BTN = document.getElementById('direct-btn');
-    const LOADER_MSG = document.getElementById('loader-msg');
-
-    let currentTunnelUrl = localStorage.getItem('netra_last_tunnel') || '';
-
-    async function discoverAndMount(forceRefresh = false) {
-      LOADER_MSG.innerText = 'Syncing Live Gateway Socket...';
-      LOADER.style.display = 'flex';
-      LOADER.style.opacity = '1';
-
-      try {
-        const resp = await fetch('active_tunnel.json?t=' + Date.now(), { cache: 'no-store' });
-        if (resp.ok) {
-          const data = await resp.json();
-          if (data && data.public_url) {
-            currentTunnelUrl = data.public_url.replace(/\/$/, '');
-            localStorage.setItem('netra_last_tunnel', currentTunnelUrl);
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              bg: '#06090f',
+              card: 'rgba(13, 19, 32, 0.75)',
+              cyan: '#00f0ff',
+              emerald: '#00ff9d',
+              gold: '#ffd700',
+              crimson: '#ff3366',
+            }
           }
         }
-      } catch (err) {
-        console.warn('[NETRA-RELAY] Local fetch note:', err);
       }
+    }
+  </script>
 
-      if (!currentTunnelUrl) {
-        currentTunnelUrl = 'https://undertake-bless-some-definition.trycloudflare.com';
-      }
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .glow-box-cyan {
+      box-shadow: 0 0 25px -5px rgba(0, 240, 255, 0.3);
+    }
+    .glow-box-gold {
+      box-shadow: 0 0 25px -5px rgba(255, 215, 0, 0.25);
+    }
+    .grid-bg {
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 60%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 32px 32px, 32px 32px;
+    }
+  </style>
+</head>
+<body class="bg-[#06090f] text-slate-100 min-h-screen selection:bg-cyan-500/30 selection:text-cyan-300 font-sans grid-bg">
 
-      DIRECT_BTN.href = currentTunnelUrl;
-      ROUTE_IND.innerText = `[${currentTunnelUrl.replace('https://', '')}]`;
-      ROUTE_IND.style.color = '#00ff9d';
-      STATUS_DOT.style.background = '#00ff9d';
-      STATUS_DOT.style.boxShadow = '0 0 8px #00ff9d';
+  <!-- 1. LIVE TELEMETRY STATUS RIBBON -->
+  <div class="border-b border-slate-800/80 bg-black/70 backdrop-blur text-xs font-mono py-2 px-4 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-2">
+          <span class="h-2.5 w-2.5 rounded-full bg-cyan-400 pulse-dot"></span>
+          <span class="text-cyan-400 font-bold tracking-wider">NETRA 1.0 AIRLOCK: OPERATIONAL</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-1 text-slate-400 border-l border-slate-800 pl-4">
+          <span>PIPELINE:</span>
+          <span class="text-emerald-400 font-bold">ANTI-EPEOLATRY AUTOPSY</span>
+        </div>
+        <div class="hidden lg:flex items-center space-x-1 text-slate-400">
+          <span>CLOUD EGRESS:</span>
+          <span class="text-amber-400 font-mono">0.00 KB (AIR-GAPPED NVMe)</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="text-slate-400">
+          <span class="text-slate-500">FLEET DOSSIERS:</span> <span class="text-cyan-300 font-bold font-mono">179 INDEXED</span>
+        </div>
+        <div class="text-slate-400 border-l border-slate-800 pl-4 hidden sm:block">
+          <span class="text-slate-500">SOVEREIGN CORE:</span> <span class="text-amber-400 font-semibold">TRISHULA SOFTWARE</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      if (FRAME.src !== currentTunnelUrl + '/') {
-        FRAME.src = currentTunnelUrl + '/';
-      }
+  <!-- 2. NAVIGATION BAR -->
+  <nav class="border-b border-slate-800/60 bg-[#080d17]/85 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="../" class="flex items-center space-x-3.5 group py-1">
+        <img src="../assets/netra_icon.png" alt="Trishula Netra" class="h-10 w-10 rounded-full border border-cyan-500/50 group-hover:border-cyan-400 transition shadow-lg shadow-cyan-500/20 shrink-0">
+        <div class="flex flex-col justify-center">
+          <div class="flex items-center gap-2">
+            <span class="font-black tracking-widest text-sm sm:text-base whitespace-nowrap bg-gradient-to-r from-cyan-400 via-amber-300 to-emerald-400 bg-clip-text text-transparent leading-none">TRISHULA NETRA</span>
+            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-950/80 text-cyan-300 border border-cyan-800/60">v1.0</span>
+          </div>
+          <span class="text-[9.5px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">Anti-Epeolatry Recon Sentinel</span>
+        </div>
+      </a>
 
-      FRAME.onload = () => {
-        LOADER.style.opacity = '0';
-        setTimeout(() => { LOADER.style.display = 'none'; }, 300);
-      };
+      <div class="hidden xl:flex items-center space-x-4 2xl:space-x-5 text-sm font-medium">
+        <a href="#doctrine" class="text-slate-300 hover:text-cyan-400 transition flex items-center gap-1.5 whitespace-nowrap shrink-0">
+          <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
+          <span>The Doctrine</span>
+        </a>
+        <a href="#pipeline" class="text-slate-300 hover:text-emerald-400 transition flex items-center gap-1.5 whitespace-nowrap shrink-0">
+          <i data-lucide="cpu" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
+          <span>4-Phase Pipeline</span>
+        </a>
+        <a href="#dossiers" class="text-slate-300 hover:text-amber-400 transition flex items-center gap-1.5 whitespace-nowrap shrink-0">
+          <i data-lucide="folder-git-2" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+          <span>Scouted Dossiers</span>
+        </a>
+        <a href="#cockpit" class="text-slate-300 hover:text-cyan-400 transition flex items-center gap-1.5 whitespace-nowrap shrink-0">
+          <i data-lucide="smartphone" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
+          <span>Mobile Airlock</span>
+        </a>
+
+        <!-- Fleet Workstations Dropdown -->
+        <div class="relative group py-2" id="fleet-dropdown-container">
+          <button type="button" id="fleet-dropdown-btn" class="text-slate-300 hover:text-cyan-400 transition flex items-center gap-1.5 whitespace-nowrap shrink-0 font-medium">
+            <i data-lucide="layers" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
+            <span>Fleet Workstations</span>
+            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform duration-200 shrink-0"></i>
+          </button>
+          <div id="fleet-dropdown-menu" class="absolute right-0 top-full pt-1.5 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
+            <div class="w-56 py-2 bg-[#0a1120]/95 backdrop-blur-xl rounded-xl border border-slate-700/80 shadow-2xl shadow-black/90">
+              <div class="px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider text-slate-500 border-b border-slate-800/80 mb-1">
+                Trishula Sovereign Fleet
+              </div>
+              <a href="../" class="flex items-center gap-2.5 px-3 py-2 text-xs font-mono text-slate-300 hover:text-white hover:bg-slate-800/60 transition">
+                <i data-lucide="arrow-left" class="w-3.5 h-3.5 text-slate-400 shrink-0"></i>
+                <span>Core Portal</span>
+              </a>
+              <a href="../swarm/" class="flex items-center gap-2.5 px-3 py-2 text-xs font-mono text-emerald-400 hover:text-emerald-300 hover:bg-emerald-950/40 transition">
+                <i data-lucide="zap" class="w-3.5 h-3.5 shrink-0"></i>
+                <span>The Swarm Cortex</span>
+              </a>
+              <a href="../quant-suite/" class="flex items-center gap-2.5 px-3 py-2 text-xs font-mono text-amber-400 hover:text-amber-300 hover:bg-amber-950/40 transition">
+                <i data-lucide="crosshair" class="w-3.5 h-3.5 shrink-0"></i>
+                <span>Quant Suite v5.0</span>
+              </a>
+              <a href="../enterprise/" class="flex items-center gap-2.5 px-3 py-2 text-xs font-mono text-emerald-400 hover:text-emerald-300 hover:bg-emerald-950/40 transition">
+                <i data-lucide="building-2" class="w-3.5 h-3.5 shrink-0"></i>
+                <span>Enterprise Labs</span>
+              </a>
+              <a href="../redlens/" class="flex items-center gap-2.5 px-3 py-2 text-xs font-mono text-rose-400 hover:text-rose-300 hover:bg-rose-950/40 transition">
+                <i data-lucide="shield" class="w-3.5 h-3.5 shrink-0"></i>
+                <span>RedLens 3.7 PQ</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-3">
+        <a href="#cockpit" class="px-3.5 py-2 rounded-lg text-xs font-mono font-bold tracking-wider bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black shadow-lg shadow-cyan-500/20 transition-all flex items-center gap-1.5">
+          <i data-lucide="radio" class="w-3.5 h-3.5"></i>
+          <span>LIVE AIRLOCK</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 3. HERO SECTION -->
+  <section class="relative pt-16 pb-20 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-cyan-500/40 bg-cyan-950/40 text-xs font-mono text-cyan-300">
+            <span class="h-2 w-2 rounded-full bg-cyan-400 animate-ping"></span>
+            <span>AUTONOMOUS CODEBASE DISSECTION & HARVESTING ENGINE</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+            Cut Through Marketing Fluff. <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-amber-300 to-emerald-300">Build On Stone Cold Truth.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-light">
+            Modern software is infected with <span class="text-amber-400 font-semibold italic">epeolatry</span>—the worship of empty words, bloated README claims, and VC-funded wrapper frameworks. 
+            <strong class="text-cyan-300 font-medium">Trishula Netra 1.0</strong> automates ruthless competitive codebase dissection, performs AST forensic autopsies, and synthesizes sovereign, air-gapped architectures directly to NVMe storage.
+          </p>
+
+          <!-- Quick Metrics Bar -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-xl mx-auto lg:mx-0">
+            <div class="p-3 rounded-lg border border-slate-800 bg-slate-900/60 text-center">
+              <div class="text-xl sm:text-2xl font-black font-mono text-cyan-400">179+</div>
+              <div class="text-[10px] font-mono text-slate-400 uppercase">Repositories Autopsied</div>
+            </div>
+            <div class="p-3 rounded-lg border border-slate-800 bg-slate-900/60 text-center">
+              <div class="text-xl sm:text-2xl font-black font-mono text-emerald-400">0%</div>
+              <div class="text-[10px] font-mono text-slate-400 uppercase">Vendor Lock-In</div>
+            </div>
+            <div class="p-3 rounded-lg border border-slate-800 bg-slate-900/60 text-center">
+              <div class="text-xl sm:text-2xl font-black font-mono text-amber-400">4-Stage</div>
+              <div class="text-[10px] font-mono text-slate-400 uppercase">Forensic Pipeline</div>
+            </div>
+            <div class="p-3 rounded-lg border border-slate-800 bg-slate-900/60 text-center">
+              <div class="text-xl sm:text-2xl font-black font-mono text-cyan-300">$0/mo</div>
+              <div class="text-[10px] font-mono text-slate-400 uppercase">Cloud Hosting Overhead</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="#pipeline" class="px-6 py-3.5 rounded-lg font-bold font-mono text-sm tracking-wider bg-cyan-400 hover:bg-cyan-300 text-black shadow-lg shadow-cyan-400/25 transition-all flex items-center gap-2">
+              <i data-lucide="crosshair" class="w-4 h-4"></i>
+              <span>INSPECT THE AUTOPSY ENGINE</span>
+            </a>
+            <a href="#dossiers" class="px-6 py-3.5 rounded-lg font-bold font-mono text-sm tracking-wider border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-slate-200 transition-all flex items-center gap-2">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+              <span>BROWSE LIVE DOSSIERS</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual: Netra Emblem & Live Telemetry Glass Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md">
+            <!-- Ambient Glow -->
+            <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-cyan-500/20 via-amber-500/10 to-emerald-500/20 blur-xl opacity-75"></div>
+            
+            <div class="relative rounded-2xl border border-cyan-500/40 bg-slate-950/90 p-6 backdrop-blur-xl shadow-2xl glow-box-cyan">
+              
+              <!-- Emblem Display -->
+              <div class="flex justify-center mb-6">
+                <div class="relative p-2 rounded-full border-2 border-cyan-400/40 bg-black/60 shadow-inner">
+                  <img src="../assets/netra_icon.png" alt="Netra Emblem" class="w-44 h-44 rounded-full object-cover shadow-2xl">
+                  <div class="absolute inset-0 rounded-full border border-cyan-300/30 animate-pulse pointer-events-none"></div>
+                </div>
+              </div>
+
+              <!-- Telemetry Header -->
+              <div class="border-t border-slate-800/80 pt-4 space-y-2.5 text-xs font-mono">
+                <div class="flex justify-between items-center text-slate-400">
+                  <span>SENTINEL IDENTIFIER:</span>
+                  <span class="text-cyan-300 font-bold">TRISHULA_NETRA_L1</span>
+                </div>
+                <div class="flex justify-between items-center text-slate-400">
+                  <span>TACTICAL ROLE:</span>
+                  <span class="text-emerald-400">ANTI-EPEOLATRY RECON</span>
+                </div>
+                <div class="flex justify-between items-center text-slate-400">
+                  <span>DISK PERSISTENCE:</span>
+                  <span class="text-slate-200">D:\Trishula-Infra\Netra\dossiers</span>
+                </div>
+                <div class="flex justify-between items-center text-slate-400">
+                  <span>TELEMETRY EGRESS:</span>
+                  <span class="text-emerald-400 font-bold">0.00% (STRICTLY HARDENED)</span>
+                </div>
+                <div class="flex justify-between items-center text-slate-400">
+                  <span>RUBRIC CALIBRATION:</span>
+                  <span class="text-amber-400">S / A / B / C / F RUBRIC</span>
+                </div>
+              </div>
+
+              <!-- Live Beacon Pill -->
+              <div class="mt-5 p-2.5 rounded-lg bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-between text-xs font-mono">
+                <div class="flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-cyan-400 animate-ping"></span>
+                  <span class="text-cyan-300 font-bold">EDGE TUNNEL ACTIVE</span>
+                </div>
+                <span class="text-slate-400">20s HEARTBEAT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SECTION: THE ANTI-EPEOLATRY DOCTRINE -->
+  <section id="doctrine" class="py-20 border-t border-slate-800/60 bg-[#070b13]/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-amber-500/40 bg-amber-950/30 text-xs font-mono text-amber-300">
+          <i data-lucide="flame" class="w-3.5 h-3.5"></i>
+          <span>THE FOUNDATIONAL PHILOSOPHY</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black tracking-tight">
+          The Death of <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Epeolatry</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          <span class="text-slate-200 font-semibold italic">Epeolatry</span> is the worship of words. The modern open-source and AI ecosystem has become a theater of marketing prose: GitHub stars inflated by bot farms, 20-page READMEs promising world-changing architectures, and multi-layered wrapper bloat hiding three lines of actual code.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="p-6 rounded-xl border border-slate-800 bg-slate-900/50 hover:border-cyan-500/40 transition-all space-y-4">
+          <div class="h-10 w-10 rounded-lg bg-cyan-950/80 border border-cyan-500/40 flex items-center justify-center text-cyan-400">
+            <i data-lucide="file-x-2" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-100">Ignore The README</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            Netra bypasses promotional claims. It clones the raw repository, parses the Abstract Syntax Tree (AST), inspects the real dependency graph, and verifies whether the code actually does what the README claims.
+          </p>
+          <div class="text-[11px] font-mono text-cyan-400 pt-2 border-t border-slate-800/80">
+            ➔ AST Analysis Over Verbal Claims
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-6 rounded-xl border border-slate-800 bg-slate-900/50 hover:border-emerald-500/40 transition-all space-y-4">
+          <div class="h-10 w-10 rounded-lg bg-emerald-950/80 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+            <i data-lucide="scissors" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-100">Strip Wrapper Bloat</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            Most "innovations" are thin wrappers over heavy frameworks with 80+ transitive dependencies. Netra identifies the pure mathematical kernel, strips the bloat, and makes it sovereign.
+          </p>
+          <div class="text-[11px] font-mono text-emerald-400 pt-2 border-t border-slate-800/80">
+            ➔ Zero LangChain • Zero Telemetry
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-6 rounded-xl border border-slate-800 bg-slate-900/50 hover:border-amber-500/40 transition-all space-y-4">
+          <div class="h-10 w-10 rounded-lg bg-amber-950/80 border border-amber-500/40 flex items-center justify-center text-amber-400">
+            <i data-lucide="hard-drive" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-100">Direct-to-Disk Sovereignty</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            No cloud database dependencies, no subscription lock-in. Netra writes structured JSON metadata, comprehensive SWOT markdown dossiers, and visual intel cards directly to local NVMe storage.
+          </p>
+          <div class="text-[11px] font-mono text-amber-400 pt-2 border-t border-slate-800/80">
+            ➔ 100% Air-Gapped Local Control
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. SECTION: THE 4-PHASE AUTOPSY PIPELINE -->
+  <section id="pipeline" class="py-20 border-t border-slate-800/60 bg-[#06090f]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-emerald-500/40 bg-emerald-950/30 text-xs font-mono text-emerald-300">
+          <i data-lucide="binary" class="w-3.5 h-3.5"></i>
+          <span>EXECUTION ARCHITECTURE</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black tracking-tight">
+          The 4-Phase <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Autopsy Pipeline</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          From a mobile tap to a fully scavenged sovereign Python package in under 3 minutes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Step 1 -->
+        <div class="relative p-6 rounded-xl border border-slate-800 bg-slate-900/60 space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-cyan-950 border border-cyan-800 text-cyan-400">PHASE 01</span>
+            <i data-lucide="radio" class="w-4 h-4 text-cyan-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-100">Omni-Channel Ingress</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Ingest targets from anywhere: Mobile PWA "Share" target, Chrome DevTools extension, Telegram/Discord webhooks, or local CLI command.
+          </p>
+          <div class="text-[11px] font-mono text-slate-400 bg-black/50 p-2.5 rounded border border-slate-800">
+            <code>POST /recon/intake</code><br>
+            <code>url: "github.com/..."</code>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative p-6 rounded-xl border border-slate-800 bg-slate-900/60 space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-emerald-950 border border-emerald-800 text-emerald-400">PHASE 02</span>
+            <i data-lucide="microscope" class="w-4 h-4 text-emerald-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-100">Forensic Dissection</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Headless git clone to sandbox, tree-sitter AST deconstruction, telemetry signature audit, API egress scanning, and license compliance review.
+          </p>
+          <div class="text-[11px] font-mono text-slate-400 bg-black/50 p-2.5 rounded border border-slate-800">
+            <code>AST Parsed: 1,420 lines</code><br>
+            <code>Telemetry: 0 found (Clean)</code>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative p-6 rounded-xl border border-slate-800 bg-slate-900/60 space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-amber-950 border border-amber-800 text-amber-400">PHASE 03</span>
+            <i data-lucide="scale" class="w-4 h-4 text-amber-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-100">SWOT Scaffolding</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Synthesizes forensic SWOT analysis (Strengths, Weaknesses, Architectural Opportunities, Threat Vectors) and assigns a Trishula Grade (S / A / B / C / F).
+          </p>
+          <div class="text-[11px] font-mono text-slate-400 bg-black/50 p-2.5 rounded border border-slate-800">
+            <code>Grade: S (Sovereign)</code><br>
+            <code>SWOT_Dossier.md generated</code>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative p-6 rounded-xl border border-slate-800 bg-slate-900/60 space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-cyan-950 border border-cyan-800 text-cyan-300">PHASE 04</span>
+            <i data-lucide="box" class="w-4 h-4 text-cyan-300"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-100">Citadel Harvest</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Extracts the core functionality into a standalone, framework-free Python adapter inside the Citadel harvest catalog, ready for instant swarm deployment.
+          </p>
+          <div class="text-[11px] font-mono text-slate-400 bg-black/50 p-2.5 rounded border border-slate-800">
+            <code>Status: HARVESTED</code><br>
+            <code>adapter.py deployed</code>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. SECTION: SCOUTED DOSSIERS -->
+  <section id="dossiers" class="py-20 border-t border-slate-800/60 bg-[#070b13]/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div>
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-cyan-500/40 bg-cyan-950/30 text-xs font-mono text-cyan-300 mb-3">
+            <i data-lucide="database" class="w-3.5 h-3.5"></i>
+            <span>SAMPLE FLEET INTEL</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight">
+            Live Forensic <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-amber-300">Autopsy Dossiers</span>
+          </h2>
+          <p class="text-slate-400 text-sm max-w-xl mt-2">
+            A small window into the 179+ foreign codebases autopsied, graded, and harvested into the sovereign fleet.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-mono text-slate-400">Total Catalog:</span>
+          <span class="px-3 py-1.5 rounded bg-slate-900 border border-slate-800 font-mono text-xs font-bold text-cyan-400">179 DOSSIERS</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Dossier 1 -->
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/60 hover:border-cyan-500/50 transition-all flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono text-slate-400">cactus-compute</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-black bg-emerald-950 text-emerald-400 border border-emerald-800">GRADE A+</span>
+            </div>
+            <h4 class="text-base font-bold text-slate-100">Needle</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              2-bit structured tool-calling and parameter extraction for edge hardware. Zero wrapper bloat.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono">
+            <span class="text-cyan-400 font-bold">HARVESTED</span>
+            <span class="text-slate-500">needle_engine.py</span>
+          </div>
+        </div>
+
+        <!-- Dossier 2 -->
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/60 hover:border-cyan-500/50 transition-all flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono text-slate-400">pinchtab</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-black bg-cyan-950 text-cyan-300 border border-cyan-800">GRADE A</span>
+            </div>
+            <h4 class="text-base font-bold text-slate-100">PinchTab</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Token-efficient DOM reference parser and CDP automation for browser agents. 85% token reduction.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono">
+            <span class="text-cyan-400 font-bold">HARVESTED</span>
+            <span class="text-slate-500">pinchtab_ref.py</span>
+          </div>
+        </div>
+
+        <!-- Dossier 3 -->
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/60 hover:border-cyan-500/50 transition-all flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono text-slate-400">mem0ai</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-black bg-cyan-950 text-cyan-300 border border-cyan-800">GRADE A</span>
+            </div>
+            <h4 class="text-base font-bold text-slate-100">Mem0</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Persistent memory and context graph for autonomous swarms. Re-implemented with pure SQLite.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono">
+            <span class="text-cyan-400 font-bold">HARVESTED</span>
+            <span class="text-slate-500">memory_engine.py</span>
+          </div>
+        </div>
+
+        <!-- Dossier 4 -->
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/60 hover:border-cyan-500/50 transition-all flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono text-slate-400">crewAIInc</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-black bg-amber-950 text-amber-400 border border-amber-800">GRADE B+</span>
+            </div>
+            <h4 class="text-base font-bold text-slate-100">CrewAI</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Hierarchical specialist swarm. Autopsied and stripped of LangChain overhead into pure asyncio queues.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono">
+            <span class="text-cyan-400 font-bold">HARVESTED</span>
+            <span class="text-slate-500">crew_engine.py</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. SECTION: MOBILE AIRLOCK ARCHITECTURE -->
+  <section id="cockpit" class="py-20 border-t border-slate-800/60 bg-[#06090f]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-cyan-500/40 bg-cyan-950/30 text-xs font-mono text-cyan-300">
+            <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+            <span>DEMONSTRATION INFRASTRUCTURE</span>
+          </div>
+          
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+            The Phone Ingress Cockpit. <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-300">Zero Cloud Bills. Zero Latency.</span>
+          </h2>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+            When demonstrating Netra live, there are no VPS servers to spin up or AWS bills to pay. The entire Citadel rig runs on an air-gapped home workstation, exposed securely to the founder's phone via an auto-healing Cloudflare edge tunnel.
+          </p>
+
+          <ul class="space-y-3.5 text-xs sm:text-sm text-slate-300 font-light">
+            <li class="flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
+              <span><strong>Web Share Target API:</strong> Tap "Share" on any GitHub repo, X/Twitter reel, or YouTube tool video on mobile ➔ instant injection into the local intake queue.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>20-Second Edge Heartbeat:</strong> Keep-alive watchdog prevents reverse-proxy socket timeouts and auto-heals without connection drops during demonstrations.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+              <span><strong>LAN Direct Fail-Safe:</strong> Binds to <code>0.0.0.0</code> for zero-latency home Wi-Fi access (0ms delay) even if cloud services are offline.</span>
+            </li>
+          </ul>
+
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="https://ratio-soc-seq-works.trycloudflare.com/" target="_blank" class="px-6 py-3 rounded-lg font-mono text-xs font-bold tracking-wider bg-cyan-400 hover:bg-cyan-300 text-black shadow-lg shadow-cyan-400/25 transition-all flex items-center gap-2">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+              <span>TEST PUBLIC INGRESS (LIVE)</span>
+            </a>
+            <div class="px-4 py-3 rounded-lg font-mono text-xs text-slate-400 border border-slate-800 bg-slate-900/60 flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-emerald-400 pulse-dot"></span>
+              <span>Port: 8089 (Air-Gapped)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Mobile Device Frame Mockup -->
+        <div class="lg:col-span-6 flex justify-center">
+          <div class="w-full max-w-sm rounded-3xl border-4 border-slate-800 bg-[#080c14] p-5 shadow-2xl glow-box-cyan space-y-4">
+            
+            <!-- Mobile Header Bar -->
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-[10px] font-mono text-slate-400">
+              <div class="flex items-center gap-1.5">
+                <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                <span class="text-slate-200 font-bold">AIRLOCK ACTIVE</span>
+              </div>
+              <span class="text-cyan-400 font-mono">10.0.0.27:8089</span>
+            </div>
+
+            <!-- Mobile Cockpit Header -->
+            <div class="flex items-center gap-3 py-1">
+              <img src="../assets/netra_icon.png" alt="Netra" class="w-9 h-9 rounded-full border border-cyan-400/60">
+              <div>
+                <div class="text-xs font-black text-cyan-400">TRISHULA NETRA 1.0</div>
+                <div class="text-[9px] font-mono text-slate-400">Citadel NVMe Intelligence Fleet</div>
+              </div>
+            </div>
+
+            <!-- Simulated Target Input -->
+            <div class="space-y-2 text-xs">
+              <div class="p-2.5 rounded bg-black/60 border border-slate-800 text-slate-300 font-mono text-[11px] truncate">
+                https://github.com/vllm-project/vllm
+              </div>
+              <button class="w-full py-2.5 rounded bg-cyan-400 text-black font-mono font-bold text-xs shadow-md">
+                ⚡ INITIATE AUTOPSY & HARVEST
+              </button>
+            </div>
+
+            <!-- Simulated Output Card -->
+            <div class="p-3 rounded bg-slate-900/80 border border-cyan-500/30 space-y-2 text-[11px] font-mono">
+              <div class="flex justify-between items-center text-slate-400">
+                <span>TARGET:</span>
+                <span class="text-slate-200">vLLM Engine</span>
+              </div>
+              <div class="flex justify-between items-center text-slate-400">
+                <span>AST MODULES:</span>
+                <span class="text-emerald-400 font-bold">54 Identified</span>
+              </div>
+              <div class="flex justify-between items-center text-slate-400">
+                <span>TRISHULA GRADE:</span>
+                <span class="text-amber-400 font-bold">GRADE S (Sovereign)</span>
+              </div>
+              <div class="flex justify-between items-center text-slate-400">
+                <span>STATUS:</span>
+                <span class="text-cyan-300 font-bold">SWOT DOSSIER LANDED</span>
+              </div>
+            </div>
+
+            <div class="pt-2 text-center text-[9px] font-mono text-slate-500">
+              TRISHULA SOFTWARE • CITADEL LOCAL FLEET
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. FOOTER -->
+  <footer class="border-t border-slate-800 bg-[#04060a] py-12 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center space-x-3">
+        <img src="../assets/netra_icon.png" alt="Netra Logo" class="h-8 w-8 rounded-full border border-cyan-500/40">
+        <div>
+          <div class="font-bold text-slate-200 text-sm">TRISHULA NETRA 1.0</div>
+          <div class="text-[10px] font-mono text-slate-500">A Subsystem of Trishula Software Sovereign Fleet</div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs font-mono">
+        <a href="../" class="hover:text-cyan-400 transition">Core Portal</a>
+        <a href="../quant-suite/" class="hover:text-amber-400 transition">Quant Suite</a>
+        <a href="../enterprise/" class="hover:text-emerald-400 transition font-bold text-emerald-300">Enterprise Labs</a>
+        <a href="../swarm/" class="hover:text-cyan-400 transition font-bold text-cyan-300">The Swarm (Tony Stark)</a>
+        <a href="https://github.com/TrishulaSoftware" target="_blank" class="hover:text-cyan-400 transition">GitHub</a>
+        <a href="https://discord.gg/QKXWP4Z4c" target="_blank" class="hover:text-cyan-400 transition">Discord</a>
+        <a href="https://x.com/trishulasoftware" target="_blank" class="hover:text-cyan-400 transition">Twitter/X</a>
+        <a href="https://instagram.com/trishulasoftware" target="_blank" class="hover:text-cyan-400 transition">Instagram</a>
+        <a href="https://t.me/+8G0degKMgtAwMrnEx" target="_blank" class="hover:text-emerald-400 transition">Telegram Alpha</a>
+      </div>
+
+      <div class="text-[11px] font-mono text-slate-500 text-center md:text-right">
+        <div>&copy; 2026 Trishula Software. All rights reserved.</div>
+        <div class="text-amber-400/80 mt-0.5">PIERCE THE HEAVENS</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Fleet Dropdown Toggle (for click/touch support)
+    const fleetBtn = document.getElementById('fleet-dropdown-btn');
+    const fleetMenu = document.getElementById('fleet-dropdown-menu');
+    if (fleetBtn && fleetMenu) {
+      fleetBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        fleetMenu.classList.toggle('!opacity-100');
+        fleetMenu.classList.toggle('!pointer-events-auto');
+      });
+      document.addEventListener('click', (e) => {
+        if (!fleetMenu.contains(e.target)) {
+          fleetMenu.classList.remove('!opacity-100', '!pointer-events-auto');
+        }
+      });
     }
 
-    // Auto-discover on load
-    discoverAndMount();
-
-    // Background keep-alive & rotation listener every 60s
-    setInterval(() => {
-      fetch('active_tunnel.json?t=' + Date.now(), { cache: 'no-store' })
-        .then(r => r.json())
-        .then(d => {
-          if (d && d.public_url && d.public_url.replace(/\/$/, '') !== currentTunnelUrl) {
-            console.log('[NETRA-RELAY] Ingress rotation detected. Updating frame...');
-            discoverAndMount(true);
-          }
-        }).catch(() => {});
-    }, 60000);
+    lucide.createIcons();
   </script>
 </body>
 </html>
