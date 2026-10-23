@@ -1,7 +1,7 @@
 {
   "name": "Trishula Netra Vanguard",
   "short_name": "Netra",
-  "start_url": "/netra/",
+  "start_url": "/netra/app.html",
   "scope": "/netra/",
   "display": "standalone",
   "background_color": "#080c14",
