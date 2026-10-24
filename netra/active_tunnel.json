@@ -1,10 +1,10 @@
 {
-  "public_url": "https://address-presentations-waiting-product.trycloudflare.com",
-  "intake_endpoint": "https://address-presentations-waiting-product.trycloudflare.com/recon/intake",
+  "public_url": "https://claimed-editions-abs-bride.trycloudflare.com",
+  "intake_endpoint": "https://claimed-editions-abs-bride.trycloudflare.com/recon/intake",
   "local_port": 8089,
   "discord_message_ids": {
-    "https://discord.com/api/webhooks/1558863475776946308/cDVuz5DNfeR2gr_I4TC6OTdgU0Nd1cIel9HzDPXtg7UhqdpxFoaScPeJK4EhN5omQmKA": "1563384614704390269",
-    "https://discord.com/api/webhooks/1559755207590543382/Qen66tfQu4W9LMYqwxj0qq210hc_k-Hkd8bzNms_0xbZEgbp_qaaVYUj3QJqaIi3QsNL": "1563384616830636096"
+    "https://discord.com/api/webhooks/1558863475776946308/cDVuz5DNfeR2gr_I4TC6OTdgU0Nd1cIel9HzDPXtg7UhqdpxFoaScPeJK4EhN5omQmKA": "1563388612744052797",
+    "https://discord.com/api/webhooks/1559755207590543382/Qen66tfQu4W9LMYqwxj0qq210hc_k-Hkd8bzNms_0xbZEgbp_qaaVYUj3QJqaIi3QsNL": "1563388611007610972"
   },
-  "last_updated": "10:52:30 PM ET"
+  "last_updated": "11:08:23 PM ET"
 }
