@@ -3,8 +3,8 @@
   "intake_endpoint": "https://grey-blvd-electronic-coupons.trycloudflare.com/recon/intake",
   "local_port": 8089,
   "discord_message_ids": {
-    "https://discord.com/api/webhooks/1558863475776946308/cDVuz5DNfeR2gr_I4TC6OTdgU0Nd1cIel9HzDPXtg7UhqdpxFoaScPeJK4EhN5omQmKA": "1563547785956036741",
-    "https://discord.com/api/webhooks/1559755207590543382/Qen66tfQu4W9LMYqwxj0qq210hc_k-Hkd8bzNms_0xbZEgbp_qaaVYUj3QJqaIi3QsNL": "1563547783435124777"
+    "https://discord.com/api/webhooks/1558863475776946308/cDVuz5DNfeR2gr_I4TC6OTdgU0Nd1cIel9HzDPXtg7UhqdpxFoaScPeJK4EhN5omQmKA": "1563578067576823962",
+    "https://discord.com/api/webhooks/1559755207590543382/Qen66tfQu4W9LMYqwxj0qq210hc_k-Hkd8bzNms_0xbZEgbp_qaaVYUj3QJqaIi3QsNL": "1563578064980414534"
   },
-  "last_updated": "09:41:04 AM ET"
+  "last_updated": "11:41:26 AM ET"
 }
