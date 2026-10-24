@@ -3,8 +3,8 @@
   "intake_endpoint": "https://address-presentations-waiting-product.trycloudflare.com/recon/intake",
   "local_port": 8089,
   "discord_message_ids": {
-    "https://discord.com/api/webhooks/1558863475776946308/cDVuz5DNfeR2gr_I4TC6OTdgU0Nd1cIel9HzDPXtg7UhqdpxFoaScPeJK4EhN5omQmKA": "1563324123923357757",
-    "https://discord.com/api/webhooks/1559755207590543382/Qen66tfQu4W9LMYqwxj0qq210hc_k-Hkd8bzNms_0xbZEgbp_qaaVYUj3QJqaIi3QsNL": "1563324126020632628"
+    "https://discord.com/api/webhooks/1558863475776946308/cDVuz5DNfeR2gr_I4TC6OTdgU0Nd1cIel9HzDPXtg7UhqdpxFoaScPeJK4EhN5omQmKA": "1563354370786066525",
+    "https://discord.com/api/webhooks/1559755207590543382/Qen66tfQu4W9LMYqwxj0qq210hc_k-Hkd8bzNms_0xbZEgbp_qaaVYUj3QJqaIi3QsNL": "1563354373197791253"
   },
-  "last_updated": "06:52:04 PM ET"
+  "last_updated": "08:52:17 PM ET"
 }
